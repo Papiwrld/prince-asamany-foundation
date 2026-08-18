@@ -1,0 +1,188 @@
+/*
+ * Prince Asamany Foundation — Global Stylesheet
+ *
+ * TYPOGRAPHY RATIONALE:
+ * Display: "Playfair Display" — High-contrast editorial serif. Used by serious NGOs,
+ *   The Guardian, major institutions. The thick/thin contrast communicates dignity and
+ *   permanence. Not a "tech startup" font. Immediately reads as a real organization.
+ *   Pairs warmth with authority.
+ * Body: "Plus Jakarta Sans" — A contemporary grotesk with subtly squared terminals
+ *   that give it warmth and approachability vs Inter/Poppins. Less common = less
+ *   "AI template" energy. Works at small sizes while retaining personality.
+ * Accent/Pullquote: "Playfair Display" italic — used for testimonials and callout quotes.
+ */
+
+@import "tailwindcss";
+
+/* ── Brand Design Tokens ─────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-brand-red:        #E81A1F;
+  --color-brand-navy:       #113647;
+  --color-brand-green:      #027E22;
+  --color-brand-gold:       #F8A614;
+  --color-brand-orange:     #EC6A23;
+  --color-brand-cream:      #FAF6EE;
+  
+  --color-brand-red-dark:   #C01015;
+  --color-brand-navy-light: #1A4D66;
+  --color-brand-gold-light: #FABB40;
+
+  /* Typography */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body:    var(--font-plus-jakarta), system-ui, sans-serif;
+
+  /* Radius */
+  --radius-card: 1.25rem;
+  --radius-card-lg: 2rem;
+  --radius-btn: 9999px;
+
+  /* Spacing extras */
+  --spacing-section: 6rem;
+  --spacing-section-sm: 3.5rem;
+}
+
+/* ── Base Reset & Typography ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps so headings aren't hidden behind the fixed navbar */
+  scroll-padding-top: 6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent horizontal scroll from overflowing child elements, especially
+   on small viewports where decorative offsets/absolute overlaps can bleed */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Make media responsive by default */
+img, svg, video { max-width: 100%; height: auto; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px; /* Tailwind rem scale anchored at 16px root */
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-navy);
+  line-height: 1.7;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+/*
+ * BODY TEXT STANDARD — applied site-wide
+ * All paragraph text = 18px (1.125rem), regular weight, relaxed leading
+ * This matches the hero intro style the client approved
+ */
+p {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* Headings use display serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em; /* Playfair Display looks best slightly tight at large sizes */
+  text-wrap: balance; /* Avoids lonely single words on the last line of headings */
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-brand-gold);
+  color: var(--color-brand-navy);
+}
+
+/* Focus styles — visible, brand-colored
+   Navy outline passes on light (cream/white) backgrounds (11:1). Dark-background
+   components that need a gold outline override this via their own
+   `focus-visible:outline-*` Tailwind classes (e.g. StoryCarousel, MapImpact). */
+:focus-visible {
+  outline: 2px solid var(--color-brand-navy);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* For focusable elements sitting on dark brand surfaces, a gold ring gives
+   the highest contrast. Applied as a utility that components opt into. */
+.focus-ring-dark:focus-visible {
+  outline-color: var(--color-brand-gold);
+}
+
+/* ── Utility classes ─────────────────────────────────────────── */
+
+/* Brush stroke accent (SVG background) */
+.brush-underline {
+  position: relative;
+  display: inline-block;
+}
+.brush-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 8px;
+  background: var(--color-brand-gold);
+  clip-path: polygon(0% 40%, 3% 0%, 97% 20%, 100% 80%, 95% 100%, 2% 85%);
+}
+
+/* Section vertical rhythm */
+.section-padding {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: var(--spacing-section-sm);
+    padding-bottom: var(--spacing-section-sm);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-brand-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-brand-gold); border-radius: 3px; }
+
+/* Nicer paragraph rag — prevents orphans/awkward last-line breaks */
+p { text-wrap: pretty; }
+
+/* SVG map location pulse — CSS-driven so prefers-reduced-motion can disable it */
+@keyframes pulseRing {
+  0%, 100% { r: 10px; opacity: 0.5; }
+  50%      { r: 22px; opacity: 0; }
+}
+.pulse-ring { animation: pulseRing 2.5s ease-in-out infinite; }
+
+/* ── Skip to content link (keyboard / screen-reader users) ───── */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--color-brand-gold);
+  color: var(--color-brand-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.5rem;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ── Respect reduced-motion preference ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
