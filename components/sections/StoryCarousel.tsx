@@ -23,14 +23,14 @@ export function StoryCarousel() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
-        {/* Centered heading */}
-        <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+        {/* Heading — centered "moment" statement */}
+        <div className="max-w-2xl mx-auto mb-12 md:mb-16 text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold">
             Impact Stories
           </span>
           <h2
             id="stories-heading"
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 leading-[1.08] max-w-[16ch]"
           >
             Learn the stories of those we&apos;ve already helped
           </h2>
@@ -84,7 +84,7 @@ export function StoryCarousel() {
           ))}
         </div>
 
-        {/* Centered CTA */}
+        {/* CTA */}
         <div className="mt-12 flex justify-center">
           <Link
             href="/stories"

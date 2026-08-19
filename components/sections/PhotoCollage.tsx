@@ -30,6 +30,7 @@ export function PhotoCollage() {
                   src="/story-2.png"
                   alt="Community capacity-building session in Ejisu, Ashanti Region, participants in a training workshop"
                   fill
+                  priority
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -56,8 +57,8 @@ export function PhotoCollage() {
 
           {/* Right: Text content */}
           <motion.div
-            initial={{ opacity: 0, x: 32 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
             className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6"

@@ -74,7 +74,7 @@ export default function StoriesPage() {
             Together we can restore hope and change lives. Support the Foundation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/donate" className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark transition-all duration-200 w-full sm:w-auto">
+            <Link href="/donate" className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark transition-all duration-200 w-full sm:w-auto sm:px-10">
               Donate Now
             </Link>
             <Link href="/get-involved" className="inline-flex items-center justify-center font-body font-semibold text-base bg-transparent text-white px-8 py-4 rounded-btn border-2 border-white/50 hover:bg-white/10 transition-all duration-200 w-full sm:w-auto">

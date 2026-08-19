@@ -104,7 +104,7 @@ export function GetInvolvedContent() {
       {/* Volunteer Form */}
       <section className="bg-brand-cream section-padding" aria-labelledby="form-heading">
         <div className="max-w-2xl mx-auto px-5 md:px-8">
-          <div className="text-center mb-10">
+          <div className="mb-10 text-center">
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Express Interest</span>
             <h2 id="form-heading" className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
               Register as a Volunteer

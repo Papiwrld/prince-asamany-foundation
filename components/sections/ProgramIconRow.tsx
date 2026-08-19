@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import { programs } from '@/lib/content';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export function ProgramIconRow() {
   return (
@@ -15,7 +15,7 @@ export function ProgramIconRow() {
       aria-labelledby="programs-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Heading row */}
+        {/* Heading row — centered "moment" statement */}
         <div className="flex flex-col items-center text-center gap-6 mb-14">
           <div>
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
@@ -30,7 +30,7 @@ export function ProgramIconRow() {
           </div>
           <Link
             href="/programs"
-            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red transition-colors duration-200 self-center md:self-auto whitespace-nowrap"
+            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red transition-colors duration-200 self-center whitespace-nowrap"
           >
             All programs →
           </Link>

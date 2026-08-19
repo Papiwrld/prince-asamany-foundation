@@ -106,7 +106,7 @@ export function DonatePageContent() {
       {/* Donation cards */}
       <section className="bg-brand-cream section-padding" aria-labelledby="donate-heading">
         <div className="max-w-4xl mx-auto px-5 md:px-8">
-          <div className="text-center mb-12">
+          <div className="mb-12 text-center">
             <h2 id="donate-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy leading-tight">
               Choose your donation method
             </h2>

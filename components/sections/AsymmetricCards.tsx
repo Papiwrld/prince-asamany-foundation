@@ -12,14 +12,14 @@ export function AsymmetricCards() {
       aria-labelledby="impact-cards-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Section heading, centered */}
+        {/* Section heading — centered "moment" statement */}
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
             Our Impact
           </span>
           <h2
             id="impact-cards-heading"
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mt-2 leading-[1.12]"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mt-2 leading-[1.08]"
           >
             Building futures, one{' '}
             <span className="brush-underline">community</span>{' '}
@@ -57,7 +57,7 @@ export function AsymmetricCards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-            className="group md:row-span-2 relative overflow-hidden rounded-[2rem] aspect-[4/3] sm:aspect-[3/4] md:aspect-auto md:min-h-[30rem] min-h-[22rem] flex flex-col items-center justify-center"
+            className="group md:row-span-2 relative overflow-hidden rounded-[2rem] w-full h-[24rem] sm:h-[28rem] md:h-auto md:min-h-[30rem] flex flex-col items-center justify-center"
           >
             <Image
               src="/textural-water.png"
@@ -66,14 +66,15 @@ export function AsymmetricCards() {
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
-            {/* Elegant gradient scrim for better contrast and premium feel */}
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent" aria-hidden="true" />
+            {/* Gradient scrim — stronger toward the bottom-left where text sits,
+                 fading to clean toward the top-right, for an Apple-like focal balance. */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy via-brand-navy/55 to-transparent" aria-hidden="true" />
             
-            {/* Content centered both horizontally and vertically */}
-            <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-8 py-10 md:px-12">
-              <div className="flex flex-col items-center text-center">
-                <span className="w-10 h-1 bg-brand-gold mb-6 rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>
-                <p className="font-display text-white text-2xl md:text-3xl lg:text-4xl font-medium italic leading-snug drop-shadow-md">
+            {/* Overlay content — horizontally centered, anchored to the bottom */}
+            <div className="relative z-10 w-full h-full flex flex-col items-center justify-end px-8 pb-10 pt-20 text-center md:px-12 md:pb-12">
+              <div className="flex flex-col items-center max-w-md">
+                <span className="w-10 h-0.5 bg-brand-gold rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>
+                <p className="mt-6 font-display text-white text-2xl leading-[1.25] md:text-4xl lg:text-[2.75rem] lg:leading-[1.18] font-medium italic drop-shadow-xl">
                   Driving sustainable human advancement.
                 </p>
               </div>

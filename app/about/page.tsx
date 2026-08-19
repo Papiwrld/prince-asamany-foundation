@@ -135,7 +135,7 @@ export default function AboutPage() {
       {/* Key Program Areas */}
       <section className="bg-brand-navy section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="text-center mb-12">
+          <div className="mb-12 text-center">
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold">Programs</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mt-2 leading-tight">
               Key Program Areas
@@ -154,7 +154,7 @@ export default function AboutPage() {
           </div>
 
           {/* Key Program Areas list */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-center">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl text-left">
             {[
               'Analysis and assessment of needs.',
               'Developing programmes and strategies for development.',

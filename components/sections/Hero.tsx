@@ -23,16 +23,16 @@ export function HeroSection() {
           quality={90}
           sizes="100vw"
         />
-        {/* Gradient overlay: strong on left for text legibility, lighter on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/92 via-brand-navy/65 to-brand-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 via-transparent to-transparent" />
+        {/* Centered gradient overlay so text stays legible in the middle */}
+        <div className="absolute inset-0 bg-brand-navy/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-brand-navy/40" />
       </div>
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full pt-24 pb-16 md:pt-28 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 lg:gap-8">
+          <div className="flex flex-col items-center text-center gap-6 lg:gap-8 lg:items-start lg:text-left">
             {/* Overline */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -44,13 +44,13 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline — centered on mobile, balanced measure */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             >
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] max-w-3xl">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.06] max-w-2xl">
                 Hope,{' '}
                 <span className="text-brand-gold brush-underline pb-1">Development</span>{' '}
                 &amp; Opportunity{' '}
@@ -63,23 +63,23 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-              className="font-body text-lg leading-relaxed text-white/80 max-w-lg"
+              className="font-body text-lg leading-relaxed text-white/80 max-w-xl"
             >
               Prince Asamany Foundation works for the social development and integration of
               underprivileged individuals, groups and communities in Ejisu Municipal Assembly.
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs — centered on mobile, side-by-side on larger screens */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-              className="flex flex-col w-full sm:w-auto sm:flex-row justify-center md:justify-start gap-4"
+              className="flex flex-col w-full sm:w-auto sm:flex-row sm:items-center justify-center gap-4"
             >
               <Link
                 href="/donate"
                 id="hero-donate-cta"
-                className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark transition-all duration-200 active:scale-[0.98] w-full sm:w-auto"
+                className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark transition-all duration-200 active:scale-[0.98] w-full sm:w-auto sm:px-10"
               >
                 Support the Foundation
               </Link>

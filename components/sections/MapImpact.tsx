@@ -43,14 +43,14 @@ export function MapImpact() {
       aria-labelledby="map-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Heading */}
-        <div className="text-center mb-12">
+        {/* Heading — centered "moment" statement */}
+        <div className="mb-12 text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
             Where We Work
           </span>
           <h2
             id="map-heading"
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mt-2 leading-tight"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mt-2 leading-[1.08]"
           >
             Always where others need help.
           </h2>
