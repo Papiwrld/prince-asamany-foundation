@@ -57,20 +57,26 @@ export function AsymmetricCards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-            className="md:row-span-2 relative overflow-hidden rounded-card-lg aspect-[4/3] sm:aspect-[3/4] md:aspect-auto md:min-h-[30rem] min-h-[20rem]"
+            className="group md:row-span-2 relative overflow-hidden rounded-[2rem] aspect-[4/3] sm:aspect-[3/4] md:aspect-auto md:min-h-[30rem] min-h-[22rem] flex flex-col items-center justify-center"
           >
             <Image
               src="/textural-water.png"
               alt="Hands holding clean water, a symbol of the Foundation's clean water access program"
               fill
-              className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
-            {/* Color overlay strip at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 bg-brand-green p-5 text-center md:text-left">
-              <span className="font-display text-white text-base font-semibold italic">
-                Driving sustainable human advancement.
-              </span>
+            {/* Elegant gradient scrim for better contrast and premium feel */}
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent" aria-hidden="true" />
+            
+            {/* Content centered both horizontally and vertically */}
+            <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-8 py-10 md:px-12">
+              <div className="flex flex-col items-center text-center">
+                <span className="w-10 h-1 bg-brand-gold mb-6 rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>
+                <p className="font-display text-white text-2xl md:text-3xl lg:text-4xl font-medium italic leading-snug drop-shadow-md">
+                  Driving sustainable human advancement.
+                </p>
+              </div>
             </div>
           </motion.div>
 
