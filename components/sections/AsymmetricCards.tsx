@@ -60,8 +60,8 @@ export function AsymmetricCards() {
             className="group md:row-span-2 relative overflow-hidden rounded-[2rem] w-full h-[24rem] sm:h-[28rem] md:h-auto md:min-h-[30rem] flex flex-col items-center justify-center"
           >
             <Image
-              src="/textural-water.png"
-              alt="Hands holding clean water, a symbol of the Foundation's clean water access program"
+              src="/media/IMG_6848.jpg"
+              alt="Close-up of a community member's hands during a foundation event"
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 33vw"

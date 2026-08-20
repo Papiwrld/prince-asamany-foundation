@@ -88,7 +88,7 @@ export function Navbar() {
           <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 shrink-0" aria-label="Prince Asamany Foundation, Home">
             <div className="relative h-12 w-36">
               <Image
-                src="/logo.jpeg"
+                src="/media/logo.jpg"
                 alt="Prince Asamany Foundation"
                 fill
                 sizes="144px"

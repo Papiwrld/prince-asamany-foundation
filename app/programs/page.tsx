@@ -12,52 +12,52 @@ export const metadata: Metadata = {
 
 const programs = [
   {
-    id: 'clean-water',
-    tag: 'Water Access',
-    title: 'Providing Access to Clean Water',
+    id: 'health-screenings',
+    tag: 'Healthcare',
+    title: 'Preventive Healthcare & Screenings',
     description:
-      'Access to clean water is a fundamental right. The Prince Asamany Foundation works directly with communities in Ejisu Municipal Assembly to identify water access gaps and develop sustainable solutions, from borehole projects to community water management training.',
+      'We believe that access to basic healthcare and timely health information should be available to everyone. We partner with local institutions like Mansa Memorial Hospital to organize free health screenings, focusing on early detection of critical illnesses such as cervical cancer to prevent fatalities.',
     approach: [
-      'Community needs assessment for water access',
-      'Borehole and water infrastructure development',
-      'Water management training for community members',
-      'Ongoing monitoring and maintenance support',
+      'Free cervical cancer screening for women in rural communities',
+      'Health education to remove fear and misconceptions',
+      'Collaboration with qualified health professionals',
+      'Promotion of early detection to improve treatment outcomes',
     ],
-    image: '/program-water.png',
-    imageAlt: 'A Ghanaian woman collecting clean water from a community borehole in Ejisu, Ashanti Region, Prince Asamany Foundation water access program',
+    image: '/media/IMG_8259.jpg.jpeg',
+    imageAlt: 'Health workers and foundation team posing by a free cervical cancer screening banner',
+    color: 'brand-red',
+  },
+  {
+    id: 'social-welfare',
+    tag: 'Social Welfare',
+    title: 'Social Welfare & Relief',
+    description:
+      'We believe in providing immediate, tangible support to the most vulnerable. Through initiatives like our annual "Joy to the Street" campaign, we supply less-privileged families, street children, and marginalized individuals with essential food, clothing, and support.',
+    approach: [
+      'Annual community donation drives',
+      'Direct provision of food and essential goods',
+      'Support for the homeless and mentally ill',
+      'Fostering social solidarity in the municipality',
+    ],
+    image: '/media/IMG_6899_1.jpg',
+    imageAlt: 'Prince Asamany handing out supplies to a marginalized individual in the street',
     color: 'brand-navy',
   },
   {
-    id: 'environment',
-    tag: 'Environment',
-    title: 'Environmental Project',
+    id: 'economic-empowerment',
+    tag: 'Empowerment',
+    title: 'Economic Empowerment',
     description:
-      'The Foundation\'s environmental work addresses the growing challenge of deforestation and environmental degradation in the Ashanti Region. We mobilize community volunteers to restore the natural environment and build awareness of sustainable land use.',
+      'Sustainable human advancement starts by delivering targeted resources and structural aid. Our district upskilling efforts focus on equipping individuals with the tools and training they need to secure independent livelihoods and break the cycle of poverty.',
     approach: [
-      'Community tree-planting initiatives',
-      'Environmental education and awareness',
-      'Sustainable land use advocacy',
-      'Collaboration with local and national environmental bodies',
+      'Targeted resource distribution for local businesses',
+      'Structural aid and capacity building',
+      'Promoting economic literacy',
+      'Collaboration with local assemblies and chiefs',
     ],
-    image: '/program-environment.png',
-    imageAlt: 'Ghanaian community volunteers tree-planting in Ashanti Region, Prince Asamany Foundation environmental program',
+    image: '/media/IMG_8277.jpg.jpeg',
+    imageAlt: 'Community member participating in an economic empowerment session',
     color: 'brand-green',
-  },
-  {
-    id: 'capacity-building',
-    tag: 'Capacity Building',
-    title: 'Capacity Building',
-    description:
-      'Training and knowledge are the most powerful tools for lasting change. The Foundation runs capacity-building workshops that equip community members, especially women and youth, with skills for economic independence, community leadership, and personal development.',
-    approach: [
-      'Vocational and skills training workshops',
-      'Community leadership development',
-      'Women and youth economic empowerment',
-      'Stakeholder collaboration for program delivery',
-    ],
-    image: '/program-capacity.png',
-    imageAlt: 'A community training workshop in Ghana, adults learning skills through the Prince Asamany Foundation capacity-building program',
-    color: 'brand-red',
   },
 ];
 

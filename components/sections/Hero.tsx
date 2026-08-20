@@ -15,8 +15,8 @@ export function HeroSection() {
       {/* Background photo, full bleed, dark overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-candid.png"
-          alt="Community members in Ejisu, Ashanti Region"
+          src="/media/IMG_4392.jpg"
+          alt="Wide shot of a line of women and children in Ejisu waiting during community outreach"
           fill
           className="object-cover object-center"
           priority

@@ -27,8 +27,8 @@ export function PhotoCollage() {
               {/* Primary photo, full width */}
               <div className="relative rounded-card-lg overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/story-2.png"
-                  alt="Community capacity-building session in Ejisu, Ashanti Region, participants in a training workshop"
+                  src="/media/IMG_4479.jpg"
+                  alt="A black and white portrait of children from the community"
                   fill
                   priority
                   className="object-cover object-center"
@@ -42,8 +42,8 @@ export function PhotoCollage() {
               >
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
                   <Image
-                    src="/textural-work.png"
-                    alt="Artisan hands at work, kente weaving, representing the Foundation's capacity-building and community empowerment programs"
+                    src="/media/IMG_6926.jpg"
+                    alt="Children eating during a foundation welfare distribution event"
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 224px"

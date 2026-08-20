@@ -45,7 +45,7 @@ export function Footer() {
           <Link href="/" aria-label="Prince Asamany Foundation, Home">
             <div className="relative h-14 w-44 mx-auto md:mx-0">
               <Image
-                src="/logo.jpeg"
+                src="/media/logo.jpg"
                 alt="Prince Asamany Foundation"
                 fill
                 sizes="176px"

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { PageHeader } from '@/components/ui/PageHeader';
+import { LeadershipRecognition } from '@/components/sections/LeadershipRecognition';
 import { CTABanner } from '@/components/sections/CTABanner';
 
 export const metadata: Metadata = {
@@ -23,9 +24,9 @@ const objectives = [
 ];
 
 const programs = [
-  { title: 'Providing Access to Clean Water.', image: '/program-water.png', alt: 'A Ghanaian woman at a community borehole, clean water access program in Ejisu' },
-  { title: 'Environmental Project.', image: '/program-environment.png', alt: 'Community volunteers planting trees in Ashanti Region Ghana, environmental program' },
-  { title: 'Capacity Building.', image: '/program-capacity.png', alt: 'Community workshop in Ghana, capacity-building training session by Prince Asamany Foundation' },
+  { title: 'Preventive Healthcare.', image: '/media/IMG_8259.jpg.jpeg', alt: 'Health workers and foundation team posing by a free cervical cancer screening banner' },
+  { title: 'Social Welfare & Relief.', image: '/media/IMG_6899_1.jpg', alt: 'Prince Asamany handing out supplies to a marginalized individual in the street' },
+  { title: 'Economic Empowerment.', image: '/media/IMG_8277.jpg.jpeg', alt: 'Providing resources and training to community members for sustainable livelihoods' },
 ];
 
 export default function AboutPage() {
@@ -83,6 +84,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <LeadershipRecognition />
 
       {/* Strategic Objectives & Core Values */}
       <section className="bg-brand-cream section-padding">
@@ -154,7 +157,7 @@ export default function AboutPage() {
           </div>
 
           {/* Key Program Areas list */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl text-left">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
             {[
               'Analysis and assessment of needs.',
               'Developing programmes and strategies for development.',
