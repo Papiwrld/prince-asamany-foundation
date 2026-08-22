@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AshantiMap } from '@/components/ui/illustrations';
+import { CountUp } from '@/components/ui/CountUp';
 
 
 // Icons
@@ -92,7 +93,7 @@ export function MapImpact() {
                     {stat.icon}
                   </div>
                   <div className="font-display text-3xl md:text-4xl font-black leading-none mb-2">
-                    {stat.value}
+                    <CountUp value={stat.value} />
                   </div>
                   
                   <div className="w-10 h-1 rounded-full my-3 bg-white/30" aria-hidden="true" />

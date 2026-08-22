@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { StickyDonate } from '@/components/layout/StickyDonate';
 import { siteConfig } from '@/lib/site';
 
 const playfair = Playfair_Display({
@@ -79,6 +80,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <StickyDonate />
         </MotionConfig>
       </body>
     </html>
