@@ -15,7 +15,7 @@ export default function DonatePage() {
       <PageHeader
         overline="Support Our Work"
         title="Support Prince Asamany Foundation"
-        description="Donate via bank transfer or MoMo — every gift makes a difference."
+        description="Donate via bank transfer or MoMo, every gift makes a difference."
         bgImage="/media/opt/IMG_6863.webp"
       />
 

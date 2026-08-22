@@ -114,7 +114,7 @@ const [active, setActive] = useState<number | null>(null);
       <div className="text-center mb-10 border-t border-white/10 pt-12">
         <h3 className="font-display text-3xl md:text-4xl font-bold text-white">Impact & Recognition Gallery</h3>
         <p className="font-body text-base text-white/60 mt-3 max-w-2xl mx-auto">
-          Moments from the 2025 Philanthropic Awards &amp; our community fieldwork — tap any photo to view it full screen.
+          Moments from the 2025 Philanthropic Awards &amp; our community fieldwork, tap any photo to view it full screen.
         </p>
       </div>
 

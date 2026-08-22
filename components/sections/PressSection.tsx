@@ -23,7 +23,7 @@ export function PressSection() {
           >
             Our work in the media
           </h2>
-          <p className="font-body text-lg text-brand-navy/70 leading-relaxed mt-4">
+          <p className="font-body text-lg text-brand-navy/70 leading-relaxed mt-4 text-left lg:text-center">
             Coverage of our programs and impact by Choice News Online.
           </p>
         </div>

@@ -92,7 +92,7 @@ export function FounderHighlight() {
               </p>
             </blockquote>
 
-            <p className="font-body text-lg text-white/75 leading-relaxed max-w-xl">
+            <p className="font-body text-lg text-white/75 leading-relaxed max-w-xl text-left">
               Awarded the 2025 Social Change Advocate Award, Prince Asamany has dedicated his life to uplifting communities across the Ashanti Region through initiatives like &ldquo;Joy to the Street&rdquo; and preventive healthcare programs.
             </p>
 

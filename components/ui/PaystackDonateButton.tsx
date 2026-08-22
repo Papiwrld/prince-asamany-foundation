@@ -139,12 +139,12 @@ export function PaystackDonateButton() {
       });
       const data = await res.json().catch(() => null);
       if (res.ok && data?.verified) {
-        setStatusMsg(`Donation confirmed! Reference: ${ref} — thank you.`);
+        setStatusMsg(`Donation confirmed! Reference: ${ref}, thank you.`);
       } else {
-        setStatusMsg(`Donation received (reference ${ref}). Confirmation pending — thank you!`);
+        setStatusMsg(`Donation received (reference ${ref}), confirmation pending, thank you!`);
       }
     } catch {
-      setStatusMsg(`Donation received (reference ${ref}). Confirmation pending — thank you!`);
+      setStatusMsg(`Donation received (reference ${ref}), confirmation pending, thank you!`);
     } finally {
       setProcessing(false);
     }
@@ -184,7 +184,7 @@ export function PaystackDonateButton() {
         ref: referenceRef.current,
         onClose: () => {
           setProcessing(false);
-          setStatusMsg('Payment window closed — no charge was made.');
+          setStatusMsg('Payment window closed, no charge was made.');
         },
         callback: (response) => {
           handlePaymentSuccess(response.reference);

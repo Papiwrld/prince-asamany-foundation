@@ -93,7 +93,7 @@ export function PhotoCollage() {
               </h2>
             </div>
 
-            <p className="font-body text-lg text-brand-navy/70 leading-relaxed">
+            <p className="font-body text-lg text-brand-navy/70 leading-relaxed text-left">
               The Prince Asamany Foundation stands as a bridge between need and compassion. If you
               are seeking support, do not hesitate to call on us. If you have a heart to uplift the
               less privileged, join hands with us, together we can restore hope and change lives.

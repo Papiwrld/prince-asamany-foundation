@@ -28,8 +28,8 @@ export function HeroSection() {
           {...blurProps(HERO_IMAGE)}
         />
         {/* Centered gradient overlay so text stays legible in the middle */}
-        <div className="absolute inset-0 bg-brand-navy/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-brand-navy/40" />
+        <div className="absolute inset-0 bg-brand-navy/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/85 via-brand-navy/45 to-brand-navy/30" />
       </div>
 
       {/* Main content */}

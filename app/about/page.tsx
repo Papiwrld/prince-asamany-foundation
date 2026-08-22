@@ -32,6 +32,52 @@ const programs = [
   { title: 'Economic Empowerment.', image: '/media/opt/IMG_8208.webp', alt: 'Foundation volunteers standing beside the foundation mission and vision banner during a community capacity-building event', href: '/programs#economic-empowerment' },
 ];
 
+const achievements = [
+  {
+    title: 'Healthcare Initiatives',
+    text: 'Partnered with healthcare providers to deliver annual cervical cancer screenings, ensuring women in underserved communities receive lifesaving care.',
+  },
+  {
+    title: 'Joy to the Street Program',
+    text: 'A flagship initiative that restores dignity and provides support to people living on the margins, reminding them they are not forgotten.',
+  },
+  {
+    title: 'Youth Empowerment',
+    text: "Invested in capacity-building programs that equip young people with skills and opportunities to thrive in today's world.",
+  },
+  {
+    title: 'Women\u2019s Economic Empowerment',
+    text: 'Supported market women to establish businesses, fostering financial independence and stability.',
+  },
+  {
+    title: 'Community Health',
+    text: 'Organized regular medical screenings to safeguard the health and well-being of vulnerable populations.',
+  },
+  {
+    title: 'National Recognition',
+    text: 'In 2025, honored with the Social Change Advocate Award by the Advocate for Fair Legal Access Ghana (AFLAG), acknowledging our role in championing justice and driving social transformation.',
+  },
+];
+
+const futurePlans = [
+  {
+    title: 'Expanding Reach',
+    text: 'Extending programs to more rural and underserved communities across Ghana.',
+  },
+  {
+    title: 'Building Bridges of Opportunity',
+    text: 'Creating pathways for youth to embrace entrepreneurship, digital skills, and leadership.',
+  },
+  {
+    title: 'Strengthening Partnerships',
+    text: 'Collaborating with NGOs, policymakers, and international organizations to amplify impact.',
+  },
+  {
+    title: 'Inspiring Service',
+    text: 'Encouraging more young people to embrace the spirit of giving, ensuring kindness continues to ripple through society.',
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -55,8 +101,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
               <p className="font-body text-lg text-brand-navy/75 leading-relaxed mb-5">
-                Prince Asamany Foundation is a non-governmental organization located at Akyawkrom
-                in Ejisu Municipal Assembly. We stand for Hope, Development and Opportunity for all.
+                The Prince Asamany Foundation was born out of a moment of compassion. While driving
+                with his daughter, Prince Douglas Asamany encountered a beggar asking for food. His
+                daughter&rsquo;s innocent plea, &ldquo;Daddy, why are they begging for food?
+                Let&rsquo;s take them home and give them something to eat,&rdquo; sparked the vision
+                to create a platform where kindness meets action.
+              </p>
+              <blockquote className="border-l-4 border-brand-gold pl-6 mb-5">
+                <p className="font-display text-xl text-brand-navy italic leading-snug">
+                  We stand for hope, Development and opportunity for all.
+                </p>
+              </blockquote>
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed mb-5">
                 Our objective is to assist in the process of social integration and personal
                 realization of the underprivileged.
               </p>
@@ -90,9 +146,62 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Achievements */}
+      <section className="bg-brand-cream section-padding">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+              Milestones
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
+              Achievements
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {achievements.map((item) => (
+              <div key={item.title} className="bg-white rounded-card-lg border border-brand-navy/10 p-8">
+                <h3 className="font-display text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
+                <p className="font-body text-brand-navy/70 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Future Plans */}
+      <section className="bg-white section-padding">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+              What&rsquo;s next
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
+              Future Plans
+            </h2>
+            <p className="font-body text-lg text-brand-navy/70 mt-4">
+              Looking ahead, the Prince Asamany Foundation envisions:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {futurePlans.map((item) => (
+              <div key={item.title} className="bg-brand-cream rounded-card-lg border border-brand-navy/10 p-8">
+                <h3 className="font-display text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
+                <p className="font-body text-brand-navy/70 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Meet the Founder — editorial profile */}
       <section className="bg-brand-cream section-padding overflow-hidden" aria-labelledby="founder-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Leadership</span>
+            <h2 id="founder-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
+              See the Recognition
+            </h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Photo stack: portrait + field shot */}
@@ -124,37 +233,21 @@ export default function AboutPage() {
 
             {/* Narrative */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 mt-8 lg:mt-0">
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
-                Leadership
-              </span>
-              <h2 id="founder-heading" className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
-                Meet our Founder
-              </h2>
               <p className="font-display text-xl md:text-2xl text-brand-navy font-semibold">
                 Prince Douglas Asamany
               </p>
-              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl text-left">
                 A chemist by training and an advocate by calling, Prince founded the Prince Asamany
                 Foundation to stand in the gap for underprivileged communities across the Ejisu
-                Municipal Assembly &mdash; from street children in Kumasi to women in need of preventive
+                Municipal Assembly, from street children in Kumasi to women in need of preventive
                 healthcare.
               </p>
-              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl text-left">
                 Whether he is handing relief packages at the annual &ldquo;Joy to the Street&rdquo; campaign or
                 championing Green Chemistry education, his approach is the same: show up in person,
                 listen first, and build solutions the community owns. In recognition of that work, he
                 was named the 2025 Social Change Advocate by AFLAG.
               </p>
-              <Link
-                href="/about#leadership"
-                className="inline-flex items-center gap-2 font-body text-sm font-semibold bg-brand-navy text-white px-6 py-3 rounded-btn hover:bg-brand-navy-light transition-colors duration-200 self-start"
-              >
-                See the recognition
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3.33334 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
             </div>
 
           </div>

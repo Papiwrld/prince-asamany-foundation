@@ -43,7 +43,7 @@ export function LeadershipRecognition() {
             transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             className="flex flex-col gap-6 lg:col-span-5"
           >
-            <div>
+            <div className="w-full text-center lg:text-left">
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold">
                 Leadership &amp; Recognition
               </span>
@@ -56,12 +56,12 @@ export function LeadershipRecognition() {
               <p className="font-display text-xl md:text-2xl italic leading-snug text-white">
                 &ldquo;A humble, strategic, and impact-driven leader whose work stands as a model for service-oriented citizenship.&rdquo;
               </p>
-              <footer className="mt-2 text-sm text-brand-gold font-semibold uppercase tracking-wider">— Rita Ama Nupe Demuyakor, AFLAG Founder</footer>
+              <footer className="mt-2 text-sm text-brand-gold font-semibold uppercase tracking-wider">Rita Ama Nupe Demuyakor, AFLAG Founder</footer>
             </blockquote>
 
             <div className="space-y-4 font-body text-lg text-white/80 leading-relaxed">
               <p>
-                In a night filled with celebration and inspiration, our Founder and President, Prince Douglas Asamany, was honored with the 2025 Social Change Advocate Award at the Philanthropic Awards &amp; Charity Night, organized by the African Leaders and Generational Achievers Forum (AFLAG).
+                In a night filled with celebration and inspiration, our Founder and President, Prince Douglas Asamany, was honored with the 2025 Social Change Advocate Award at the Philanthropic Awards &amp; Charity Night, organized by the Advocate for Fair Legal Access Ghana (AFLAG).
               </p>
               <p>
                 The award recognized Prince Asamany&rsquo;s outstanding dedication to human welfare and sustainable development under the foundation&rsquo;s guiding motto: <strong>&ldquo;Hope, Development, and Opportunity to All.&rdquo;</strong> AFLAG highlighted the transformative impact of our free medical screening initiatives, educational support schemes, job skills training, and livelihood empowerment projects.
@@ -93,7 +93,7 @@ export function LeadershipRecognition() {
                 <div className="relative aspect-video">
                   <Image
                     src={VIDEO_POSTER}
-                    alt="Prince Douglas Asamany honored as AFLAG Social Change Advocate — award night highlights"
+                    alt="Prince Douglas Asamany honored as AFLAG Social Change Advocate, award night highlights"
                     fill
                     sizes="(max-width: 1024px) 100vw, 58vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
@@ -112,7 +112,7 @@ export function LeadershipRecognition() {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
                     </span>
                     <span className="font-body text-[10px] sm:text-xs font-semibold text-white tracking-widest uppercase">
-                      Event Highlights &middot; 1:45
+                      Event Highlights, 1:45
                     </span>
                   </span>
 
@@ -126,7 +126,7 @@ export function LeadershipRecognition() {
                   {/* Label */}
                   <span className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-left pointer-events-none">
                     <span className="block font-body text-sm md:text-base font-medium text-white/90 drop-shadow-lg">
-                      Award Night Highlights &mdash; Marriott Hotel, Nov 15, 2025
+                      Award Night Highlights, Marriott Hotel, Nov 15, 2025
                     </span>
                   </span>
                 </div>
@@ -164,8 +164,8 @@ export function LeadershipRecognition() {
               <dl className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-white/10">
                 {[
                   { k: 'Honoree', v: 'Prince Douglas Asamany' },
-                  { k: 'Presented by', v: 'AFLAG — Generational Achievers Forum' },
-                  { k: 'Venue & Date', v: 'Marriott Hotel · Nov 15, 2025' },
+                  { k: 'Presented by', v: 'AFLAG, Advocate for Fair Legal Access Ghana' },
+                  { k: 'Venue & Date', v: 'Marriott Hotel, Nov 15, 2025' },
                 ].map((item) => (
                   <div key={item.k} className="flex flex-col gap-1">
                     <dt className="font-body text-[11px] font-semibold uppercase tracking-widest text-brand-gold">
