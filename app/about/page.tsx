@@ -217,7 +217,7 @@ export default function AboutPage() {
                 />
               </div>
               <div className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-4 xl:-right-10 lg:w-56 xl:w-64 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-10">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[5/6]">
                   <Image
                     src="/media/opt/IMG_6899_1.webp"
                     alt="Prince Asamany bending to greet an elderly woman during a community relief visit in Kumasi"
@@ -228,7 +228,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <div className="hidden lg:block h-12" aria-hidden="true" />
+              <div className="hidden lg:block h-28" aria-hidden="true" />
             </div>
 
             {/* Narrative */}

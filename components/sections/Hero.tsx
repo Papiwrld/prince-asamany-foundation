@@ -27,9 +27,9 @@ export function HeroSection() {
           sizes="100vw"
           {...blurProps(HERO_IMAGE)}
         />
-        {/* Centered gradient overlay so text stays legible in the middle */}
-        <div className="absolute inset-0 bg-brand-navy/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/85 via-brand-navy/45 to-brand-navy/30" />
+        {/* Lightened overlay so image color shows through */}
+        <div className="absolute inset-0 bg-brand-navy/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-brand-navy/20 to-transparent" />
       </div>
 
       {/* Main content */}
@@ -41,7 +41,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold">
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]">
                 Akyawkrom, Ejisu, Ashanti Region, Ghana
               </span>
             </motion.div>
@@ -52,7 +52,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             >
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.06] max-w-2xl">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.06] max-w-2xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
                 Hope,{' '}
                 <span className="text-brand-gold brush-underline pb-1">Development</span>{' '}
                 &amp; Opportunity{' '}
@@ -65,7 +65,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-              className="font-body text-lg leading-relaxed text-white/80 max-w-xl"
+              className="font-body text-lg leading-relaxed text-white/90 max-w-xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]"
             >
               Prince Asamany Foundation works for the social development and integration of
               underprivileged individuals, groups and communities in Ejisu Municipal Assembly.

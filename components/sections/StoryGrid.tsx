@@ -48,7 +48,7 @@ export function StoryGrid() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
               className="group flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
             >
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-64 md:h-72 lg:h-80 overflow-hidden shrink-0">
                 <Image
                   src={story.image}
                   alt={story.imageAlt}
