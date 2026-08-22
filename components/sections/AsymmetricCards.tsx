@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CTACard, StatCard } from '@/components/ui/Card';
+import { blurProps } from '@/lib/media';
 
 export function AsymmetricCards() {
   return (
@@ -60,11 +61,12 @@ export function AsymmetricCards() {
             className="group md:row-span-2 relative overflow-hidden rounded-[2rem] w-full h-[24rem] sm:h-[28rem] md:h-auto md:min-h-[30rem] flex flex-col items-center justify-center"
           >
             <Image
-              src="/media/IMG_6848.jpg"
+              src="/media/opt/IMG_6848.webp"
               alt="Close-up of a community member's hands during a foundation event"
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 33vw"
+              {...blurProps('/media/opt/IMG_6848.webp')}
             />
             {/* Gradient scrim — stronger toward the bottom-left where text sits,
                  fading to clean toward the top-right, for an Apple-like focal balance. */}
@@ -91,7 +93,7 @@ export function AsymmetricCards() {
             <StatCard
               stat="4"
               label="Focus Areas"
-              sublabel="Clean water, environment, capacity-building, and stakeholder collaboration"
+              sublabel="Healthcare, social welfare, economic empowerment, and environmental projects"
               variant="gold"
               className="h-full min-h-44"
             />

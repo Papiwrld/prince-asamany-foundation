@@ -64,7 +64,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
           {/* Body paragraphs */}
           <div className="flex flex-col gap-5">
             {story.body.map((para, i) => (
-              <p key={i} className="font-body text-base text-brand-navy/75 leading-relaxed">
+              <p key={i} className="font-body text-lg text-brand-navy/75 leading-relaxed">
                 {para}
               </p>
             ))}

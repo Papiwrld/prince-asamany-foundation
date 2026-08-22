@@ -39,7 +39,7 @@ export function ContactForm() {
 
           {/* Contact details, 2 cols */}
           <div className="lg:col-span-2 flex flex-col gap-8">
-            <div>
+            <div className="text-center">
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Find Us</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Get in Touch
@@ -55,7 +55,7 @@ export function ContactForm() {
               </div>
               <address className="not-italic">
                 <div className="font-body text-sm font-bold text-brand-navy mb-1">Physical Address</div>
-                <p className="font-body text-sm text-brand-navy/65 leading-relaxed">
+                <p className="font-body text-sm text-brand-navy/70 leading-relaxed">
                   {siteConfig.address.line1}<br />
                   {siteConfig.address.line2}<br />
                   {siteConfig.address.box}, {siteConfig.address.city}
@@ -117,7 +117,7 @@ export function ContactForm() {
                 href="https://maps.google.com/maps?q=Ejisu,+Ashanti+Region,+Ghana"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center font-body text-xs text-brand-navy/50 py-2 hover:text-brand-red transition-colors duration-200"
+                className="block text-center font-body text-xs text-brand-navy/70 py-2 hover:text-brand-red transition-colors duration-200"
               >
                 View on Google Maps ↗
               </a>
@@ -126,7 +126,7 @@ export function ContactForm() {
 
           {/* Contact form, 3 cols */}
           <div className="lg:col-span-3">
-            <div className="mb-8">
+            <div className="mb-8 text-center">
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Message</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Send a Message

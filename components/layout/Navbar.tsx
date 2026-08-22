@@ -38,15 +38,16 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
-  // Focus trap for mobile menu
+  // Focus trap for mobile menu — includes the header hamburger so keyboard
+  // users can always Tab back to the close control
   useEffect(() => {
     if (!menuOpen) return;
     const menu = document.getElementById('mobile-menu');
-    if (!menu) return;
+    const toggle = document.getElementById('mobile-menu-toggle');
+    if (!menu || !toggle) return;
 
     const focusableSelectors = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    const focusableElements = Array.from(menu.querySelectorAll<HTMLElement>(focusableSelectors));
-    if (focusableElements.length === 0) return;
+    const focusableElements = [toggle as HTMLElement, ...Array.from(menu.querySelectorAll<HTMLElement>(focusableSelectors))];
 
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
@@ -68,8 +69,8 @@ export function Navbar() {
       }
     };
 
-    menu.addEventListener('keydown', handleTab);
-    return () => menu.removeEventListener('keydown', handleTab);
+    document.addEventListener('keydown', handleTab);
+    return () => document.removeEventListener('keydown', handleTab);
   }, [menuOpen]);
 
   const navBg = scrolled
@@ -86,16 +87,15 @@ export function Navbar() {
         >
           {/* Logo */}
           <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 shrink-0" aria-label="Prince Asamany Foundation, Home">
-            <div className="relative h-12 w-36">
-              <Image
-                src="/media/logo.jpg"
-                alt="Prince Asamany Foundation"
-                fill
-                sizes="144px"
-                className="object-contain object-left"
-                priority
-              />
-            </div>
+            <Image
+              src="/media/opt/logo-mark.webp"
+              alt="Prince Asamany Foundation"
+              width={800}
+              height={427}
+              sizes="160px"
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav links */}
@@ -204,7 +204,7 @@ export function Navbar() {
 
             {/* Contact info at bottom */}
             <div className="mt-12 pt-8 border-t border-white/15 text-center px-2 pb-4">
-              <p className="font-body text-sm text-white/50">{siteConfig.address.box}, {siteConfig.address.city}, Ashanti</p>
+              <p className="font-body text-sm text-white/70">{siteConfig.address.box}, {siteConfig.address.city}, Ashanti</p>
               <a href={`tel:` + siteConfig.phone.tel} className="mt-3 inline-flex items-center justify-center gap-2 font-body text-lg font-bold text-brand-gold">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" aria-hidden="true" />
                 {siteConfig.phone.display}

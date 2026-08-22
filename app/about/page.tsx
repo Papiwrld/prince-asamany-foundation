@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { LeadershipRecognition } from '@/components/sections/LeadershipRecognition';
+import { PressSection } from '@/components/sections/PressSection';
 import { CTABanner } from '@/components/sections/CTABanner';
+import { blurProps } from '@/lib/media';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -24,9 +27,9 @@ const objectives = [
 ];
 
 const programs = [
-  { title: 'Preventive Healthcare.', image: '/media/IMG_8259.jpg.jpeg', alt: 'Health workers and foundation team posing by a free cervical cancer screening banner' },
-  { title: 'Social Welfare & Relief.', image: '/media/IMG_6899_1.jpg', alt: 'Prince Asamany handing out supplies to a marginalized individual in the street' },
-  { title: 'Economic Empowerment.', image: '/media/IMG_8277.jpg.jpeg', alt: 'Providing resources and training to community members for sustainable livelihoods' },
+  { title: 'Preventive Healthcare.', image: '/media/opt/IMG_8259.webp', alt: 'Health workers and foundation team posing by a free cervical cancer screening banner', href: '/programs#health-screenings' },
+  { title: 'Social Welfare & Relief.', image: '/media/opt/IMG_6851.webp', alt: 'Foundation volunteers handing relief items to mothers and children during a Joy to the Street outreach in Kumasi', href: '/programs#social-welfare' },
+  { title: 'Economic Empowerment.', image: '/media/opt/IMG_8208.webp', alt: 'Foundation volunteers standing beside the foundation mission and vision banner during a community capacity-building event', href: '/programs#economic-empowerment' },
 ];
 
 export default function AboutPage() {
@@ -37,18 +40,20 @@ export default function AboutPage() {
         overline="Our Foundation"
         title="About Prince Asamany Foundation"
         description="The Prince Asamany Foundation stands as a bridge between need and compassion. If you have a heart to uplift the less privileged, join hands with us."
-        bgImage="/about-community.png"
+        bgImage="/media/opt/IMG_6885.webp"
       />
 
       {/* About intro */}
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">About Us</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
+              Who we are
+            </h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">About Us</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 mb-6 leading-tight">
-                Who we are
-              </h2>
               <p className="font-body text-lg text-brand-navy/75 leading-relaxed mb-5">
                 Prince Asamany Foundation is a non-governmental organization located at Akyawkrom
                 in Ejisu Municipal Assembly. We stand for Hope, Development and Opportunity for all.
@@ -85,7 +90,80 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Meet the Founder — editorial profile */}
+      <section className="bg-brand-cream section-padding overflow-hidden" aria-labelledby="founder-heading">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Photo stack: portrait + field shot */}
+            <div className="relative">
+              <div className="relative rounded-card-lg overflow-hidden aspect-[4/5] shadow-xl max-w-md mx-auto lg:max-w-none">
+                <Image
+                  src="/media/opt/IMG_6965.webp"
+                  alt="Portrait of Prince Douglas Asamany, Founder and President of the Prince Asamany Foundation, seated outdoors in a foundation T-shirt"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  {...blurProps('/media/opt/IMG_6965.webp')}
+                />
+              </div>
+              <div className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-4 xl:-right-10 lg:w-56 xl:w-64 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-10">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/media/opt/IMG_6899_1.webp"
+                    alt="Prince Asamany bending to greet an elderly woman during a community relief visit in Kumasi"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 256px"
+                    {...blurProps('/media/opt/IMG_6899_1.webp')}
+                  />
+                </div>
+              </div>
+              <div className="hidden lg:block h-12" aria-hidden="true" />
+            </div>
+
+            {/* Narrative */}
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 mt-8 lg:mt-0">
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+                Leadership
+              </span>
+              <h2 id="founder-heading" className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy leading-tight">
+                Meet our Founder
+              </h2>
+              <p className="font-display text-xl md:text-2xl text-brand-navy font-semibold">
+                Prince Douglas Asamany
+              </p>
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
+                A chemist by training and an advocate by calling, Prince founded the Prince Asamany
+                Foundation to stand in the gap for underprivileged communities across the Ejisu
+                Municipal Assembly &mdash; from street children in Kumasi to women in need of preventive
+                healthcare.
+              </p>
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
+                Whether he is handing relief packages at the annual &ldquo;Joy to the Street&rdquo; campaign or
+                championing Green Chemistry education, his approach is the same: show up in person,
+                listen first, and build solutions the community owns. In recognition of that work, he
+                was named the 2025 Social Change Advocate by AFLAG.
+              </p>
+              <Link
+                href="/about#leadership"
+                className="inline-flex items-center gap-2 font-body text-sm font-semibold bg-brand-navy text-white px-6 py-3 rounded-btn hover:bg-brand-navy-light transition-colors duration-200 self-start"
+              >
+                See the recognition
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.33334 8H12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <LeadershipRecognition />
+
+      <PressSection />
 
       {/* Strategic Objectives & Core Values */}
       <section className="bg-brand-cream section-padding">
@@ -93,10 +171,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             {/* Strategic Objectives */}
             <div>
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Strategy</span>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 mb-8 leading-tight">
-                Strategic Objectives
-              </h2>
+              <div className="text-center mb-8">
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Strategy</span>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
+                  Strategic Objectives
+                </h2>
+              </div>
               <ul className="flex flex-col gap-4 list-none m-0 p-0" role="list">
                 {objectives.map((obj) => (
                   <li key={obj} className="flex items-start gap-4">
@@ -113,10 +193,12 @@ export default function AboutPage() {
 
             {/* Core Values */}
             <div>
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Our Values</span>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 mb-8 leading-tight">
-                Core Values
-              </h2>
+              <div className="text-center mb-8">
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Our Values</span>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
+                  Core Values
+                </h2>
+              </div>
               <div className="flex flex-col gap-6">
                 {values.map((v, i) => (
                   <div key={v.title} className="flex gap-5">
@@ -125,7 +207,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-bold text-brand-navy">{v.title}</h3>
-                      <p className="font-body text-sm text-brand-navy/65 mt-1 leading-relaxed">{v.desc}</p>
+                      <p className="font-body text-sm text-brand-navy/70 mt-1 leading-relaxed">{v.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -146,13 +228,25 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {programs.map((p) => (
-              <div key={p.title} className="relative rounded-card-lg overflow-hidden group" style={{ minHeight: '280px' }}>
-                <Image src={p.image} alt={p.alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+              <Link
+                key={p.title}
+                href={p.href}
+                aria-label={`${p.title} — read more on the Programs page`}
+                className="relative rounded-card-lg overflow-hidden group min-h-[400px] lg:min-h-[480px] block focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-4"
+              >
+                <Image 
+                  src={p.image} 
+                  alt={p.alt} 
+                  fill 
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700" 
+                  sizes="(max-width: 768px) 100vw, 33vw" 
+                  {...blurProps(p.image)}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-display text-xl font-bold text-white leading-tight">{p.title}</h3>
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white leading-tight">{p.title}</h3>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

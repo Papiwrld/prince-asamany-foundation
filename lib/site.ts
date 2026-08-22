@@ -8,7 +8,6 @@
 export interface SiteConfig {
     name: string;
     tagline: string;
-    year: number;
     url: string;
     phone: { display: string; tel: string };
     email: string;
@@ -34,7 +33,6 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
     name: 'Prince Asamany Foundation',
     tagline: 'Hope, Development & Opportunity for All',
-    year: 2026,
     // Base URL used for metadata / Open Graph. Update to your real deployed domain.
     url: 'https://princeasamanyfoundation.org',
 
@@ -95,12 +93,6 @@ export const navLinks: { label: string; href: string }[] = [
     { label: 'Get Involved', href: '/get-involved' },
     { label: 'Contact', href: '/contact' },
 ];
-
-/** Render-only phone display, e.g. "(+233) 55 304 5832" */
-export const PHONE_DISPLAY = siteConfig.phone.display;
-
-/** tel: href value, e.g. "+233553045832" */
-export const PHONE_TEL = siteConfig.phone.tel;
 
 /** mailto: href value */
 export const EMAIL = siteConfig.email;

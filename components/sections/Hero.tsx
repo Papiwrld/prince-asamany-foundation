@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { GhanaMapSilhouette } from '@/components/ui/illustrations';
+import { blurProps } from '@/lib/media';
+
+const HERO_IMAGE = '/media/opt/IMG_4403_2.webp';
 
 export function HeroSection() {
   return (
@@ -15,13 +18,14 @@ export function HeroSection() {
       {/* Background photo, full bleed, dark overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/media/IMG_4392.jpg"
-          alt="Wide shot of a line of women and children in Ejisu waiting during community outreach"
+          src={HERO_IMAGE}
+          alt="Foundation volunteer in a Santa hat handing a holiday gift to a child over a car boot during the Joy to the Street outreach in Kumasi"
           fill
           className="object-cover object-center"
           priority
-          quality={90}
+          quality={82}
           sizes="100vw"
+          {...blurProps(HERO_IMAGE)}
         />
         {/* Centered gradient overlay so text stays legible in the middle */}
         <div className="absolute inset-0 bg-brand-navy/55" />

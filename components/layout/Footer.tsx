@@ -43,15 +43,15 @@ export function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-5 items-center md:items-start text-center md:text-left">
           <Link href="/" aria-label="Prince Asamany Foundation, Home">
-            <div className="relative h-14 w-44 mx-auto md:mx-0">
-              <Image
-                src="/media/logo.jpg"
-                alt="Prince Asamany Foundation"
-                fill
-                sizes="176px"
-                className="object-contain object-center md:object-left"
-              />
-            </div>
+            <Image
+              src="/media/opt/logo-mark.webp"
+              alt="Prince Asamany Foundation"
+              width={800}
+              height={427}
+              sizes="(max-width: 768px) 40vw, 160px"
+              className="h-14 w-auto mx-auto md:mx-0"
+              priority
+            />
           </Link>
           <p className="font-body text-sm text-white/65 leading-relaxed max-w-xs">
             A registered non-governmental organization working for social development and the
@@ -141,7 +141,7 @@ export function Footer() {
           <span className="font-body text-xs font-semibold text-brand-navy">
             &copy; {new Date().getFullYear()} Prince Asamany Foundation. All rights reserved.
           </span>
-          <span className="font-display text-xs italic text-brand-navy/75">
+          <span className="font-display text-xs italic text-brand-navy">
             Hope, Development &amp; Opportunity for All
           </span>
         </div>

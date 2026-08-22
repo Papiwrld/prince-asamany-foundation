@@ -15,7 +15,7 @@ export function CTABanner() {
       {/* Background texture image, low opacity */}
       <div className="absolute inset-0 opacity-15" aria-hidden="true">
         <Image
-          src="/about-community.png"
+          src="/media/opt/IMG_6890.webp"
           alt=""
           fill
           sizes="100vw"

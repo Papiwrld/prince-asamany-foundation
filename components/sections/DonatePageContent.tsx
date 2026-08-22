@@ -50,7 +50,7 @@ function CopyRow({ value, label }: { value: string; label: string }) {
       className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left bg-transparent hover:bg-brand-gold/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold transition-colors duration-200"
     >
       <span className="block">
-        <span className="block font-body text-xs text-brand-navy/50 uppercase tracking-wider mb-0.5">{label}</span>
+        <span className="block font-body text-xs text-brand-navy/70 uppercase tracking-wider mb-0.5">{label}</span>
         <span className="block font-body text-base font-semibold text-brand-navy">{value}</span>
       </span>
       <span
@@ -119,9 +119,9 @@ export function DonatePageContent() {
             <PaystackDonateButton />
           </div>
 
-          <div className="flex items-center gap-4 mb-10">
+          <div id="manual-donation" className="flex items-center gap-4 mb-10">
             <div className="h-px bg-brand-navy/10 flex-1"></div>
-            <span className="font-body text-sm font-semibold text-brand-navy/40 uppercase tracking-widest">Or donate manually</span>
+            <span className="font-body text-sm font-semibold text-brand-navy/70 uppercase tracking-widest">Or donate manually</span>
             <div className="h-px bg-brand-navy/10 flex-1"></div>
           </div>
 
@@ -160,7 +160,7 @@ export function DonatePageContent() {
 
           {/* Confirmation note */}
           <div className="mt-10 p-6 bg-white rounded-card-lg border border-brand-navy/10 text-center">
-            <p className="font-body text-sm text-brand-navy/65 leading-relaxed">
+            <p className="font-body text-sm text-brand-navy/70 leading-relaxed">
               After making your donation, please contact us at{' '}
               <a href={`tel:${siteConfig.phone.tel}`} className="font-semibold text-brand-red hover:underline">
                 {siteConfig.phone.display}
@@ -177,22 +177,22 @@ export function DonatePageContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative rounded-card-lg overflow-hidden aspect-[4/3]">
               <Image
-                src="/donate-visual.png"
-                alt="Two hands clasped in partnership, representing the bridge between donor compassion and community need"
+                src="/media/opt/IMG_6926.webp"
+                alt="Overhead view of children sharing a meal from food packs distributed during a Joy to the Street relief event"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="flex flex-col gap-6">
-              <div>
-                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
-                  Your Contribution
-                </span>
-                <h2 className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
-                  Why your support matters
-                </h2>
-              </div>
+            <div className="text-center">
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+                Your Contribution
+              </span>
+              <h2 className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
+                Why your support matters
+              </h2>
+            </div>
               <blockquote className="font-display italic text-lg text-brand-navy/80 leading-relaxed border-l-4 border-brand-gold pl-6">
                 &ldquo;The Prince Asamany Foundation stands as a bridge between need and compassion.
                 If you have a heart to uplift the less privileged, join hands with us, together we
@@ -208,7 +208,7 @@ export function DonatePageContent() {
                   <li key={item} className="flex items-start gap-3">
                     <span className="w-5 h-5 rounded-full bg-brand-gold shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
                       <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4l3 3 5-6" stroke="#1A3A5C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M1 4l3 3 5-6" className="stroke-brand-navy" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
                     <span className="font-body text-sm text-brand-navy/75 leading-relaxed">{item}</span>

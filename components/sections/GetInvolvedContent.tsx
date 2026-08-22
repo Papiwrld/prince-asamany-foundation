@@ -74,7 +74,7 @@ export function GetInvolvedContent() {
       {/* Opportunities */}
       <section className="bg-white section-padding" aria-labelledby="opportunities-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Volunteer</span>
             <h2 id="opportunities-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
               Volunteer Opportunities
@@ -181,22 +181,38 @@ export function GetInvolvedContent() {
 
               {/* Opportunity */}
               <div>
-                <label htmlFor="volunteer-opportunity" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                  Area of Interest
-                </label>
-                <select
-                  id="volunteer-opportunity"
-                  name="opportunity"
-                  value={formData.opportunity}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy focus:border-brand-navy transition-colors duration-200 min-h-[52px] appearance-none"
-                >
-                  <option value="">Select an opportunity...</option>
-                  {opportunities.map((opp) => (
-                    <option key={opp.title} value={opp.title}>{opp.title}</option>
-                  ))}
-                  <option value="General Support">General Support</option>
-                </select>
+<label htmlFor="volunteer-opportunity" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
+                    Area of Interest
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="volunteer-opportunity"
+                      name="opportunity"
+                      value={formData.opportunity}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 pr-12 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy focus:border-brand-navy transition-colors duration-200 min-h-[52px] appearance-none"
+                    >
+                      <option value="">Select an opportunity...</option>
+                      {opportunities.map((opp) => (
+                        <option key={opp.title} value={opp.title}>{opp.title}</option>
+                      ))}
+                      <option value="General Support">General Support</option>
+                    </select>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-brand-navy"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </div>
               </div>
 
               {/* Message */}

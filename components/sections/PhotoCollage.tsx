@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { blurProps } from '@/lib/media';
 
 export function PhotoCollage() {
   return (
@@ -23,30 +24,47 @@ export function PhotoCollage() {
             className="relative"
           >
             {/* Collage: stacked on mobile, overlapping on desktop */}
-            <div className="relative">
+            <div className="relative z-10">
               {/* Primary photo, full width */}
-              <div className="relative rounded-card-lg overflow-hidden aspect-[4/3]">
+              <div className="relative rounded-card-lg overflow-hidden aspect-[4/3] shadow-xl">
                 <Image
-                  src="/media/IMG_4479.jpg"
-                  alt="A black and white portrait of children from the community"
+                  src="/media/opt/IMG_6917.webp"
+                  alt="Prince Asamany handing a care package to a boy during a street outreach in Ejisu"
                   fill
-                  priority
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  {...blurProps('/media/opt/IMG_6917.webp')}
                 />
               </div>
 
               {/* Secondary photo — stacked below on mobile/tablet, overlapped bottom-right at lg+ */}
               <div
-                className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-8 lg:w-56 lg:h-44 rounded-card-lg overflow-hidden border-4 border-white"
+                className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-8 lg:w-56 lg:h-44 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-20"
               >
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full">
                   <Image
-                    src="/media/IMG_6926.jpg"
-                    alt="Children eating during a foundation welfare distribution event"
+                    src="/media/opt/IMG_4479.webp"
+                    alt="A black and white portrait of children from the community"
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 224px"
+                    {...blurProps('/media/opt/IMG_4479.webp')}
+                  />
+                </div>
+              </div>
+
+              {/* Third photo — overlapped top-left at lg+ */}
+              <div
+                className="hidden lg:block lg:absolute lg:-top-10 lg:-left-8 lg:w-48 lg:h-48 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-20"
+              >
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/media/opt/IMG_6877.webp"
+                    alt="Prince Asamany engaging with a community member"
+                    fill
+                    className="object-cover object-top"
+                    sizes="192px"
+                    {...blurProps('/media/opt/IMG_6877.webp')}
                   />
                 </div>
               </div>
@@ -71,7 +89,7 @@ export function PhotoCollage() {
                 id="collage-heading"
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mt-2 leading-[1.12]"
               >
-                What we have done with your help?
+                What your support has made possible
               </h2>
             </div>
 
@@ -82,19 +100,19 @@ export function PhotoCollage() {
             </p>
 
             <ul className="flex flex-col items-start text-left gap-4 list-none m-0 p-0" role="list">
-              {[
-                'Providing access to clean water to communities in Ejisu Municipal Assembly',
-                'Environmental projects and reforestation in the Ashanti Region',
-                'Capacity-building and training for community empowerment',
-                'Collaboration with stakeholders to leverage collective impact',
-              ].map((item) => (
+{[
+  'Free health screenings and preventive care in partnership with local hospitals',
+  'Annual "Joy to the Street" relief for vulnerable families and street children',
+  'Skills training and economic empowerment for sustainable local livelihoods',
+  'Environmental projects and reforestation in the Ashanti Region',
+].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span
                     className="mt-1 w-5 h-5 rounded-full bg-brand-gold shrink-0 flex items-center justify-center"
                     aria-hidden="true"
                   >
                     <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                      <path d="M1 4l3 3 5-6" stroke="#1A3A5C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M1 4l3 3 5-6" className="stroke-brand-navy" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </span>
                   <span className="font-body text-lg text-brand-navy/75 leading-relaxed">{item}</span>

@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { HeroSection } from '@/components/sections/Hero';
 import { ProgramIconRow } from '@/components/sections/ProgramIconRow';
 import { AsymmetricCards } from '@/components/sections/AsymmetricCards';
+import { FounderHighlight } from '@/components/sections/FounderHighlight';
 import { PhotoCollage } from '@/components/sections/PhotoCollage';
-import { StoryCarousel } from '@/components/sections/StoryCarousel';
+import { StoryGrid } from '@/components/sections/StoryGrid';
 import { MapImpact } from '@/components/sections/MapImpact';
 import { CTABanner } from '@/components/sections/CTABanner';
 
@@ -19,8 +20,9 @@ export default function HomePage() {
       <HeroSection />
       <ProgramIconRow />
       <AsymmetricCards />
+      <FounderHighlight />
       <PhotoCollage />
-      <StoryCarousel />
+      <StoryGrid />
       <MapImpact />
       <CTABanner />
     </>

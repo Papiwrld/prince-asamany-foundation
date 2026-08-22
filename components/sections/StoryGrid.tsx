@@ -6,10 +6,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { stories } from '@/lib/content';
+import { blurProps } from '@/lib/media';
 
-export function StoryCarousel() {
+export function StoryGrid() {
   return (
-    <section className="relative overflow-hidden bg-brand-green section-padding" aria-labelledby="stories-heading">
+    <section className="relative overflow-hidden bg-brand-navy section-padding" aria-labelledby="stories-heading">
       {/* Subtle dot texture */}
       <div className="absolute inset-0 opacity-10" aria-hidden="true">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -54,6 +55,7 @@ export function StoryCarousel() {
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  {...blurProps(story.image)}
                 />
                 <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
                   {story.tag}
@@ -64,7 +66,7 @@ export function StoryCarousel() {
                 <h3 className="font-display text-xl font-bold text-brand-navy leading-snug">
                   {story.name}
                 </h3>
-                <div className="font-body text-xs text-brand-navy/55 mt-1">
+                <div className="font-body text-xs text-brand-navy/70 mt-1">
                   {story.role}
                 </div>
 
@@ -88,7 +90,7 @@ export function StoryCarousel() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/stories"
-            className="inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-green px-6 py-3 rounded-btn transition-colors duration-200"
+            className="inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn transition-colors duration-200"
           >
             View all stories
           </Link>

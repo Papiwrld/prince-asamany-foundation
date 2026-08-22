@@ -6,8 +6,8 @@ import { AshantiMap } from '@/components/ui/illustrations';
 
 
 // Icons
-const ActivityIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+const HeartIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
 );
 const MapPinIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -15,8 +15,8 @@ const MapPinIcon = () => (
 const ShieldIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
 );
-const BankIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+const AwardIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
 );
 
 type ThemeColor = 'red' | 'gold' | 'navy' | 'green';
@@ -30,10 +30,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: 'Ashanti', label: 'Regional Focus', description: 'Communities across the Ashanti Region, Ghana', theme: 'red', icon: <ActivityIcon /> },
-  { value: 'Ejisu', label: 'Our Base', description: 'Akyawkrom, Ejisu Municipal Assembly', theme: 'gold', icon: <MapPinIcon /> },
-  { value: 'LBG', label: 'NGO Status', description: 'Registered with the Government of Ghana', theme: 'navy', icon: <ShieldIcon /> },
-  { value: 'GTBank', label: 'Banking Partner', description: 'Secure, transparent financial operations', theme: 'green', icon: <BankIcon /> },
+  { value: '800+', label: 'Lives Touched in 2024', description: 'Street children and vulnerable persons reached during the Joy to the Street campaign', theme: 'red', icon: <HeartIcon /> },
+  { value: 'Free', label: 'Health Screenings', description: 'Cervical cancer screening and health education with Mansa Memorial Hospital', theme: 'green', icon: <ShieldIcon /> },
+  { value: '2025', label: 'Social Change Advocate', description: 'Founder honored by AFLAG for impact-driven community leadership', theme: 'gold', icon: <AwardIcon /> },
+  { value: 'Ejisu', label: 'Our Base', description: 'Akyawkrom, Ejisu Municipal Assembly, Ashanti Region', theme: 'navy', icon: <MapPinIcon /> },
 ];
 
 export function MapImpact() {
@@ -98,7 +98,7 @@ export function MapImpact() {
                   <div className="w-10 h-1 rounded-full my-3 bg-white/30" aria-hidden="true" />
                   
                   <div className="font-body text-lg font-semibold mb-1.5">{stat.label}</div>
-                  <div className={`font-body text-sm leading-relaxed ${stat.theme === 'gold' ? 'text-brand-navy' : 'text-white/85'}`}>
+                  <div className={`font-body text-sm leading-relaxed ${stat.theme === 'gold' ? 'text-brand-navy' : 'text-white'}`}>
                     {stat.description}
                   </div>
                 </motion.div>

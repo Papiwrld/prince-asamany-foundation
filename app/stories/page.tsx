@@ -48,7 +48,7 @@ export default function StoriesPage() {
                   </blockquote>
                   <footer className="mt-2">
                     <div className="font-body text-sm font-bold text-brand-navy">{story.name}</div>
-                    <div className="font-body text-xs text-brand-navy/55 mt-0.5">{story.role}</div>
+                    <div className="font-body text-xs text-brand-navy/70 mt-0.5">{story.role}</div>
                   </footer>
                   <Link
                     href={`/stories/${story.id}`}
@@ -70,7 +70,7 @@ export default function StoriesPage() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
             Be part of the next story.
           </h2>
-          <p className="font-body text-lg text-white/70 leading-relaxed">
+          <p className="font-body text-lg text-white/90 leading-relaxed">
             Together we can restore hope and change lives. Support the Foundation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">

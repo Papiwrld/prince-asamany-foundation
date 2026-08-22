@@ -63,10 +63,6 @@ export function AshantiMap() {
       <circle className="pulse-ring stroke-brand-red" cx="200" cy="205" r="16" strokeWidth="1.5" fill="none" opacity="0.5" />
       <text x="215" y="210" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="13" className="fill-brand-red" fontWeight="700">Ejisu</text>
       <text x="172" y="185" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="10" className="fill-brand-gold" fontWeight="500" opacity="0.85">Ashanti Region</text>
-      <circle cx="170" cy="195" r="4" className="fill-brand-gold" opacity="0.6"/>
-      <text x="130" y="195" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="9" className="fill-brand-gold" opacity="0.7">Kumasi</text>
-      <text x="188" y="295" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="9" className="fill-brand-green" opacity="0.5">Accra</text>
-      <circle cx="200" cy="288" r="3" className="fill-brand-green" opacity="0.35"/>
     </svg>
   );
 }

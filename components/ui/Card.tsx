@@ -36,7 +36,7 @@ export function StatCard({ stat, label, sublabel, variant = 'navy', className = 
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id={patternId} x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-              <circle cx="1.5" cy="1.5" r="1.5" fill={isLight ? '#1A3A5C' : '#FFFFFF'} />
+              <circle cx="1.5" cy="1.5" r="1.5" className={isLight ? 'fill-brand-navy' : 'fill-white'} />
             </pattern>
           </defs>
           <rect x="0" y="0" width="100%" height="100%" fill={`url(#${patternId})`} />

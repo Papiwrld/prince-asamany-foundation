@@ -69,22 +69,23 @@ export function PaystackDonateButton() {
 
   const openModal = () => {
     referenceRef.current = generateReference();
-    setErrorMsg(
-      !paystackConfigured
-        ? 'Online payments are not configured yet. Please use the bank or MoMo options below.'
-        : ''
-    );
+    setErrorMsg('');
     setStatusMsg('');
     setIsOpen(true);
   };
 
-  const closeModal = useCallback(() => {
+  const closeModal = () => {
     setIsOpen(false);
     setErrorMsg('');
     setStatusMsg('');
     setProcessing(false);
     triggerRef.current?.focus();
-  }, []);
+  };
+
+  const viewManualDetails = () => {
+    closeModal();
+    document.getElementById('manual-donation')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   // Focus trap
   useEffect(() => {
@@ -116,6 +117,15 @@ export function PaystackDonateButton() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') closeModal();
   };
+
+  // Lock body scroll while the donation modal is open
+  useEffect(() => {
+    if (!isOpen) return;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const handlePaymentSuccess = useCallback(async (ref: string) => {
     setProcessing(true);
@@ -192,7 +202,11 @@ export function PaystackDonateButton() {
       <button
         ref={triggerRef}
         onClick={openModal}
-        className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-gold text-brand-navy px-8 py-4 rounded-btn border-2 border-brand-gold hover:bg-brand-gold-light hover:border-brand-gold-light transition-all duration-300 shadow-lg shadow-brand-gold/20 w-full sm:w-auto"
+        className={
+          paystackConfigured
+            ? 'inline-flex items-center justify-center font-body font-semibold text-base bg-brand-gold text-brand-navy px-8 py-4 rounded-btn border-2 border-brand-gold hover:bg-brand-gold-light hover:border-brand-gold-light transition-all duration-300 shadow-lg shadow-brand-gold/20 w-full sm:w-auto'
+            : 'inline-flex items-center justify-center font-body font-semibold text-base bg-brand-cream text-brand-navy/70 px-8 py-4 rounded-btn border-2 border-brand-navy/20 transition-all duration-300 w-full sm:w-auto'
+        }
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2" aria-hidden="true">
           <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
@@ -232,7 +246,7 @@ export function PaystackDonateButton() {
                 </svg>
               </span>
               <h3 id="donation-modal-title" className="font-display text-2xl font-bold text-brand-navy">Make a Donation</h3>
-              <p className="font-body text-sm text-brand-navy/60 mt-2">Enter your details to proceed with Paystack secure payment.</p>
+              <p className="font-body text-sm text-brand-navy/70 mt-2">Enter your details to proceed with Paystack secure payment.</p>
             </div>
 
             {statusMsg && (
@@ -246,47 +260,65 @@ export function PaystackDonateButton() {
               </p>
             )}
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div>
-                <label htmlFor="donor-email" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Email Address</label>
-                <input
-                  id="donor-email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); setErrorMsg(''); }}
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
-                />
+            {paystackConfigured ? (
+              <>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  <div>
+                    <label htmlFor="donor-email" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Email Address</label>
+                    <input
+                      id="donor-email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => { setEmail(e.target.value); setErrorMsg(''); }}
+                      placeholder="you@example.com"
+                      className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="donor-amount" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Amount (GHS)</label>
+                    <input
+                      id="donor-amount"
+                      type="number"
+                      min="1"
+                      step="0.01"
+                      required
+                      value={amount}
+                      onChange={(e) => { setAmount(e.target.value); setErrorMsg(''); }}
+                      placeholder="100.00"
+                      className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={processing}
+                    className="w-full font-body font-bold text-lg bg-brand-red text-white py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark transition-all duration-200 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {processing ? 'Processing…' : 'Proceed to Pay'}
+                  </button>
+                </form>
+
+                <p className="font-body text-xs text-center text-brand-navy/70 mt-6">
+                  Secured by <strong className="font-semibold">Paystack</strong>
+                </p>
+              </>
+            ) : (
+              <div className="text-center">
+                <p className="font-body text-sm text-brand-navy/70 leading-relaxed">
+                  Online payments via Paystack are coming soon. In the meantime, you can donate
+                  securely by bank transfer or MTN MoMo using the details below.
+                </p>
+                <button
+                  type="button"
+                  onClick={viewManualDetails}
+                  className="mt-6 w-full font-body font-bold text-base bg-brand-navy text-white py-3.5 rounded-btn transition-colors duration-200 hover:bg-brand-navy-light"
+                >
+                  View Bank &amp; MoMo Details
+                </button>
               </div>
-
-              <div>
-                <label htmlFor="donor-amount" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Amount (GHS)</label>
-                <input
-                  id="donor-amount"
-                  type="number"
-                  min="1"
-                  step="0.01"
-                  required
-                  value={amount}
-                  onChange={(e) => { setAmount(e.target.value); setErrorMsg(''); }}
-                  placeholder="100.00"
-                  className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={processing}
-                className="w-full font-body font-bold text-lg bg-brand-red text-white py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark transition-all duration-200 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {processing ? 'Processing…' : 'Proceed to Pay'}
-              </button>
-            </form>
-
-            <p className="font-body text-xs text-center text-brand-navy/40 mt-6">
-              Secured by <strong className="font-semibold">Paystack</strong>
-            </p>
+            )}
           </div>
         </div>
       )}

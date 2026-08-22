@@ -42,7 +42,11 @@
   --spacing-section-sm: 3.5rem;
 }
 
-/* ── Base Reset & Typography ─────────────────────────────────── */
+/* ── Base Reset & Typography ───────────────────────────────────
+   Wrapped in @layer base so Tailwind utilities (text-sm, leading-*, etc.)
+    can override element-level defaults. Unlayered CSS would beat the
+    utilities layer regardless of specificity. */
+@layer base {
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -114,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .focus-ring-dark:focus-visible {
   outline-color: var(--color-brand-gold);
 }
+} /* end @layer base */
 
 /* ── Utility classes ─────────────────────────────────────────── */
 
@@ -125,8 +130,8 @@ h1, h2, h3, h4, h5, h6 {
 .brush-underline::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -6px;
-  height: 8px;
+  left: 0; right: 0; bottom: -10px;
+  height: 6px;
   background: var(--color-brand-gold);
   clip-path: polygon(0% 40%, 3% 0%, 97% 20%, 100% 80%, 95% 100%, 2% 85%);
 }

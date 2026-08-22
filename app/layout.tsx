@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     title: 'Prince Asamany Foundation, Hope, Development & Opportunity for All',
     description:
       'A registered NGO working for social development and integration of underprivileged communities in Ejisu, Ashanti Region, Ghana.',
-    images: [{ url: '/hero-candid.png', width: 1200, height: 630, alt: 'Prince Asamany Foundation' }],
+    images: [{ url: '/media/opt/IMG_4403_2.webp', width: 1200, height: 630, alt: 'Prince Asamany Foundation volunteer handing a holiday gift to a child during the Joy to the Street outreach in Kumasi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Prince Asamany Foundation',
     description: 'Hope, Development & Opportunity for All, Ejisu, Ashanti, Ghana',
-    images: ['/hero-candid.png'],
+    images: ['/media/opt/IMG_4403_2.webp'],
   },
 };
 

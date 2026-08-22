@@ -48,7 +48,7 @@ export function ProgramIconRow() {
               whileTap={{ scale: 0.97 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="flex flex-col items-center text-center md:items-start md:text-left gap-4 p-6 rounded-card-lg bg-brand-cream hover:bg-brand-navy hover:-translate-y-1 hover:shadow-lg focus:bg-brand-navy active:bg-brand-navy active:shadow-lg group transition-all duration-300 h-full no-underline focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2"
+              className="flex flex-col items-center text-center md:items-start md:text-left gap-4 p-6 rounded-card-lg bg-brand-cream hover:bg-brand-navy hover:-translate-y-1 hover:shadow-lg group transition-all duration-300 h-full no-underline focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2"
             >
               <div className="text-brand-red group-hover:text-brand-gold transition-colors duration-300">
                 {program.icon}
@@ -56,7 +56,7 @@ export function ProgramIconRow() {
               <h3 className="font-display text-xl font-bold text-brand-navy group-hover:text-white transition-colors duration-300 leading-tight">
                 {program.title}
               </h3>
-              <p className="font-body text-lg text-brand-navy/65 group-hover:text-white/70 transition-colors duration-300 leading-relaxed">
+              <p className="font-body text-lg text-brand-navy/70 group-hover:text-white/70 transition-colors duration-300 leading-relaxed">
                 {program.description}
               </p>
             </MotionLink>
