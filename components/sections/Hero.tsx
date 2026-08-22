@@ -34,9 +34,7 @@ export function HeroSection() {
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full pt-24 pb-16 md:pt-28 md:pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-          <div className="flex flex-col items-center text-center gap-6 lg:gap-8 lg:items-start lg:text-left">
+        <div className="flex flex-col items-center text-center gap-6 lg:gap-8 max-w-3xl mx-auto">
             {/* Overline */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -98,21 +96,23 @@ export function HeroSection() {
 
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-            className="hidden lg:flex items-center justify-center relative"
-            aria-hidden="true"
-          >
-            {/* Map container */}
-            <div className="relative w-72 h-80 xl:w-80 xl:h-96">
-              <GhanaMapSilhouette />
-            </div>
-
-          </motion.div>
-        </div>
       </div>
+
+      {/* Ghana map accent — subtle backdrop on desktop, kept out of the centered flow */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
+        className="hidden lg:flex absolute right-4 xl:right-16 top-1/2 -translate-y-1/2 pointer-events-none"
+        aria-hidden="true"
+      >
+        {/* Soft scrim so the map reads cleanly over any hero photo */}
+        <div className="absolute -inset-16 rounded-full bg-brand-navy/40 blur-3xl" aria-hidden="true" />
+        {/* Map container */}
+        <div className="relative w-72 h-80 xl:w-80 xl:h-96 text-white">
+          <GhanaMapSilhouette />
+        </div>
+      </motion.div>
 
     </section>
   );

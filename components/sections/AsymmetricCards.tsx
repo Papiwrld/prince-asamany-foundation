@@ -76,7 +76,7 @@ export function AsymmetricCards() {
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-end px-8 pb-10 pt-20 text-center md:px-12 md:pb-12">
               <div className="flex flex-col items-center max-w-md">
                 <span className="w-10 h-0.5 bg-brand-gold rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>
-                <p className="mt-6 font-display text-white text-2xl leading-[1.25] md:text-4xl lg:text-[2.75rem] lg:leading-[1.18] font-medium italic drop-shadow-xl">
+                <p className="mt-6 font-display text-white text-2xl leading-[1.3] md:text-3xl lg:text-4xl lg:leading-[1.22] font-medium italic drop-shadow-xl">
                   Driving sustainable human advancement.
                 </p>
               </div>

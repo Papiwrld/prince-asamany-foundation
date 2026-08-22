@@ -1,12 +1,42 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { blurProps } from '@/lib/media';
 
+const founderPhotos = [
+  {
+    src: '/media/opt/FB_IMG_1763729825877.webp',
+    alt: 'Prince Douglas Asamany in a tuxedo seated at the Philanthropic Awards & Charity Night gala dinner',
+    pos: '50% 25%',
+  },
+  {
+    src: '/media/opt/IMG-20251115-WA0160.webp',
+    alt: 'Prince Douglas Asamany speaking with attendees at a foundation event',
+    pos: '50% 15%',
+  },
+  {
+    src: '/media/opt/IMG-20251118-WA0044.webp',
+    alt: 'Prince Douglas Asamany delivering remarks from the podium at the awards night',
+    pos: '50% 8%',
+  },
+];
+
 export function FounderHighlight() {
+  const [active, setActive] = useState(0);
+  const prefersReduced = useReducedMotion();
+  const current = founderPhotos[active];
+
+  /* Auto-rotate every 5s; each change (auto or manual) restarts the countdown */
+  useEffect(() => {
+    if (prefersReduced) return;
+    const id = setInterval(() => {
+      setActive((a) => (a + 1) % founderPhotos.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [active, prefersReduced]);
   return (
     <section id="founder" className="bg-brand-navy text-white section-padding overflow-hidden relative">
       {/* Subtle background texture/pattern */}
@@ -22,7 +52,7 @@ export function FounderHighlight() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           
           {/* Left Column: Portrait & Moments */}
           <motion.div 
@@ -30,41 +60,46 @@ export function FounderHighlight() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 lg:col-span-7"
           >
-            {/* Primary portrait — the founder award moment. Video lives on the About page (LeadershipRecognition). */}
-            <div className="relative aspect-square rounded-card-lg overflow-hidden border-4 border-white/10 shadow-2xl group">
-              <Image
-                src="/media/opt/FB_IMG_1763729825877.webp"
-                alt="Prince Douglas Asamany in a tuxedo seated at the Philanthropic Awards & Charity Night gala dinner"
-                fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                {...blurProps('/media/opt/FB_IMG_1763729825877.webp')}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" aria-hidden="true" />
-            </div>
+            {/* Single auto-rotating frame — portrait ratio suits the source photos. Video lives on the About page. */}
+            <div className="relative rounded-card-lg overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/5] group">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={current.src}
+                    alt={current.alt}
+                    fill
+                    style={{ objectPosition: current.pos }}
+                    className="object-cover transition-transform duration-[5000ms] ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    priority
+                    {...blurProps(current.src)}
+                  />
+                </motion.div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" aria-hidden="true" />
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[4/3] rounded-card-lg overflow-hidden border-2 border-white/10 shadow-lg group">
-                <Image
-                  src="/media/opt/IMG-20251115-WA0160.webp"
-                  alt="Prince Douglas Asamany speaking with attendees at a foundation event"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  {...blurProps('/media/opt/IMG-20251115-WA0160.webp')}
-                />
-              </div>
-              <div className="relative aspect-[4/3] rounded-card-lg overflow-hidden border-2 border-white/10 shadow-lg group">
-                <Image
-                  src="/media/opt/IMG-20251118-WA0044.webp"
-                  alt="Prince Douglas Asamany with the foundation team at the awards night"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                  {...blurProps('/media/opt/IMG-20251118-WA0044.webp')}
-                />
+                {/* Slide indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                  {founderPhotos.map((photo, i) => (
+                    <button
+                      key={photo.src}
+                      type="button"
+                      onClick={() => setActive(i)}
+                      aria-label={`Show photo ${i + 1} of ${founderPhotos.length}`}
+                      aria-current={i === active}
+                      className={`h-1.5 rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2 ${
+                        i === active ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/50 hover:bg-white/80'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -75,7 +110,7 @@ export function FounderHighlight() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-            className="flex flex-col items-center justify-between gap-8 text-center lg:items-start lg:text-left"
+            className="flex flex-col items-center justify-between gap-8 text-center lg:col-span-5 lg:items-start lg:text-left"
           >
             <div>
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold mb-3 block">
