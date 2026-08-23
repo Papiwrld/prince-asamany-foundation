@@ -8,6 +8,11 @@ export function StickyDonate() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
+  // Pages with a Donate Now button near the footer — sticky button is redundant there
+  const redundantPaths = ['/', '/about', '/programs', '/get-involved', '/stories'];
+  const isRedundant =
+    pathname === '/donate' || redundantPaths.some((p) => p === '/' ? pathname === '/' : pathname.startsWith(p));
+
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 560);
     onScroll();
@@ -15,7 +20,7 @@ export function StickyDonate() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  if (pathname === '/donate') return null;
+  if (isRedundant) return null;
 
   return (
     <Link
