@@ -79,14 +79,13 @@ export function FounderHighlight() {
                     style={{ objectPosition: current.pos }}
                     className="object-cover transition-transform duration-[5000ms] ease-out group-hover:scale-[1.04]"
                     sizes="(max-width: 1024px) 100vw, 58vw"
-                    priority
                     {...blurProps(current.src)}
                   />
                 </motion.div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" aria-hidden="true" />
 
-                {/* Slide indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                {/* Slide indicators — 32px hit areas around the visual dots */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10">
                   {founderPhotos.map((photo, i) => (
                     <button
                       key={photo.src}
@@ -94,10 +93,14 @@ export function FounderHighlight() {
                       onClick={() => setActive(i)}
                       aria-label={`Show photo ${i + 1} of ${founderPhotos.length}`}
                       aria-current={i === active}
-                      className={`h-1.5 rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2 ${
-                        i === active ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/50 hover:bg-white/80'
-                      }`}
-                    />
+                      className="flex h-8 w-8 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
+                    >
+                      <span
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === active ? 'w-6 bg-brand-gold' : 'w-1.5 bg-white/50 hover:bg-white/80'
+                        }`}
+                      />
+                    </button>
                   ))}
                 </div>
               </div>

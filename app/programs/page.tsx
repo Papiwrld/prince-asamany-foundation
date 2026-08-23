@@ -157,7 +157,7 @@ export default function ProgramsPage() {
               {/* Text */}
               <div className="flex flex-col gap-6">
                 <div className="text-center lg:text-left">
-                  <span className={`font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red`}>
+                  <span className={`font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark`}>
                     {program.tag}
                   </span>
                   <h2
@@ -183,7 +183,7 @@ export default function ProgramsPage() {
                 </div>
                 <Link
                   href="/donate"
-                  className="inline-flex items-center font-body text-sm font-semibold text-brand-red border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200 self-start"
+                  className="inline-flex items-center font-body text-sm font-semibold text-brand-red-dark border-b-2 border-brand-gold pb-1 transition-colors duration-200 self-start"
                 >
                   Support this program →
                 </Link>

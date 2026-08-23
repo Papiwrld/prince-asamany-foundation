@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CTACard, StatCard } from '@/components/ui/Card';
 import { blurProps } from '@/lib/media';
@@ -15,7 +16,7 @@ export function AsymmetricCards() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Section heading — centered "moment" statement */}
         <div className="max-w-3xl mx-auto mb-12 text-center">
-          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
             Our Impact
           </span>
           <h2
@@ -83,20 +84,30 @@ export function AsymmetricCards() {
             </div>
           </motion.div>
 
-          {/* Col 3 top: Smaller stat card */}
+          {/* Col 3 top: Photo card linking to programs (avoids competing numeric stats) */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            className="group relative overflow-hidden rounded-card-lg min-h-44 shadow-lg"
           >
-            <StatCard
-              stat="4"
-              label="Focus Areas"
-              sublabel="Healthcare, social welfare, economic empowerment, and environmental projects"
-              variant="gold"
-              className="h-full min-h-44"
+            <Link href="/programs" aria-label="Explore our work — see our programs" className="absolute inset-0 z-10">
+              <span className="sr-only">Explore our work — see our programs</span>
+            </Link>
+            <Image
+              src="/media/opt/IMG_6917.webp"
+              alt="Prince Asamany handing a care package to a boy during a street outreach in Ejisu"
+              fill
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              {...blurProps('/media/opt/IMG_6917.webp')}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/35 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 p-6 flex items-center justify-between gap-4 pointer-events-none">
+              <span className="font-display text-xl font-bold text-white leading-snug">Explore our work</span>
+              <span className="font-body text-sm font-semibold text-brand-gold whitespace-nowrap">See programs →</span>
+            </div>
           </motion.div>
 
           {/* Col 3 bottom: CTA card */}

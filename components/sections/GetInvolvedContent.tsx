@@ -60,7 +60,11 @@ export function GetInvolvedContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'volunteer', ...formData }),
       });
-      if (!res.ok) throw new Error('Submission failed');
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setError(data?.error || 'Sorry, something went wrong. Please try again or call us directly.');
+        return;
+      }
       setSubmitted(true);
     } catch {
       setError('Sorry, something went wrong. Please try again or call us directly.');
@@ -75,7 +79,7 @@ export function GetInvolvedContent() {
       <section className="bg-white section-padding" aria-labelledby="opportunities-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="mb-12 text-center">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Volunteer</span>
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Volunteer</span>
             <h2 id="opportunities-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
               Volunteer Opportunities
             </h2>
@@ -105,7 +109,7 @@ export function GetInvolvedContent() {
       <section className="bg-brand-cream section-padding" aria-labelledby="form-heading">
         <div className="max-w-2xl mx-auto px-5 md:px-8">
           <div className="mb-10 text-center">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Express Interest</span>
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Express Interest</span>
             <h2 id="form-heading" className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
               Register as a Volunteer
             </h2>
@@ -122,14 +126,14 @@ export function GetInvolvedContent() {
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               {error && (
-                <div role="alert" className="bg-brand-red/10 border-2 border-brand-red rounded-card-lg p-4 font-body text-sm text-brand-red">
+                <div role="alert" className="bg-brand-red/10 border-2 border-brand-red rounded-card-lg p-4 font-body text-sm text-brand-red-dark">
                   {error}
                 </div>
               )}
               {/* Name */}
               <div>
                 <label htmlFor="volunteer-name" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                  Full Name <span className="text-brand-red" aria-hidden="true">*</span>
+                  Full Name <span className="text-brand-red-dark" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="volunteer-name"
@@ -148,7 +152,7 @@ export function GetInvolvedContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="volunteer-email" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                    Email Address <span className="text-brand-red" aria-hidden="true">*</span>
+                    Email Address <span className="text-brand-red-dark" aria-hidden="true">*</span>
                   </label>
                   <input
                     id="volunteer-email"

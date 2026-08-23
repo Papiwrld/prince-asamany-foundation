@@ -23,7 +23,11 @@ export function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'contact', ...formData }),
       });
-      if (!res.ok) throw new Error('Submission failed');
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setError(data?.error || 'Sorry, something went wrong. Please try again or call us directly.');
+        return;
+      }
       setSubmitted(true);
     } catch {
       setError('Sorry, something went wrong. Please try again or call us directly.');
@@ -40,7 +44,7 @@ export function ContactForm() {
           {/* Contact details, 2 cols */}
           <div className="lg:col-span-2 flex flex-col gap-8">
             <div className="text-center">
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Find Us</span>
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Find Us</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Get in Touch
               </h2>
@@ -74,7 +78,7 @@ export function ContactForm() {
                 <div className="font-body text-sm font-bold text-brand-navy mb-1">Phone</div>
                 <a
                   href={`tel:${siteConfig.phone.tel}`}
-                  className="font-body text-base font-semibold text-brand-red hover:underline"
+                  className="font-body text-base font-semibold text-brand-red-dark hover:underline"
                 >
                   {siteConfig.phone.display}
                 </a>
@@ -117,7 +121,7 @@ export function ContactForm() {
                 href="https://maps.google.com/maps?q=Ejisu,+Ashanti+Region,+Ghana"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center font-body text-xs text-brand-navy/70 py-2 hover:text-brand-red transition-colors duration-200"
+                className="block text-center font-body text-xs text-brand-navy/70 py-2 hover:text-brand-red-dark transition-colors duration-200"
               >
                 View on Google Maps ↗
               </a>
@@ -127,7 +131,7 @@ export function ContactForm() {
           {/* Contact form, 3 cols */}
           <div className="lg:col-span-3">
             <div className="mb-8 text-center">
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Message</span>
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Message</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Send a Message
               </h2>
@@ -144,14 +148,14 @@ export function ContactForm() {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 {error && (
-                  <div role="alert" className="bg-brand-red/10 border-2 border-brand-red rounded-card-lg p-4 font-body text-sm text-brand-red">
+                  <div role="alert" className="bg-brand-red/10 border-2 border-brand-red rounded-card-lg p-4 font-body text-sm text-brand-red-dark">
                     {error}
                   </div>
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="contact-name" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                      Full Name <span className="text-brand-red" aria-hidden="true">*</span>
+                      Full Name <span className="text-brand-red-dark" aria-hidden="true">*</span>
                     </label>
                     <input
                       id="contact-name" name="name" type="text" required autoComplete="name"
@@ -162,7 +166,7 @@ export function ContactForm() {
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                      Email Address <span className="text-brand-red" aria-hidden="true">*</span>
+                      Email Address <span className="text-brand-red-dark" aria-hidden="true">*</span>
                     </label>
                     <input
                       id="contact-email" name="email" type="email" required autoComplete="email"
@@ -185,7 +189,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <label htmlFor="contact-message" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">
-                    Message <span className="text-brand-red" aria-hidden="true">*</span>
+                    Message <span className="text-brand-red-dark" aria-hidden="true">*</span>
                   </label>
                   <textarea
                     id="contact-message" name="message" required rows={6}

@@ -14,7 +14,7 @@ export function PressSection() {
     <section className="bg-white section-padding" aria-labelledby="press-heading">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
             In the News
           </span>
           <h2
@@ -44,7 +44,7 @@ export function PressSection() {
                 </span>
                 <span className="font-body text-xs text-brand-navy/70">{item.date}</span>
               </div>
-              <h3 className="font-display text-lg font-bold text-brand-navy leading-snug group-hover:text-brand-red transition-colors duration-200">
+              <h3 className="font-display text-lg font-bold text-brand-navy leading-snug group-hover:text-brand-red-dark transition-colors duration-200">
                 {item.title}
               </h3>
               <div className="mt-auto pt-2 flex items-center gap-2 font-body text-sm text-brand-navy/70">

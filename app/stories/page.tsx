@@ -52,7 +52,7 @@ export default function StoriesPage() {
                   </footer>
                   <Link
                     href={`/stories/${story.id}`}
-                    className="font-body text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-200 mt-2 inline-block"
+                    className="font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 mt-2 inline-block"
                     aria-label={`Read ${story.name}'s full story`}
                   >
                     Read full story →

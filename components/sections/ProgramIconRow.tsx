@@ -18,7 +18,7 @@ export function ProgramIconRow() {
         {/* Heading row — centered "moment" statement */}
         <div className="flex flex-col items-center text-center gap-6 mb-14">
           <div>
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
               What We Do
             </span>
             <h2
@@ -30,7 +30,7 @@ export function ProgramIconRow() {
           </div>
           <Link
             href="/programs"
-            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red transition-colors duration-200 self-center whitespace-nowrap"
+            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200 self-center whitespace-nowrap"
           >
             All programs →
           </Link>
@@ -50,7 +50,7 @@ export function ProgramIconRow() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
               className="flex flex-col items-center text-center md:items-start md:text-left gap-4 p-6 rounded-card-lg bg-brand-cream hover:bg-brand-navy hover:-translate-y-1 hover:shadow-lg group transition-all duration-300 h-full no-underline focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2"
             >
-              <div className="text-brand-red group-hover:text-brand-gold transition-colors duration-300">
+              <div className="text-brand-red-dark group-hover:text-brand-gold transition-colors duration-300">
                 {program.icon}
               </div>
               <h3 className="font-display text-xl font-bold text-brand-navy group-hover:text-white transition-colors duration-300 leading-tight">

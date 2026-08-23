@@ -46,7 +46,7 @@ export function MapImpact() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Heading — centered "moment" statement */}
         <div className="mb-12 text-center">
-          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+          <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
             Where We Work
           </span>
           <h2

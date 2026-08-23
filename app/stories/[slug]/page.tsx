@@ -46,6 +46,13 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
       {/* Article */}
       <article className="bg-brand-cream section-padding">
         <div className="max-w-2xl mx-auto px-5 md:px-8">
+          {/* Back affordance at the top so readers can leave from anywhere */}
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <Link href="/stories" className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200">
+              ← All stories
+            </Link>
+          </nav>
+
           {/* Byline */}
           <header className="mb-10">
             <h1 className="font-display text-4xl md:text-5xl font-black text-brand-navy leading-tight mb-3">
@@ -72,7 +79,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
 
           {/* Back link + CTA */}
           <div className="mt-14 pt-8 border-t border-brand-navy/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-            <Link href="/stories" className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red transition-colors duration-200">
+            <Link href="/stories" className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200">
               ← All stories
             </Link>
             <Link

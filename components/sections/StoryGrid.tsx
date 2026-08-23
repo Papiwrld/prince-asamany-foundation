@@ -33,7 +33,7 @@ export function StoryGrid() {
             id="stories-heading"
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 leading-[1.08] max-w-[16ch]"
           >
-            Learn the stories of those we&apos;ve already helped
+            One story that says it all
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ export function StoryGrid() {
 
                 <Link
                   href={`/stories/${story.id}`}
-                  className="mt-6 font-body text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors duration-200"
+                  className="mt-6 font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200"
                   aria-label={`Read ${story.name}'s full story`}
                 >
                   Read full story →

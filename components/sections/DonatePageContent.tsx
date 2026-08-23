@@ -162,7 +162,7 @@ export function DonatePageContent() {
           <div className="mt-10 p-6 bg-white rounded-card-lg border border-brand-navy/10 text-center">
             <p className="font-body text-sm text-brand-navy/70 leading-relaxed">
               After making your donation, please contact us at{' '}
-              <a href={`tel:${siteConfig.phone.tel}`} className="font-semibold text-brand-red hover:underline">
+              <a href={`tel:${siteConfig.phone.tel}`} className="font-semibold text-brand-red-dark hover:underline">
                 {siteConfig.phone.display}
               </a>{' '}
               to confirm your transfer. We would love to thank you personally.
@@ -186,7 +186,7 @@ export function DonatePageContent() {
             </div>
             <div className="flex flex-col gap-6">
             <div className="text-center">
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
                 Your Contribution
               </span>
               <h2 className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">

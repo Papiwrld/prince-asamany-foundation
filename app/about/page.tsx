@@ -93,7 +93,7 @@ export default function AboutPage() {
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">About Us</span>
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">About Us</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
               Who we are
             </h2>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-8">
               {/* Vision */}
               <div className="border-l-4 border-brand-gold pl-6">
-                <h3 className="font-display text-xl font-bold text-brand-red mb-2">Vision</h3>
+                <h3 className="font-display text-xl font-bold text-brand-red-dark mb-2">Vision</h3>
                 <p className="font-body text-lg text-brand-navy/75 leading-relaxed italic">
                   Our Work aims to break the vicious cycle of poverty &amp; social isolation and to
                   restore hope for a better future.
@@ -135,7 +135,7 @@ export default function AboutPage() {
 
               {/* Mission */}
               <div className="border-l-4 border-brand-navy pl-6">
-                <h3 className="font-display text-xl font-bold text-brand-red mb-2">Mission</h3>
+                <h3 className="font-display text-xl font-bold text-brand-red-dark mb-2">Mission</h3>
                 <p className="font-body text-lg text-brand-navy/75 leading-relaxed italic">
                   Work for social development and integration of the underprivileged individuals,
                   groups and communities.
@@ -150,7 +150,7 @@ export default function AboutPage() {
       <section className="bg-brand-cream section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
               Milestones
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
@@ -172,7 +172,7 @@ export default function AboutPage() {
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
               What&rsquo;s next
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
@@ -197,7 +197,7 @@ export default function AboutPage() {
       <section className="bg-brand-cream section-padding overflow-hidden" aria-labelledby="founder-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Leadership</span>
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Leadership</span>
             <h2 id="founder-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
               See the Recognition
             </h2>
@@ -265,7 +265,7 @@ export default function AboutPage() {
             {/* Strategic Objectives */}
             <div>
               <div className="text-center mb-8">
-                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Strategy</span>
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Strategy</span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
                   Strategic Objectives
                 </h2>
@@ -287,7 +287,7 @@ export default function AboutPage() {
             {/* Core Values */}
             <div>
               <div className="text-center mb-8">
-                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">Our Values</span>
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Our Values</span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
                   Core Values
                 </h2>

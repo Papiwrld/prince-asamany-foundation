@@ -82,7 +82,7 @@ export function PhotoCollage() {
             className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6"
           >
             <div>
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red">
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
                 Our Work
               </span>
               <h2
@@ -123,7 +123,7 @@ export function PhotoCollage() {
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 mt-4">
               <Link
                 href="/about"
-                className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-navy pt-[6px] pb-1 hover:text-brand-red transition-colors duration-200"
+                className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-navy pt-[6px] pb-1 hover:text-brand-red-dark transition-colors duration-200"
               >
                 About us →
               </Link>

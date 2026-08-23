@@ -255,7 +255,7 @@ export function PaystackDonateButton() {
               </p>
             )}
             {errorMsg && (
-              <p role="alert" className="font-body text-sm text-brand-red bg-brand-red/5 rounded-btn px-4 py-3 mb-5 text-center">
+              <p role="alert" className="font-body text-sm text-brand-red-dark bg-brand-red/5 rounded-btn px-4 py-3 mb-5 text-center">
                 {errorMsg}
               </p>
             )}
