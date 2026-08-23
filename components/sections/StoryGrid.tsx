@@ -37,9 +37,9 @@ export function StoryGrid() {
           </h2>
         </div>
 
-        {/* Three equal cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {stories.map((story, i) => (
+        {/* Single featured card */}
+        <div className="max-w-md mx-auto">
+          {stories.slice(0, 1).map((story, i) => (
             <motion.article
               key={story.id}
               initial={{ opacity: 0, y: 24 }}
@@ -54,7 +54,7 @@ export function StoryGrid() {
                   alt={story.imageAlt}
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 448px"
                   {...blurProps(story.image)}
                 />
                 <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
