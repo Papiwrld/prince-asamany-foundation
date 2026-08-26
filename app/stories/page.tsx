@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { stories } from '@/lib/content';
+import { blurProps } from '@/lib/media';
 
 export const metadata: Metadata = {
   title: 'Stories & Impact',
@@ -35,6 +36,7 @@ export default function StoriesPage() {
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 33vw"
+                    {...blurProps(story.image)}
                   />
                   <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
                     {story.tag}
@@ -49,6 +51,9 @@ export default function StoriesPage() {
                   <footer className="mt-2">
                     <div className="font-body text-sm font-bold text-brand-navy">{story.name}</div>
                     <div className="font-body text-xs text-brand-navy/70 mt-0.5">{story.role}</div>
+                    {story.date && (
+                      <div className="font-body text-xs font-semibold text-brand-red-dark mt-1">{story.date}</div>
+                    )}
                   </footer>
                   <Link
                     href={`/stories/${story.id}`}

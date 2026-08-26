@@ -31,15 +31,15 @@ export function StoryGrid() {
           </span>
           <h2
             id="stories-heading"
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 leading-[1.08] max-w-[16ch]"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 leading-[1.08] max-w-[20ch]"
           >
-            One story that says it all
+            Stories that show our impact
           </h2>
         </div>
 
-        {/* Single featured card */}
-        <div className="max-w-md mx-auto">
-          {stories.slice(0, 1).map((story, i) => (
+        {/* Three-card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {stories.slice(0, 3).map((story, i) => (
             <motion.article
               key={story.id}
               initial={{ opacity: 0, y: 24 }}
@@ -48,13 +48,13 @@ export function StoryGrid() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
               className="group flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
             >
-              <div className="relative h-64 md:h-72 lg:h-80 overflow-hidden shrink-0">
+              <div className="relative h-56 overflow-hidden shrink-0">
                 <Image
                   src={story.image}
                   alt={story.imageAlt}
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 448px"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   {...blurProps(story.image)}
                 />
                 <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
@@ -69,6 +69,9 @@ export function StoryGrid() {
                 <div className="font-body text-xs text-brand-navy/70 mt-1">
                   {story.role}
                 </div>
+                {story.date && (
+                  <div className="font-body text-xs font-semibold text-brand-red-dark mt-1">{story.date}</div>
+                )}
 
                 <blockquote className="font-display italic text-base text-brand-navy/80 leading-relaxed mt-4">
                   &ldquo;{story.quote}&rdquo;

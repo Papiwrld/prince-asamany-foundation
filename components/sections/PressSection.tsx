@@ -36,7 +36,7 @@ export function PressSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col gap-3 p-6 rounded-card-lg bg-brand-cream border border-brand-navy/5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2 no-underline"
-              aria-label={`${item.title} — read the full article on ${item.outlet} (opens in a new tab)`}
+              aria-label={`${item.title}. Read the full article on ${item.outlet} (opens in a new tab)`}
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="px-3 py-1 rounded-full text-xs font-body font-semibold bg-white text-brand-navy/70">

@@ -68,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${plusJakarta.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${playfair.variable} ${plusJakarta.variable}`}>
       <head>
         <link rel="icon" href="/logo.jpeg" type="image/jpeg" />
       </head>

@@ -42,7 +42,7 @@ export function ProgramIconRow() {
             <MotionLink
               key={program.title}
               href={program.href}
-              aria-label={`${program.title} — view all programs`}
+              aria-label={`${program.title}: view all programs`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileTap={{ scale: 0.97 }}

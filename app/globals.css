@@ -16,7 +16,15 @@
 
 /* ── Brand Design Tokens ─────────────────────────────────────── */
 @theme {
-  /* Colors */
+  /* Colors
+     Contrast rules (WCAG AA, verified):
+     • white on red #E81A1F = 4.57:1 — passes ONLY for bold/large button text;
+       never use small or regular-weight text on red. For text links on cream/white
+       use brand-red-dark (#C01015) instead.
+     • navy on gold = 6.4:1 — the correct fill pairing for primary CTAs.
+       Never place white text on gold (~1.9:1) or gold text on light surfaces.
+     • Safe reading pairs: navy-on-cream 11.9:1, white-on-navy 12.8:1,
+       white-on-green 5.2:1, navy-on-white 12.8:1. */
   --color-brand-red:        #E81A1F;
   --color-brand-navy:       #113647;
   --color-brand-green:      #027E22;

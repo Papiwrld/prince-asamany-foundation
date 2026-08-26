@@ -43,7 +43,8 @@ export const programs: Program[] = [
   },
 ];
 
-export interface Story {  id: string;
+export interface Story {
+  id: string;
   name: string;
   location: string;
   role: string;
@@ -53,9 +54,61 @@ export interface Story {  id: string;
   imageAlt: string;
   quote: string;
   body: string[];
+  /** Display date shown on cards/detail (e.g. 'July 2026'). Optional. */
+  date?: string;
+  /** Optional photo gallery rendered on the story detail page. */
+  gallery?: { src: string; alt: string }[];
 }
 
 export const stories: Story[] = [
+  {
+    id: 'free-deworming-exercise',
+    name: 'Free Deworming Exercise',
+    location: 'Forestry Commission Training Centre & Ejisu Akyawkrom',
+    role: 'Student Health Initiative',
+    tag: 'Healthcare',
+    tagColor: 'bg-brand-red text-white',
+    image: '/media/opt/IMG-20260727-WA0008.webp',
+    imageAlt: 'Students of the Certificate in Natural Resources Management programme hold up deworming tablets in a group photo on the steps of the Forestry Commission Training Centre',
+    quote: 'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students.',
+    date: 'July 2026',
+    body: [
+      'In July, the Prince Asamany Foundation organized a free deworming exercise for 84 students offering the Certificate in Natural Resources Management course at the Forestry Commission Training Centre, as well as for members of the Ejisu Akyawkrom community.',
+      'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students. Beneficiaries received free deworming medication and were educated on the importance of personal hygiene, proper sanitation, and healthy living practices.',
+      'The exercise was important because good health enables students to concentrate on their studies, participate actively in practical training, and complete their programme successfully. It also reduced the financial burden on the beneficiaries while promoting awareness of preventive healthcare.',
+      'Overall, the exercise was a valuable health intervention that contributed to the well-being of the 84 students and demonstrated the Prince Asamany Foundation\u2019s commitment to supporting students and promoting healthy communities.',
+    ],
+    gallery: [
+      { src: '/media/opt/IMG-20260727-WA0011.webp', alt: 'A wider group photo of students on the training-centre steps, several holding up deworming tablets' },
+      { src: '/media/opt/IMG-20260727-WA0017.webp', alt: 'Students in Forestry Commission shirts gather inside the training centre during the deworming exercise' },
+      { src: '/media/opt/IMG-20260727-WA0014.webp', alt: 'A screened health station set up for the deworming exercise' },
+      { src: '/media/opt/IMG-20260727-WA0018.webp', alt: 'A beneficiary holds her deworming medication as a staff member looks on' },
+    ],
+  },
+  {
+    id: 'farmers-engagement-akyawkrom',
+    name: "Farmers' Engagement",
+    location: 'Akyawkrom & Surrounding Communities',
+    role: 'Economic Empowerment Initiative',
+    tag: 'Economic Empowerment',
+    tagColor: 'bg-brand-green text-white',
+    image: '/media/opt/IMG-20260713-WA0030.webp',
+    imageAlt: 'A community member in a colourful headwrap holds a young child outdoors in warm sunlight at the Farmers\u2019 Engagement in Akyawkrom',
+    quote: 'The initiative is expected to contribute to poverty reduction, improved food production, and sustainable livelihoods among farmers in the community.',
+    date: 'July 2026',
+    body: [
+      'The Prince Asamany Foundation engaged farmers in Akyawkrom and its surrounding communities to discuss sustainable farming practices and ways of improving their livelihoods.',
+      'The engagement focused on promoting environmentally friendly farming methods, improving productivity, and encouraging farmers to work together. Discussions also centred on the formation of a farmers\u2019 cooperative, which will help members access resources, share knowledge, improve market opportunities, and strengthen their bargaining power.',
+      'The initiative is expected to contribute to poverty reduction, improved food production, and sustainable livelihoods among farmers in the community.',
+      'The Foundation remains committed to supporting farmers and creating opportunities that will promote economic empowerment and community development.',
+    ],
+    gallery: [
+      { src: '/media/opt/IMG-20260713-WA0004.webp', alt: 'A Foundation representative registers a resident during the engagement at Akyawkrom' },
+      { src: '/media/opt/IMG-20260713-WA0041.webp', alt: 'Farmers and residents gather under a covered structure during the engagement' },
+      { src: '/media/opt/IMG-20260713-WA0020.webp', alt: 'Older community members in colourful traditional dress seated at the gathering' },
+      { src: '/media/opt/IMG-20260713-WA0039.webp', alt: 'A speaker addresses seated community members during the engagement' },
+    ],
+  },
   {
     id: 'joy-to-the-street',
     name: 'Joy to the Street Campaign',
@@ -133,21 +186,21 @@ export const pressItems: PressItem[] = [
     href: 'https://choicenewsonline.com/prince-douglas-asamany-receives-prestigious-2025-social-change-advocate-award-at-philanthropic-awards-charity-night/',
   },
   {
-    title: 'Early Screening Saves Lives — Senior Midwife Urges Women to Prevent Cervical Cancer',
+    title: 'Early Screening Saves Lives: Senior Midwife Urges Women to Prevent Cervical Cancer',
     outlet: 'Choice News Online',
     date: 'Feb 1, 2026',
     tag: 'Healthcare',
     href: 'https://choicenewsonline.com/early-screening-saves-lives-senior-midwife-urges-women-to-prevent-cervical-cancer/',
   },
   {
-    title: 'Go for Screening Early to Prevent Cervical Cancer — Health Professionals Advise Women in Ejisu',
+    title: 'Go for Screening Early to Prevent Cervical Cancer: Health Professionals Advise Women in Ejisu',
     outlet: 'Choice News Online',
     date: 'Feb 1, 2026',
     tag: 'Healthcare',
     href: 'https://choicenewsonline.com/go-for-screening-early-to-prevent-cervical-cancer-health-professionals-advise-women-in-ejisu/',
   },
   {
-    title: 'Cervical Cancer Is Preventable If Detected Early — Mansa Memorial Hospital Educates Women',
+    title: 'Cervical Cancer Is Preventable If Detected Early: Mansa Memorial Hospital Educates Women',
     outlet: 'Choice News Online',
     date: 'Feb 1, 2026',
     tag: 'Healthcare',

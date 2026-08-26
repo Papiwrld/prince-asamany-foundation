@@ -26,17 +26,19 @@ const founderPhotos = [
 
 export function FounderHighlight() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const prefersReduced = useReducedMotion();
   const current = founderPhotos[active];
 
-  /* Auto-rotate every 5s; each change (auto or manual) restarts the countdown */
+  /* Auto-rotate every 5s; each change (auto or manual) restarts the countdown.
+     Pausable on hover/focus (WCAG 2.2.2) and disabled entirely for reduced motion. */
   useEffect(() => {
-    if (prefersReduced) return;
+    if (prefersReduced || paused) return;
     const id = setInterval(() => {
       setActive((a) => (a + 1) % founderPhotos.length);
     }, 5000);
     return () => clearInterval(id);
-  }, [active, prefersReduced]);
+  }, [active, prefersReduced, paused]);
   return (
     <section id="founder" className="bg-brand-navy text-white section-padding overflow-hidden relative">
       {/* Subtle background texture/pattern */}
@@ -64,7 +66,13 @@ export function FounderHighlight() {
           >
             {/* Single auto-rotating frame — portrait ratio suits the source photos. Video lives on the About page. */}
             <div className="relative rounded-card-lg overflow-hidden shadow-2xl">
-              <div className="relative aspect-[4/5] group">
+              <div
+                className="relative aspect-[4/5] group"
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+                onFocusCapture={() => setPaused(true)}
+                onBlurCapture={() => setPaused(false)}
+              >
                 <motion.div
                   key={active}
                   initial={{ opacity: 0 }}

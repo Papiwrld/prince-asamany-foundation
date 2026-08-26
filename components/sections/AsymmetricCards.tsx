@@ -92,8 +92,8 @@ export function AsymmetricCards() {
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             className="group relative overflow-hidden rounded-card-lg min-h-44 shadow-lg"
           >
-            <Link href="/programs" aria-label="Explore our work — see our programs" className="absolute inset-0 z-10">
-              <span className="sr-only">Explore our work — see our programs</span>
+            <Link href="/programs" aria-label="Explore our work: see our programs" className="absolute inset-0 z-10">
+              <span className="sr-only">Explore our work: see our programs</span>
             </Link>
             <Image
               src="/media/opt/IMG_6917.webp"

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { stories } from '@/lib/content';
+import { blurProps } from '@/lib/media';
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,17 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
   return {
     title: `Story: ${story.name}`,
     description: story.quote,
+    openGraph: {
+      title: story.name,
+      description: story.quote,
+      images: [{ url: story.image, alt: story.imageAlt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: story.name,
+      description: story.quote,
+      images: [story.image],
+    },
   };
 }
 
@@ -56,9 +68,12 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
           {/* Byline */}
           <header className="mb-10">
             <h1 className="font-display text-4xl md:text-5xl font-black text-brand-navy leading-tight mb-3">
-              Story: {story.name}
+              {story.name}
             </h1>
             <p className="font-body text-sm text-brand-navy/55">{story.role}, {story.location}</p>
+            {story.date && (
+              <p className="font-body text-sm font-semibold text-brand-red-dark mt-1">{story.date}</p>
+            )}
           </header>
 
           {/* Pull quote */}
@@ -76,6 +91,27 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
               </p>
             ))}
           </div>
+
+          {/* Photo gallery */}
+          {story.gallery && story.gallery.length > 0 && (
+            <section className="mt-14" aria-label={`Photo gallery from ${story.name}`}>
+              <h2 className="font-display text-2xl font-bold text-brand-navy mb-6">From the field</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {story.gallery.map((img) => (
+                  <div key={img.src} className="relative aspect-[4/3] rounded-card-lg overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      {...blurProps(img.src)}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Back link + CTA */}
           <div className="mt-14 pt-8 border-t border-brand-navy/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">

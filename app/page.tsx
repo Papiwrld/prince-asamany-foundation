@@ -5,6 +5,7 @@ import { AsymmetricCards } from '@/components/sections/AsymmetricCards';
 import { FounderHighlight } from '@/components/sections/FounderHighlight';
 import { StoryGrid } from '@/components/sections/StoryGrid';
 import { MapImpact } from '@/components/sections/MapImpact';
+import { TrustStrip } from '@/components/sections/TrustStrip';
 import { CTABanner } from '@/components/sections/CTABanner';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <FounderHighlight />
       <StoryGrid />
       <MapImpact />
+      <TrustStrip />
       <CTABanner />
     </>
   );

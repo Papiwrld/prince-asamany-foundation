@@ -31,6 +31,18 @@ declare global {
 const generateReference = () =>
   `donation-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 
+/**
+ * Impact-anchored giving tiers (landing-page best practice: concrete specificity
+ * beats open amounts). Wording is deliberately conservative — "helps provide" —
+ * so it stays accurate even as program costs change.
+ */
+export const GIVE_TIERS = [
+  { amount: '100', label: 'GHS 100', impact: 'Helps provide school supplies for a pupil' },
+  { amount: '250', label: 'GHS 250', impact: 'Helps provide a welfare pack for a vulnerable family' },
+  { amount: '500', label: 'GHS 500', impact: 'Supports free health screenings for community members' },
+  { amount: '1000', label: 'GHS 1,000', impact: 'Helps sponsor a community outreach event' },
+];
+
 /** Lazily load the Paystack inline script once. Returns a promise that resolves when ready. */
 function loadPaystackScript(): Promise<void> {
   if (typeof window === 'undefined') return Promise.reject(new Error('SSR'));
@@ -57,7 +69,8 @@ export function PaystackDonateButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [errorMsg, setErrorMsg] = useState<string>('');
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string; amount?: string }>({});
+  const [formError, setFormError] = useState<string>('');
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [processing, setProcessing] = useState(false);
 
@@ -69,14 +82,16 @@ export function PaystackDonateButton() {
 
   const openModal = () => {
     referenceRef.current = generateReference();
-    setErrorMsg('');
+    setFieldErrors({});
+    setFormError('');
     setStatusMsg('');
     setIsOpen(true);
   };
 
   const closeModal = () => {
     setIsOpen(false);
-    setErrorMsg('');
+    setFieldErrors({});
+    setFormError('');
     setStatusMsg('');
     setProcessing(false);
     triggerRef.current?.focus();
@@ -129,7 +144,8 @@ export function PaystackDonateButton() {
 
   const handlePaymentSuccess = useCallback(async (ref: string) => {
     setProcessing(true);
-    setErrorMsg('');
+    setFieldErrors({});
+    setFormError('');
     setStatusMsg('');
     try {
       const res = await fetch('/api/paystack/verify', {
@@ -155,21 +171,23 @@ export function PaystackDonateButton() {
     e.preventDefault();
     if (processing) return;
 
-    if (!paystackConfigured) {
-      setErrorMsg('Online payments are not configured yet. Please use the bank or MoMo options below.');
-      return;
-    }
+    // Per-field validation — errors are announced and tied to their input
+    // via aria-describedby, directly beneath the field.
+    const errors: { email?: string; amount?: string } = {};
     if (!amount || parseFloat(amount) <= 0) {
-      setErrorMsg('Please enter a valid amount.');
-      return;
+      errors.amount = 'Please enter a valid amount.';
     }
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      setErrorMsg('Please enter a valid email address.');
+      errors.email = 'Please enter a valid email address.';
+    }
+    if (errors.amount || errors.email) {
+      setFieldErrors(errors);
       return;
     }
 
     setProcessing(true);
-    setErrorMsg('');
+    setFieldErrors({});
+    setFormError('');
     setStatusMsg('');
 
     try {
@@ -193,7 +211,7 @@ export function PaystackDonateButton() {
       handler.openIframe();
     } catch {
       setProcessing(false);
-      setErrorMsg('Unable to start the payment window. Please try again.');
+      setFormError('Unable to start the payment window. Please try again.');
     }
   };
 
@@ -202,17 +220,13 @@ export function PaystackDonateButton() {
       <button
         ref={triggerRef}
         onClick={openModal}
-        className={
-          paystackConfigured
-            ? 'inline-flex items-center justify-center font-body font-semibold text-base bg-brand-gold text-brand-navy px-8 py-4 rounded-btn border-2 border-brand-gold hover:bg-brand-gold-light hover:border-brand-gold-light transition-all duration-300 shadow-lg shadow-brand-gold/20 w-full sm:w-auto'
-            : 'inline-flex items-center justify-center font-body font-semibold text-base bg-brand-cream text-brand-navy/70 px-8 py-4 rounded-btn border-2 border-brand-navy/20 transition-all duration-300 w-full sm:w-auto'
-        }
+        className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-gold text-brand-navy px-8 py-4 rounded-btn border-2 border-brand-gold hover:bg-brand-gold-light hover:border-brand-gold-light transition-all duration-300 shadow-lg shadow-brand-gold/20 w-full sm:w-auto"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2" aria-hidden="true">
           <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
           <line x1="2" y1="10" x2="22" y2="10"></line>
         </svg>
-        {paystackConfigured ? 'Donate Online with Paystack' : 'Online Donation'}
+        Donate Online
       </button>
 
       {/* Modal overlay */}
@@ -246,7 +260,11 @@ export function PaystackDonateButton() {
                 </svg>
               </span>
               <h3 id="donation-modal-title" className="font-display text-2xl font-bold text-brand-navy">Make a Donation</h3>
-              <p className="font-body text-sm text-brand-navy/70 mt-2">Enter your details to proceed with Paystack secure payment.</p>
+              <p className="font-body text-sm text-brand-navy/70 mt-2">
+                {paystackConfigured
+                  ? 'Enter your details to proceed with Paystack secure payment.'
+                  : 'Online card payment is coming soon. You can give right now via bank transfer or MTN MoMo.'}
+              </p>
             </div>
 
             {statusMsg && (
@@ -254,9 +272,9 @@ export function PaystackDonateButton() {
                 {statusMsg}
               </p>
             )}
-            {errorMsg && (
+            {formError && (
               <p role="alert" className="font-body text-sm text-brand-red-dark bg-brand-red/5 rounded-btn px-4 py-3 mb-5 text-center">
-                {errorMsg}
+                {formError}
               </p>
             )}
 
@@ -269,26 +287,69 @@ export function PaystackDonateButton() {
                       id="donor-email"
                       type="email"
                       required
+                      autoComplete="email"
                       value={email}
-                      onChange={(e) => { setEmail(e.target.value); setErrorMsg(''); }}
+                      aria-invalid={fieldErrors.email ? true : undefined}
+                      aria-describedby={fieldErrors.email ? 'donor-email-error' : undefined}
+                      onChange={(e) => { setEmail(e.target.value); setFieldErrors((f) => ({ ...f, email: undefined })); }}
                       placeholder="you@example.com"
-                      className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
+                      className={`w-full px-4 py-3 rounded-btn border-2 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors ${fieldErrors.email ? 'border-brand-red' : 'border-brand-navy/20'}`}
                     />
+                    {fieldErrors.email && (
+                      <p id="donor-email-error" role="alert" className="font-body text-xs font-semibold text-brand-red-dark mt-1.5">
+                        {fieldErrors.email}
+                      </p>
+                    )}
                   </div>
 
+                  {/* Impact-anchored giving tiers */}
+                  <fieldset>
+                    <legend className="block font-body text-sm font-semibold text-brand-navy mb-2">Choose an amount (GHS)</legend>
+                    <div className="grid grid-cols-2 gap-2">
+                      {GIVE_TIERS.map((tier) => {
+                        const selected = amount === tier.amount;
+                        return (
+                          <button
+                            key={tier.amount}
+                            type="button"
+                            aria-pressed={selected}
+                            onClick={() => { setAmount(tier.amount); setFieldErrors((f) => ({ ...f, amount: undefined })); }}
+                            className={`rounded-btn border-2 px-3 py-2.5 text-left transition-colors duration-150 ${
+                              selected
+                                ? 'border-brand-gold bg-brand-gold/10'
+                                : 'border-brand-navy/15 hover:border-brand-navy/40'
+                            }`}
+                          >
+                            <span className="block font-body font-bold text-base text-brand-navy">{tier.label}</span>
+                            <span className="block font-body text-xs text-brand-navy/70 leading-snug mt-0.5">{tier.impact}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </fieldset>
+
                   <div>
-                    <label htmlFor="donor-amount" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Amount (GHS)</label>
+                    <label htmlFor="donor-amount" className="block font-body text-sm font-semibold text-brand-navy mb-1.5">Custom amount (GHS)</label>
                     <input
                       id="donor-amount"
                       type="number"
                       min="1"
                       step="0.01"
                       required
+                      inputMode="decimal"
+                      autoComplete="off"
                       value={amount}
-                      onChange={(e) => { setAmount(e.target.value); setErrorMsg(''); }}
-                      placeholder="100.00"
-                      className="w-full px-4 py-3 rounded-btn border-2 border-brand-navy/20 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors"
+                      aria-invalid={fieldErrors.amount ? true : undefined}
+                      aria-describedby={fieldErrors.amount ? 'donor-amount-error' : undefined}
+                      onChange={(e) => { setAmount(e.target.value); setFieldErrors((f) => ({ ...f, amount: undefined })); }}
+                      placeholder="Other amount"
+                      className={`w-full px-4 py-3 rounded-btn border-2 bg-white font-body text-base text-brand-navy placeholder:text-brand-navy/55 focus:outline-none focus:border-brand-gold transition-colors ${fieldErrors.amount ? 'border-brand-red' : 'border-brand-navy/20'}`}
                     />
+                    {fieldErrors.amount && (
+                      <p id="donor-amount-error" role="alert" className="font-body text-xs font-semibold text-brand-red-dark mt-1.5">
+                        {fieldErrors.amount}
+                      </p>
+                    )}
                   </div>
 
                   <button
@@ -300,22 +361,27 @@ export function PaystackDonateButton() {
                   </button>
                 </form>
 
-                <p className="font-body text-xs text-center text-brand-navy/70 mt-6">
-                  Secured by <strong className="font-semibold">Paystack</strong>
+                <p className="font-body text-xs text-center text-brand-navy/70 mt-6 leading-relaxed">
+                  Secured by <strong className="font-semibold">Paystack</strong> (card &amp; mobile money).
+                  Prince Asamany Foundation is an NGO based in Ejisu, Ashanti Region, Ghana.
                 </p>
               </>
             ) : (
               <div className="text-center">
-                <p className="font-body text-sm text-brand-navy/70 leading-relaxed">
-                  Online payments via Paystack are coming soon. In the meantime, you can donate
-                  securely by bank transfer or MTN MoMo using the details below.
+                <p className="font-body text-base text-brand-navy/80 leading-relaxed">
+                  Online card payment is coming soon. You can give right now via{' '}
+                  <strong className="font-semibold">bank transfer</strong> or{' '}
+                  <strong className="font-semibold">MTN MoMo</strong>. Tap below for the account details.
                 </p>
                 <button
                   type="button"
                   onClick={viewManualDetails}
-                  className="mt-6 w-full font-body font-bold text-base bg-brand-navy text-white py-3.5 rounded-btn transition-colors duration-200 hover:bg-brand-navy-light"
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 font-body font-bold text-base bg-brand-gold text-brand-navy py-3.5 rounded-btn border-2 border-brand-gold transition-colors duration-200 hover:bg-brand-gold-light hover:border-brand-gold-light"
                 >
                   View Bank &amp; MoMo Details
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M12 5v14" /><path d="m19 12-7 7-7-7" />
+                  </svg>
                 </button>
               </div>
             )}

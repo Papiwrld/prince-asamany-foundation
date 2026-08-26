@@ -22,6 +22,8 @@ interface ProgramBlock {
   image2?: string;
   image2Alt?: string;
   color: string;
+  /** Optional related impact story link rendered next to the donate CTA. */
+  story?: { href: string; label: string };
 }
 
 const programs: ProgramBlock[] = [
@@ -42,6 +44,7 @@ const programs: ProgramBlock[] = [
     image2: '/media/opt/IMG_8116.webp',
     image2Alt: 'Health educator presenting a cervical cancer awareness atlas to seated women at a community screening outreach',
     color: 'brand-red',
+    story: { href: '/stories/free-deworming-exercise', label: 'the deworming exercise' },
   },
   {
     id: 'social-welfare',
@@ -58,6 +61,7 @@ const programs: ProgramBlock[] = [
     image: '/media/opt/IMG_6928.webp',
     imageAlt: 'Mother in a white headscarf with her children holding food packages after a Joy to the Street relief distribution in Kumasi',
     color: 'brand-navy',
+    story: { href: '/stories/joy-to-the-street', label: 'the Joy to the Street campaign' },
   },
   {
     id: 'economic-empowerment',
@@ -74,6 +78,7 @@ const programs: ProgramBlock[] = [
     image: '/media/opt/IMG_8277.webp',
     imageAlt: 'Community member participating in an economic empowerment session',
     color: 'brand-green',
+    story: { href: '/stories/farmers-engagement-akyawkrom', label: "the farmers' engagement" },
   },
 ];
 
@@ -181,12 +186,22 @@ export default function ProgramsPage() {
                     ))}
                   </ul>
                 </div>
-                <Link
-                  href="/donate"
-                  className="inline-flex items-center font-body text-sm font-semibold text-brand-red-dark border-b-2 border-brand-gold pb-1 transition-colors duration-200 self-start"
-                >
-                  Support this program →
-                </Link>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <Link
+                    href="/donate"
+                    className="inline-flex items-center font-body text-sm font-semibold text-brand-red-dark border-b-2 border-brand-gold pb-1 transition-colors duration-200 self-start"
+                  >
+                    Support this program →
+                  </Link>
+                  {program.story && (
+                    <Link
+                      href={program.story.href}
+                      className="inline-flex items-center font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-navy/30 pb-1 hover:border-brand-red-dark hover:text-brand-red-dark transition-colors duration-200 self-start"
+                    >
+                      Read {program.story.label} →
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>

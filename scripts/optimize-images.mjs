@@ -43,6 +43,14 @@ const FILES = [
   'award-night-poster.jpg',
   // replacements for AI placeholders (about hero / donate / CTA / OG)
   'IMG_6885.jpg', 'IMG_6863.jpg', 'IMG_6890.jpg',
+  // free deworming exercise (Forestry Commission Training Centre, July 2026)
+  'IMG-20260727-WA0008.jpg.jpeg', 'IMG-20260727-WA0011.jpg.jpeg',
+  'IMG-20260727-WA0017.jpg.jpeg', 'IMG-20260727-WA0014.jpg.jpeg',
+  'IMG-20260727-WA0018.jpg.jpeg',
+  // farmers' engagement at Akyawkrom (July 2026)
+  'IMG-20260713-WA0030.jpg.jpeg', 'IMG-20260713-WA0004.jpg.jpeg',
+  'IMG-20260713-WA0041.jpg.jpeg', 'IMG-20260713-WA0020.jpg.jpeg',
+  'IMG-20260713-WA0039.jpg.jpeg',
 ];
 
 // Max width per image. Full-bleed backgrounds get more; small cards get less.

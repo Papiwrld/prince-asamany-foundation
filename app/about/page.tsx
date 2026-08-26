@@ -324,7 +324,7 @@ export default function AboutPage() {
               <Link
                 key={p.title}
                 href={p.href}
-                aria-label={`${p.title} — read more on the Programs page`}
+                aria-label={`${p.title}: read more on the Programs page`}
                 className="relative rounded-card-lg overflow-hidden group min-h-[400px] lg:min-h-[480px] block focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-4"
               >
                 <Image 
