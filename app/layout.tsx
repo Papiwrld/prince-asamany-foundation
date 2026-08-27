@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
+import { Playfair_Display, Plus_Jakarta_Sans, Geist } from 'next/font/google';
 import { MotionConfig } from 'framer-motion';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { StickyDonate } from '@/components/layout/StickyDonate';
 import { siteConfig } from '@/lib/site';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -68,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${playfair.variable} ${plusJakarta.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={cn(playfair.variable, plusJakarta.variable, "font-sans", geist.variable)}>
       <head>
         <link rel="icon" href="/logo.jpeg" type="image/jpeg" />
       </head>

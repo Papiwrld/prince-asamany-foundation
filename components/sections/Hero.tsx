@@ -82,14 +82,14 @@ export function HeroSection() {
               <Link
                 href="/donate"
                 id="hero-donate-cta"
-                className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark transition-all duration-200 active:scale-[0.98] w-full sm:w-auto sm:px-10"
+                className="micro-press inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark w-full sm:w-auto sm:px-10"
               >
                 Support the Foundation
               </Link>
               <Link
                 href="/about"
                 id="hero-learn-more"
-                className="inline-flex items-center justify-center font-body font-semibold text-base bg-transparent text-white px-8 py-4 rounded-btn border-2 border-white/40 hover:bg-white/10 hover:border-white/70 transition-all duration-200 w-full sm:w-auto"
+                className="micro-press inline-flex items-center justify-center font-body font-semibold text-base bg-transparent text-white px-8 py-4 rounded-btn border-2 border-white/40 hover:bg-white/10 hover:border-white/70 w-full sm:w-auto"
               >
                 Learn More
               </Link>

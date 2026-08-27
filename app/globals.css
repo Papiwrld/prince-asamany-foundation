@@ -171,6 +171,43 @@ p { text-wrap: pretty; }
 }
 .pulse-ring { animation: pulseRing 2.5s ease-in-out infinite; }
 
+/* ── Micro-Interactions (transitions.dev & Amicro inspired) ──── */
+/* Fast, tactile active states that run under 300ms */
+.micro-press {
+  transition: transform 150ms cubic-bezier(0.32, 0.72, 0, 1), background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.micro-press:active {
+  transform: scale(0.97);
+}
+
+.micro-card-lift {
+  transition: transform 250ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 250ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.micro-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(17, 54, 71, 0.15);
+}
+.micro-card-lift:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 4px 8px -4px rgba(17, 54, 71, 0.1);
+}
+
+.micro-link-glow {
+  transition: color 200ms ease, text-shadow 200ms ease;
+}
+.micro-link-glow:hover {
+  text-shadow: 0 0 12px rgba(248, 166, 20, 0.4);
+}
+
+/* ── Premium Reveal ────────────────────────── */
+@keyframes premiumReveal {
+  0% { opacity: 0; transform: scale(1.03); filter: blur(4px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0px); }
+}
+.premium-reveal {
+  animation: premiumReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* ── Skip to content link (keyboard / screen-reader users) ───── */
 .skip-link {
   position: absolute;

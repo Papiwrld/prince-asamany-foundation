@@ -79,10 +79,14 @@ export const stories: Story[] = [
       'Overall, the exercise was a valuable health intervention that contributed to the well-being of the 84 students and demonstrated the Prince Asamany Foundation\u2019s commitment to supporting students and promoting healthy communities.',
     ],
     gallery: [
+      { src: '/media/opt/WhatsApp Image 2026-08-26 at 00.41.26.webp', alt: 'Flyer for the Free Deworming Exercise organized by the Prince Asamany Foundation' },
       { src: '/media/opt/IMG-20260727-WA0011.webp', alt: 'A wider group photo of students on the training-centre steps, several holding up deworming tablets' },
       { src: '/media/opt/IMG-20260727-WA0017.webp', alt: 'Students in Forestry Commission shirts gather inside the training centre during the deworming exercise' },
       { src: '/media/opt/IMG-20260727-WA0014.webp', alt: 'A screened health station set up for the deworming exercise' },
       { src: '/media/opt/IMG-20260727-WA0018.webp', alt: 'A beneficiary holds her deworming medication as a staff member looks on' },
+      { src: '/media/opt/IMG-20260727-WA0010.webp', alt: 'Students and foundation representatives walking together outdoors' },
+      { src: '/media/opt/IMG-20260727-WA0012.webp', alt: 'Foundation representatives and beneficiaries walking' },
+      { src: '/media/opt/IMG-20260727-WA0016.webp', alt: 'Foundation representative addressing students indoors' },
     ],
   },
   {
@@ -98,15 +102,21 @@ export const stories: Story[] = [
     date: 'July 2026',
     body: [
       'The Prince Asamany Foundation engaged farmers in Akyawkrom and its surrounding communities to discuss sustainable farming practices and ways of improving their livelihoods.',
-      'The engagement focused on promoting environmentally friendly farming methods, improving productivity, and encouraging farmers to work together. Discussions also centred on the formation of a farmers\u2019 cooperative, which will help members access resources, share knowledge, improve market opportunities, and strengthen their bargaining power.',
+      'The engagement focused on promoting environmentally friendly farming methods, improving productivity, and encouraging farmers to work together. Discussions also centered on the formation of a farmers’ cooperative, which will help members access resources, share knowledge, improve market opportunities, and strengthen their bargaining power.',
       'The initiative is expected to contribute to poverty reduction, improved food production, and sustainable livelihoods among farmers in the community.',
       'The Foundation remains committed to supporting farmers and creating opportunities that will promote economic empowerment and community development.',
     ],
     gallery: [
+      { src: '/media/opt/WhatsApp Image 2026-08-26 at 00.41.30.webp', alt: 'Official event flyer for the Farmers in Akyawkrom and its environs' },
       { src: '/media/opt/IMG-20260713-WA0004.webp', alt: 'A Foundation representative registers a resident during the engagement at Akyawkrom' },
       { src: '/media/opt/IMG-20260713-WA0041.webp', alt: 'Farmers and residents gather under a covered structure during the engagement' },
       { src: '/media/opt/IMG-20260713-WA0020.webp', alt: 'Older community members in colourful traditional dress seated at the gathering' },
       { src: '/media/opt/IMG-20260713-WA0039.webp', alt: 'A speaker addresses seated community members during the engagement' },
+      { src: '/media/opt/IMG-20260713-WA0002.webp', alt: 'Attendees gathering and conversing outside before the engagement' },
+      { src: '/media/opt/IMG-20260713-WA0012.webp', alt: 'Foundation representative discussing with an attendee' },
+      { src: '/media/opt/IMG-20260713-WA0017.webp', alt: 'A large group of community members attentively listening' },
+      { src: '/media/opt/IMG-20260713-WA0025.webp', alt: 'Foundation representative facilitating a discussion with the farmers' },
+      { src: '/media/opt/IMG-20260713-WA0042.webp', alt: 'Women in colourful traditional dresses seated together at the gathering' },
     ],
   },
   {

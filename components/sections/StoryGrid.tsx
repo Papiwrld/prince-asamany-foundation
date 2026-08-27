@@ -46,7 +46,7 @@ export function StoryGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="group flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
+              className="micro-card-lift group flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
             >
               <div className="relative h-56 overflow-hidden shrink-0">
                 <Image
@@ -93,7 +93,7 @@ export function StoryGrid() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/stories"
-            className="inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn transition-colors duration-200"
+            className="micro-press inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn"
           >
             View all stories
           </Link>

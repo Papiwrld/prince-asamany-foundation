@@ -46,11 +46,16 @@ const FILES = [
   // free deworming exercise (Forestry Commission Training Centre, July 2026)
   'IMG-20260727-WA0008.jpg.jpeg', 'IMG-20260727-WA0011.jpg.jpeg',
   'IMG-20260727-WA0017.jpg.jpeg', 'IMG-20260727-WA0014.jpg.jpeg',
-  'IMG-20260727-WA0018.jpg.jpeg',
+  'IMG-20260727-WA0018.jpg.jpeg', 'IMG-20260727-WA0010.jpg.jpeg',
+  'IMG-20260727-WA0012.jpg.jpeg', 'IMG-20260727-WA0016.jpg.jpeg',
+  'WhatsApp Image 2026-08-26 at 00.41.26.jpeg',
   // farmers' engagement at Akyawkrom (July 2026)
   'IMG-20260713-WA0030.jpg.jpeg', 'IMG-20260713-WA0004.jpg.jpeg',
   'IMG-20260713-WA0041.jpg.jpeg', 'IMG-20260713-WA0020.jpg.jpeg',
-  'IMG-20260713-WA0039.jpg.jpeg',
+  'IMG-20260713-WA0039.jpg.jpeg', 'IMG-20260713-WA0002.jpg.jpeg',
+  'IMG-20260713-WA0012.jpg.jpeg', 'IMG-20260713-WA0017.jpg.jpeg',
+  'IMG-20260713-WA0025.jpg.jpeg', 'IMG-20260713-WA0042.jpg.jpeg',
+  'WhatsApp Image 2026-08-26 at 00.41.30.jpeg',
 ];
 
 // Max width per image. Full-bleed backgrounds get more; small cards get less.

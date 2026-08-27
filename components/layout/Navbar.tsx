@@ -107,7 +107,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
-                    className={'font-body text-sm font-medium transition-colors duration-200 py-2 border-b-2 ' + (active ? 'text-brand-gold border-brand-gold' : 'text-white/85 border-transparent hover:text-brand-gold hover:border-brand-gold')}
+                    className={'micro-link-glow font-body text-sm font-medium transition-colors duration-200 py-2 border-b-2 ' + (active ? 'text-brand-gold border-brand-gold' : 'text-white/85 border-transparent hover:text-brand-gold hover:border-brand-gold')}
                   >
                     {link.label}
                   </Link>
@@ -121,7 +121,7 @@ export function Navbar() {
             <Link
               href="/donate"
               id="nav-donate-cta"
-              className="font-body text-sm font-semibold bg-brand-red text-white px-5 py-2.5 rounded-btn hover:bg-brand-red-dark transition-colors duration-200 border-2 border-brand-red hover:border-brand-red-dark"
+              className="micro-press font-body text-sm font-semibold bg-brand-red text-white px-5 py-2.5 rounded-btn hover:bg-brand-red-dark border-2 border-brand-red hover:border-brand-red-dark"
             >
               Donate
             </Link>
@@ -171,7 +171,7 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
                     aria-current={active ? 'page' : undefined}
-                    className={`relative block text-center font-display text-4xl font-bold py-4 transition-colors duration-200 ` + (active ? 'text-brand-gold' : 'text-white/85 hover:text-brand-gold')}
+                    className={`micro-press relative block text-center font-display text-4xl font-bold py-4 transition-colors duration-200 ` + (active ? 'text-brand-gold' : 'text-white/85 hover:text-brand-gold')}
                     style={{
                       transitionDelay: menuOpen ? `${i * 60}ms` : '0ms',
                       transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -197,7 +197,7 @@ export function Navbar() {
             <Link
               href="/donate"
               onClick={() => setMenuOpen(false)}
-              className="block w-full text-center font-body font-semibold text-lg bg-brand-red text-white py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark transition-colors duration-200"
+              className="micro-press block w-full text-center font-body font-semibold text-lg bg-brand-red text-white py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark"
             >
               Donate Now
             </Link>
