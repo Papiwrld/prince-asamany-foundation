@@ -73,7 +73,7 @@ export const stories: Story[] = [
     quote: 'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students.',
     date: 'July 2026',
     body: [
-      'In July, the Prince Asamany Foundation organized a free deworming exercise for 84 students offering the Certificate in Natural Resources Management course at the Forestry Commission Training Centre, as well as for members of the Ejisu Akyawkrom community.',
+      'In July, the Prince Asamany Foundation organized a free deworming exercise for 84 students offering the Certificate in Natural Resources Management course at the Forestry Commission Training Centre and in the Ejisu Akyawkrom community.',
       'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students. Beneficiaries received free deworming medication and were educated on the importance of personal hygiene, proper sanitation, and healthy living practices.',
       'The exercise was important because good health enables students to concentrate on their studies, participate actively in practical training, and complete their programme successfully. It also reduced the financial burden on the beneficiaries while promoting awareness of preventive healthcare.',
       'Overall, the exercise was a valuable health intervention that contributed to the well-being of the 84 students and demonstrated the Prince Asamany Foundation\u2019s commitment to supporting students and promoting healthy communities.',
@@ -103,8 +103,7 @@ export const stories: Story[] = [
     body: [
       'The Prince Asamany Foundation engaged farmers in Akyawkrom and its surrounding communities to discuss sustainable farming practices and ways of improving their livelihoods.',
       'The engagement focused on promoting environmentally friendly farming methods, improving productivity, and encouraging farmers to work together. Discussions also centered on the formation of a farmers’ cooperative, which will help members access resources, share knowledge, improve market opportunities, and strengthen their bargaining power.',
-      'The initiative is expected to contribute to poverty reduction, improved food production, and sustainable livelihoods among farmers in the community.',
-      'The Foundation remains committed to supporting farmers and creating opportunities that will promote economic empowerment and community development.',
+      'The initiative is expected to contribute to poverty reduction, improved food production, and sustainable livelihoods among farmers in the community. The Foundation remains committed to supporting farmers and creating opportunities that will promote economic empowerment and community development.',
     ],
     gallery: [
       { src: '/media/opt/WhatsApp Image 2026-08-26 at 00.41.30.webp', alt: 'Official event flyer for the Farmers in Akyawkrom and its environs' },
@@ -119,49 +118,7 @@ export const stories: Story[] = [
       { src: '/media/opt/IMG-20260713-WA0042.webp', alt: 'Women in colourful traditional dresses seated together at the gathering' },
     ],
   },
-  {
-    id: 'farmer-spotlight-voice',
-    name: 'Voice of the Community',
-    location: 'Akyawkrom',
-    role: 'Local Farmer',
-    tag: 'Community Voice',
-    tagColor: 'bg-[#007BFF] text-white',
-    image: '/media/opt/IMG-20260713-WA0028.webp',
-    imageAlt: 'A local farmer in a blue checked dress listens attentively during the community engagement',
-    quote: 'Being part of the cooperative gives us a stronger voice. We are learning how to improve our crop yields sustainably while supporting each other.',
-    date: 'July 2026',
-    body: [
-      'During the Foundation\'s community engagement in Akyawkrom, we sat down with local farmers to hear about their daily experiences, challenges, and goals for the future.',
-      'One of the key themes that emerged was the desire for stronger cooperative structures. Farmers highlighted that by working together, they can better access resources, share sustainable farming techniques, and improve their market bargaining power.',
-      'These direct conversations are crucial for the Prince Asamany Foundation. By listening closely to the community, the Foundation ensures that its economic empowerment initiatives are directly tailored to the real needs of the people they serve.'
-    ],
-    gallery: [
-      { src: '/media/opt/IMG-20260713-WA0039.webp', alt: 'A speaker addressing seated community members during the engagement' },
-      { src: '/media/opt/IMG-20260713-WA0012.webp', alt: 'Foundation representative discussing with an attendee' },
-    ],
-  },
-  {
-    id: 'womens-farming-cooperative',
-    name: 'Women in Agriculture',
-    location: 'Akyawkrom',
-    role: 'Community Leaders',
-    tag: 'Empowerment',
-    tagColor: 'bg-brand-gold text-brand-navy',
-    image: '/media/opt/IMG-20260713-WA0031.webp',
-    imageAlt: 'A group of women farmers in colorful traditional dresses seated together at a community gathering',
-    quote: 'When women farmers unite, the entire community thrives. We are the backbone of food security in Akyawkrom.',
-    date: 'July 2026',
-    body: [
-      'Women play a foundational role in the agricultural sector across Akyawkrom and its surrounding communities. At the recent Farmers\' Engagement, the collective presence of women farmers was a powerful testament to their leadership and dedication.',
-      'The gathering focused heavily on how to support these women through targeted upskilling, access to better farming tools, and the establishment of supportive cooperative networks.',
-      'The Prince Asamany Foundation recognizes that empowering women in agriculture has a profound multiplier effect. When women are equipped with the right resources and knowledge, it leads to improved food security, higher household incomes, and better outcomes for children and families across the district.'
-    ],
-    gallery: [
-      { src: '/media/opt/IMG-20260713-WA0042.webp', alt: 'Women in colourful traditional dresses seated together at the gathering' },
-      { src: '/media/opt/IMG-20260713-WA0020.webp', alt: 'Older community members in colourful traditional dress seated at the gathering' },
-      { src: '/media/opt/IMG-20260713-WA0041.webp', alt: 'Farmers and residents gather under a covered structure during the engagement' },
-    ],
-  },
+
   {
     id: 'joy-to-the-street',
     name: 'Joy to the Street Campaign',
