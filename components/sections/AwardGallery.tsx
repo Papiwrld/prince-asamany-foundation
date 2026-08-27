@@ -118,8 +118,8 @@ const [active, setActive] = useState<number | null>(null);
         </p>
       </div>
 
-      {/* Editorial masonry — photos keep their natural aspect ratio */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
+      {/* Mobile: Horizontal scroll snap. Desktop: Editorial masonry */}
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 sm:block sm:columns-2 lg:columns-3 sm:gap-4 md:gap-6 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {IMAGES.map((img, i) => (
           <motion.button
             initial={{ opacity: 0, scale: 0.95 }}
@@ -130,7 +130,7 @@ const [active, setActive] = useState<number | null>(null);
             type="button"
             onClick={() => openLightbox(i)}
             aria-label={`View photo: ${img.caption}`}
-            className="group relative mb-4 md:mb-6 break-inside-avoid w-full block overflow-hidden rounded-card-lg border border-white/15 shadow-2xl bg-brand-navy focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
+            className="group relative shrink-0 snap-center w-[85vw] sm:w-full mb-0 sm:mb-4 md:mb-6 break-inside-avoid block overflow-hidden rounded-card-lg border border-white/15 shadow-2xl bg-brand-navy focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
           >
             {/* Main Image — natural aspect ratio, never cropped */}
             <Image

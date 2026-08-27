@@ -37,8 +37,8 @@ export function StoryGrid() {
           </h2>
         </div>
 
-        {/* Three-card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Three-card grid / Mobile swipe carousel */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {stories.slice(0, 3).map((story, i) => (
             <motion.article
               key={story.id}
@@ -46,7 +46,7 @@ export function StoryGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="micro-card-lift group flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
+              className="micro-card-lift group shrink-0 snap-center w-[85vw] md:w-auto flex flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4"
             >
               <div className="relative h-56 overflow-hidden shrink-0">
                 <Image

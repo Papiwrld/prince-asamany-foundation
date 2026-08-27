@@ -192,13 +192,13 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
               </div>
               <span className="font-body text-sm text-brand-navy/45">{story.gallery.length} photos</span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-6 sm:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {story.gallery.map((img, i) => (
                 <div
                   key={img.src}
-                  className={`relative rounded-card-lg overflow-hidden group ${
-                    // Make first image span 2 columns for a featured feel
-                    i === 0 ? 'col-span-2 row-span-2 aspect-[4/3]' : 'aspect-[4/3]'
+                  className={`relative rounded-card-lg overflow-hidden group shrink-0 snap-center w-[85vw] sm:w-auto ${
+                    // Make first image span 2 columns for a featured feel on desktop
+                    i === 0 ? 'sm:col-span-2 sm:row-span-2 aspect-[4/3] sm:aspect-auto' : 'aspect-[4/3]'
                   }`}
                 >
                   <Image
