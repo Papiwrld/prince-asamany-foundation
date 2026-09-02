@@ -92,7 +92,11 @@ export function Footer() {
               return (
                 <li
                   key={link.href}
-                  className={`flex justify-center md:justify-start ${isDonate ? 'col-span-2 mt-1' : ''}`}
+                  className={
+                    isDonate
+                      ? 'col-span-2 flex justify-center mt-2 md:col-span-1 md:justify-start md:mt-0'
+                      : 'flex justify-center md:justify-start'
+                  }
                 >
                   <Link
                     href={link.href}
