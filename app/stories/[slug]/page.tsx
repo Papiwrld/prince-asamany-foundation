@@ -40,6 +40,10 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
   const story = stories.find((s) => s.id === slug);
   if (!story) notFound();
 
+  const currentIndex = stories.findIndex((s) => s.id === slug);
+  const prevStory = stories[(currentIndex - 1 + stories.length) % stories.length];
+  const nextStory = stories[(currentIndex + 1) % stories.length];
+
   /* "About this story" metadata — rendered in the sticky sidebar on desktop
      and as a card above the article on mobile. */
   const aboutMeta = (
@@ -232,6 +236,80 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
             </div>
           </section>
         )}
+
+        {/* ── Next / Previous Story Navigation ── */}
+        <nav aria-label="Story pagination" className="border-t border-brand-navy/10 py-16 max-w-7xl mx-auto px-5 md:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
+              Continue Reading
+            </span>
+            <Link
+              href="/stories"
+              className="font-body text-sm font-semibold text-brand-navy hover:text-brand-red-dark transition-colors inline-flex items-center gap-1.5"
+            >
+              All stories
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Previous Story */}
+            <Link
+              href={`/stories/${prevStory.id}`}
+              className="group relative flex items-center gap-5 p-5 bg-white rounded-card-lg border border-brand-navy/10 hover:border-brand-gold/60 shadow-sm hover:shadow-md transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-navy"
+            >
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-card overflow-hidden shrink-0">
+                <Image
+                  src={prevStory.image}
+                  alt={prevStory.imageAlt}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 80px, 96px"
+                  {...blurProps(prevStory.image)}
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="inline-flex items-center gap-1 font-body text-xs font-bold uppercase tracking-wider text-brand-navy/60 group-hover:text-brand-red-dark transition-colors">
+                  <span aria-hidden="true">←</span> Previous Story
+                </span>
+                <h3 className="font-display text-base sm:text-lg font-bold text-brand-navy mt-1 group-hover:text-brand-red-dark transition-colors truncate">
+                  {prevStory.name}
+                </h3>
+                <span className={`inline-block px-2 py-0.5 mt-2 rounded-full text-[11px] font-body font-semibold ${prevStory.tagColor}`}>
+                  {prevStory.tag}
+                </span>
+              </div>
+            </Link>
+
+            {/* Next Story */}
+            <Link
+              href={`/stories/${nextStory.id}`}
+              className="group relative flex items-center justify-between gap-5 p-5 bg-white rounded-card-lg border border-brand-navy/10 hover:border-brand-gold/60 shadow-sm hover:shadow-md transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-navy text-right"
+            >
+              <div className="min-w-0 flex-1 order-2 sm:order-1 text-left sm:text-right">
+                <span className="inline-flex items-center gap-1 font-body text-xs font-bold uppercase tracking-wider text-brand-navy/60 group-hover:text-brand-red-dark transition-colors">
+                  Next Story <span aria-hidden="true">→</span>
+                </span>
+                <h3 className="font-display text-base sm:text-lg font-bold text-brand-navy mt-1 group-hover:text-brand-red-dark transition-colors truncate">
+                  {nextStory.name}
+                </h3>
+                <span className={`inline-block px-2 py-0.5 mt-2 rounded-full text-[11px] font-body font-semibold ${nextStory.tagColor}`}>
+                  {nextStory.tag}
+                </span>
+              </div>
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-card overflow-hidden shrink-0 order-1 sm:order-2">
+                <Image
+                  src={nextStory.image}
+                  alt={nextStory.imageAlt}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 80px, 96px"
+                  {...blurProps(nextStory.image)}
+                />
+              </div>
+            </Link>
+          </div>
+        </nav>
       </article>
     </>
   );

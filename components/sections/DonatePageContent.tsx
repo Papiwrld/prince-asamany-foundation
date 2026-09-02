@@ -5,7 +5,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { siteConfig } from '@/lib/site';
 import { pressItems } from '@/lib/content';
-import { GIVE_TIERS } from '@/components/ui/PaystackDonateButton';
+import { GIVE_TIERS, type CurrencyCode } from '@/components/ui/PaystackDonateButton';
 
 const PaystackDonateButton = dynamic(
   () => import('@/components/ui/PaystackDonateButton').then((mod) => mod.PaystackDonateButton),
@@ -103,6 +103,8 @@ function DonationCard({
 }
 
 export function DonatePageContent() {
+  const [currency, setCurrency] = useState<CurrencyCode>('GHS');
+
   return (
     <>
       {/* Donation cards */}
@@ -122,13 +124,52 @@ export function DonatePageContent() {
             <PaystackDonateButton />
           </div>
 
+          {/* Diaspora Currency Switcher */}
+          <div className="flex flex-col items-center mb-6">
+            <div
+              className="flex items-center gap-1.5 p-1 bg-white rounded-full border border-brand-navy/10 shadow-sm"
+              role="tablist"
+              aria-label="Display currency"
+            >
+              {(['GHS', 'USD', 'GBP', 'EUR'] as CurrencyCode[]).map((cur) => (
+                <button
+                  key={cur}
+                  type="button"
+                  role="tab"
+                  aria-selected={currency === cur}
+                  onClick={() => setCurrency(cur)}
+                  className={`font-body text-xs font-bold px-3.5 py-1.5 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-brand-navy ${
+                    currency === cur
+                      ? 'bg-brand-navy text-white shadow-sm'
+                      : 'text-brand-navy/70 hover:text-brand-navy'
+                  }`}
+                >
+                  {cur}
+                </button>
+              ))}
+            </div>
+            <p className="font-body text-xs text-brand-navy/65 mt-2 text-center">
+              {currency === 'GHS'
+                ? 'Ghana Cedis · Local mobile money & bank cards accepted'
+                : `Showing approximate diaspora equivalent · Card converted automatically at checkout`}
+            </p>
+          </div>
+
           {/* Impact-anchored giving tiers */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 list-none m-0 p-0" aria-label="What your gift can provide">
             {GIVE_TIERS.map((tier) => (
-              <li key={tier.amount} className="rounded-card-lg bg-white border border-brand-navy/5 shadow-sm px-5 py-6 text-center">
+              <li
+                key={tier.amount}
+                className="rounded-card-lg bg-white border border-brand-navy/5 shadow-sm px-5 py-6 text-center transition-all duration-200 hover:shadow-md"
+              >
                 <span className="block font-display text-xl font-bold text-brand-navy">{tier.label}</span>
+                {currency !== 'GHS' && (
+                  <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-brand-navy font-body text-xs font-bold">
+                    {tier.approx[currency]}
+                  </span>
+                )}
                 <span className="block w-8 h-0.5 bg-brand-gold mx-auto my-2.5" aria-hidden="true" />
-                <span className="block font-body text-sm text-brand-navy/70 leading-relaxed">{tier.impact}</span>
+                <span className="block font-body text-sm text-brand-navy/75 leading-relaxed">{tier.impact}</span>
               </li>
             ))}
           </ul>

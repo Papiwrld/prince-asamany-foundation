@@ -36,11 +36,20 @@ const generateReference = () =>
  * beats open amounts). Wording is deliberately conservative — "helps provide" —
  * so it stays accurate even as program costs change.
  */
-export const GIVE_TIERS = [
-  { amount: '100', label: 'GHS 100', impact: 'Helps provide school supplies for a pupil' },
-  { amount: '250', label: 'GHS 250', impact: 'Helps provide a welfare pack for a vulnerable family' },
-  { amount: '500', label: 'GHS 500', impact: 'Supports free health screenings for community members' },
-  { amount: '1000', label: 'GHS 1,000', impact: 'Helps sponsor a community outreach event' },
+export type CurrencyCode = 'GHS' | 'USD' | 'GBP' | 'EUR';
+
+export interface GiveTier {
+  amount: string;
+  label: string;
+  impact: string;
+  approx: Record<'USD' | 'GBP' | 'EUR', string>;
+}
+
+export const GIVE_TIERS: GiveTier[] = [
+  { amount: '100', label: 'GHS 100', impact: 'Helps provide school supplies for a pupil', approx: { USD: '~$7', GBP: '~$5', EUR: '~$6' } },
+  { amount: '250', label: 'GHS 250', impact: 'Helps provide a welfare pack for a vulnerable family', approx: { USD: '~$16', GBP: '~$13', EUR: '~$15' } },
+  { amount: '500', label: 'GHS 500', impact: 'Supports free health screenings for community members', approx: { USD: '~$32', GBP: '~$25', EUR: '~$30' } },
+  { amount: '1000', label: 'GHS 1,000', impact: 'Helps sponsor a community outreach event', approx: { USD: '~$65', GBP: '~$50', EUR: '~$60' } },
 ];
 
 /** Lazily load the Paystack inline script once. Returns a promise that resolves when ready. */
@@ -67,6 +76,7 @@ function loadPaystackScript(): Promise<void> {
 
 export function PaystackDonateButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const [currency, setCurrency] = useState<CurrencyCode>('GHS');
   const [amount, setAmount] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [fieldErrors, setFieldErrors] = useState<{ email?: string; amount?: string }>({});
@@ -302,9 +312,29 @@ export function PaystackDonateButton() {
                     )}
                   </div>
 
-                  {/* Impact-anchored giving tiers */}
+                  {/* Impact-anchored giving tiers with Currency Guide */}
                   <fieldset>
-                    <legend className="block font-body text-sm font-semibold text-brand-navy mb-2">Choose an amount (GHS)</legend>
+                    <div className="flex items-center justify-between mb-2">
+                      <legend className="block font-body text-sm font-semibold text-brand-navy">Choose an amount</legend>
+                      <div className="inline-flex rounded-full p-0.5 bg-brand-cream border border-brand-navy/10" role="tablist" aria-label="Currency guide">
+                        {(['GHS', 'USD', 'GBP', 'EUR'] as CurrencyCode[]).map((cur) => (
+                          <button
+                            key={cur}
+                            type="button"
+                            role="tab"
+                            aria-selected={currency === cur}
+                            onClick={() => setCurrency(cur)}
+                            className={`font-body text-[11px] font-bold px-2 py-0.5 rounded-full transition-colors ${
+                              currency === cur
+                                ? 'bg-brand-navy text-white shadow-sm'
+                                : 'text-brand-navy/65 hover:text-brand-navy'
+                            }`}
+                          >
+                            {cur}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                     <div className="grid grid-cols-2 gap-2">
                       {GIVE_TIERS.map((tier) => {
                         const selected = amount === tier.amount;
@@ -320,7 +350,14 @@ export function PaystackDonateButton() {
                                 : 'border-brand-navy/15 hover:border-brand-navy/40'
                             }`}
                           >
-                            <span className="block font-body font-bold text-base text-brand-navy">{tier.label}</span>
+                            <div className="flex items-baseline justify-between gap-1">
+                              <span className="block font-body font-bold text-base text-brand-navy">{tier.label}</span>
+                              {currency !== 'GHS' && (
+                                <span className="font-body font-bold text-xs text-brand-red-dark">
+                                  {tier.approx[currency]}
+                                </span>
+                              )}
+                            </div>
                             <span className="block font-body text-xs text-brand-navy/70 leading-snug mt-0.5">{tier.impact}</span>
                           </button>
                         );
@@ -362,8 +399,7 @@ export function PaystackDonateButton() {
                 </form>
 
                 <p className="font-body text-xs text-center text-brand-navy/70 mt-6 leading-relaxed">
-                  Secured by <strong className="font-semibold">Paystack</strong> (card &amp; mobile money).
-                  Prince Asamany Foundation is an NGO based in Ejisu, Ashanti Region, Ghana.
+                  Secured by <strong className="font-semibold">Paystack</strong>. Payments are billed in GHS; international cards (USD, GBP, EUR) convert automatically with zero foundation surcharges.
                 </p>
               </>
             ) : (

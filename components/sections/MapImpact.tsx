@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AshantiMap } from '@/components/ui/illustrations';
+import { AshantiMap, MAP_HOTSPOTS } from '@/components/ui/illustrations';
 import { CountUp } from '@/components/ui/CountUp';
 
 
@@ -38,6 +38,9 @@ const stats: Stat[] = [
 ];
 
 export function MapImpact() {
+  const [activeId, setActiveId] = useState<string>('akyawkrom');
+  const activeHotspot = MAP_HOTSPOTS.find((h) => h.id === activeId) ?? MAP_HOTSPOTS[0];
+
   return (
     <section
       className="bg-brand-cream section-padding"
@@ -59,15 +62,69 @@ export function MapImpact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Map */}
+          {/* Interactive Map & Hotspot Inspector */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="relative"
+            className="relative flex flex-col"
           >
-            <AshantiMap />
+            <div className="bg-white/80 backdrop-blur-sm rounded-card-lg border border-brand-navy/10 p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-body text-xs font-bold uppercase tracking-wider text-brand-red-dark">
+                  Operational Hotspots
+                </span>
+                <span className="font-body text-xs text-brand-navy/65">
+                  Select a node to inspect
+                </span>
+              </div>
+
+              <AshantiMap activeId={activeId} onSelect={setActiveId} />
+
+              {/* Location Pill Selector for Ergonomics */}
+              <div
+                className="flex flex-wrap items-center justify-center gap-2 mt-4 pt-4 border-t border-brand-navy/10"
+                role="tablist"
+                aria-label="Regional impact locations"
+              >
+                {MAP_HOTSPOTS.map((h) => (
+                  <button
+                    key={h.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeId === h.id}
+                    onClick={() => setActiveId(h.id)}
+                    className={`font-body text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-brand-navy ${
+                      activeId === h.id
+                        ? 'bg-brand-navy text-white shadow-sm'
+                        : 'bg-white text-brand-navy/70 border border-brand-navy/15 hover:bg-brand-cream hover:text-brand-navy'
+                    }`}
+                  >
+                    {h.name}
+                  </button>
+                ))}
+              </div>
+
+              {/* Active Hotspot Information Callout */}
+              <div className="mt-4 p-4 rounded-card bg-brand-cream/80 border border-brand-navy/10 transition-all duration-300">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <span className="font-display text-base font-bold text-brand-navy flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-red" aria-hidden="true" />
+                    {activeHotspot.name}
+                  </span>
+                  <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-body font-bold ${activeHotspot.tagColor}`}>
+                    {activeHotspot.tag}
+                  </span>
+                </div>
+                <p className="font-body text-xs text-brand-navy/70 font-medium mb-1">
+                  📍 {activeHotspot.area}
+                </p>
+                <p className="font-body text-sm text-brand-navy/80 leading-relaxed">
+                  {activeHotspot.impact}
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Stats, stack on mobile */}
