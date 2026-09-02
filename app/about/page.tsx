@@ -216,14 +216,14 @@ export default function AboutPage() {
                   {...blurProps('/media/opt/IMG_6965.webp')}
                 />
               </div>
-              <div className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-4 xl:-right-10 lg:w-56 xl:w-64 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-10">
+              <div className="relative mt-6 max-w-xs mx-auto lg:max-w-none lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-4 xl:-right-10 lg:w-56 xl:w-64 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-10">
                 <div className="relative aspect-[5/6]">
                   <Image
                     src="/media/opt/IMG_6899_1.webp"
                     alt="Prince Asamany bending to greet an elderly woman during a community relief visit in Kumasi"
                     fill
                     className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 256px"
+                    sizes="(max-width: 1024px) 320px, 256px"
                     {...blurProps('/media/opt/IMG_6899_1.webp')}
                   />
                 </div>

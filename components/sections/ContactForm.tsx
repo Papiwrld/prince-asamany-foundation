@@ -43,7 +43,7 @@ export function ContactForm() {
 
           {/* Contact details, 2 cols */}
           <div className="lg:col-span-2 flex flex-col gap-8">
-            <div className="text-center">
+            <div className="text-center lg:text-left">
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Find Us</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Get in Touch
@@ -130,7 +130,7 @@ export function ContactForm() {
 
           {/* Contact form, 3 cols */}
           <div className="lg:col-span-3">
-            <div className="mb-8 text-center">
+            <div className="mb-8 text-center lg:text-left">
               <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Message</span>
               <h2 className="font-display text-2xl font-bold text-brand-navy mt-2 leading-tight">
                 Send a Message
