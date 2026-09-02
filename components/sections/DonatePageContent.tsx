@@ -283,14 +283,14 @@ export function DonatePageContent() {
               />
             </div>
             <div className="flex flex-col gap-6">
-            <div className="text-center">
-              <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
-                Your Contribution
-              </span>
-              <h2 className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
-                Why your support matters
-              </h2>
-            </div>
+              <div>
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
+                  Your Contribution
+                </span>
+                <h2 className="font-display text-3xl font-bold text-brand-navy mt-2 leading-tight">
+                  Why your support matters
+                </h2>
+              </div>
               <blockquote className="font-display italic text-lg text-brand-navy/80 leading-relaxed border-l-4 border-brand-gold pl-6">
                 &ldquo;The Prince Asamany Foundation stands as a bridge between need and compassion.
                 If you have a heart to uplift the less privileged, join hands with us, together we

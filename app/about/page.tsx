@@ -232,17 +232,17 @@ export default function AboutPage() {
             </div>
 
             {/* Narrative */}
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6 mt-8 lg:mt-0">
+            <div className="flex flex-col items-start text-left gap-6 mt-8 lg:mt-0">
               <p className="font-display text-xl md:text-2xl text-brand-navy font-semibold">
                 Prince Douglas Asamany
               </p>
-              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl text-left">
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
                 A chemist by training and an advocate by calling, Prince founded the Prince Asamany
                 Foundation to stand in the gap for underprivileged communities across the Ejisu
                 Municipal Assembly, from street children in Kumasi to women in need of preventive
                 healthcare.
               </p>
-              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl text-left">
+              <p className="font-body text-lg text-brand-navy/75 leading-relaxed max-w-xl">
                 Whether he is handing relief packages at the annual &ldquo;Joy to the Street&rdquo; campaign or
                 championing Green Chemistry education, his approach is the same: show up in person,
                 listen first, and build solutions the community owns. In recognition of that work, he
@@ -264,7 +264,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             {/* Strategic Objectives */}
             <div>
-              <div className="text-center mb-8">
+              <div className="text-left mb-8">
                 <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Strategy</span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
                   Strategic Objectives
@@ -286,7 +286,7 @@ export default function AboutPage() {
 
             {/* Core Values */}
             <div>
-              <div className="text-center mb-8">
+              <div className="text-left mb-8">
                 <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Our Values</span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
                   Core Values

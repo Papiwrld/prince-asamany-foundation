@@ -94,6 +94,7 @@ p {
   font-size: 1.125rem; /* 18px */
   line-height: 1.75;
   font-weight: 400;
+  text-wrap: pretty; /* Prevents orphan words on the last line of body paragraphs */
 }
 
 /* Headings use display serif */
