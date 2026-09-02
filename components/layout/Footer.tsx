@@ -90,7 +90,10 @@ export function Footer() {
             {footerLinks.map((link) => {
               const isDonate = link.href === '/donate';
               return (
-                <li key={link.href} className="flex justify-center md:justify-start">
+                <li
+                  key={link.href}
+                  className={`flex justify-center md:justify-start ${isDonate ? 'col-span-2 mt-1' : ''}`}
+                >
                   <Link
                     href={link.href}
                     className={`font-body text-sm hover:translate-x-1 transition-all duration-200 inline-flex items-center justify-center md:justify-start gap-1.5 py-1.5 text-center md:text-left ${
