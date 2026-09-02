@@ -40,6 +40,38 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
   const story = stories.find((s) => s.id === slug);
   if (!story) notFound();
 
+  /* "About this story" metadata — rendered in the sticky sidebar on desktop
+     and as a card above the article on mobile. */
+  const aboutMeta = (
+    <>
+      <p className="font-body text-xs font-semibold uppercase tracking-[0.12em] text-brand-red-dark mb-4">About this story</p>
+      <dl className="flex flex-col gap-4">
+        <div>
+          <dt className="font-body text-xs text-brand-navy/70 mb-0.5">Initiative</dt>
+          <dd className="font-body text-sm font-semibold text-brand-navy">{story.name}</dd>
+        </div>
+        <div>
+          <dt className="font-body text-xs text-brand-navy/70 mb-0.5">Category</dt>
+          <dd>
+            <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-body font-bold ${story.tagColor}`}>
+              {story.tag}
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt className="font-body text-xs text-brand-navy/70 mb-0.5">Location</dt>
+          <dd className="font-body text-sm text-brand-navy/80">{story.location}</dd>
+        </div>
+        {story.date && (
+          <div>
+            <dt className="font-body text-xs text-brand-navy/70 mb-0.5">Date</dt>
+            <dd className="font-body text-sm font-semibold text-brand-red-dark">{story.date}</dd>
+          </div>
+        )}
+      </dl>
+    </>
+  );
+
   return (
     <>
       {/* ── Cinematic Hero ── */}
@@ -91,6 +123,11 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
 
             {/* ── Left: Article prose ── */}
             <div className="min-w-0">
+              {/* About this story — mobile only (desktop uses the sticky sidebar) */}
+              <div className="lg:hidden bg-white rounded-card-lg border border-brand-navy/10 p-6 mb-10">
+                {aboutMeta}
+              </div>
+
               {/* Pull quote */}
               <blockquote className="border-l-4 border-brand-gold pl-6 mb-10">
                 <p className="font-display italic text-xl md:text-2xl text-brand-navy leading-relaxed">
@@ -111,7 +148,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
               <div className="mt-14 pt-8 border-t border-brand-navy/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                 <Link
                   href="/stories"
-                  className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200"
+                  className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 py-1 hover:text-brand-red-dark transition-colors duration-200"
                 >
                   ← All stories
                 </Link>
@@ -129,31 +166,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
               <div className="sticky top-28 flex flex-col gap-6">
                 {/* About this story card */}
                 <div className="bg-white rounded-card-lg border border-brand-navy/10 p-7">
-                  <p className="font-body text-xs font-semibold uppercase tracking-[0.12em] text-brand-red-dark mb-4">About this story</p>
-                  <dl className="flex flex-col gap-4">
-                    <div>
-                      <dt className="font-body text-xs text-brand-navy/50 mb-0.5">Initiative</dt>
-                      <dd className="font-body text-sm font-semibold text-brand-navy">{story.name}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-body text-xs text-brand-navy/50 mb-0.5">Category</dt>
-                      <dd>
-                        <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-body font-bold ${story.tagColor}`}>
-                          {story.tag}
-                        </span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="font-body text-xs text-brand-navy/50 mb-0.5">Location</dt>
-                      <dd className="font-body text-sm text-brand-navy/80">{story.location}</dd>
-                    </div>
-                    {story.date && (
-                      <div>
-                        <dt className="font-body text-xs text-brand-navy/50 mb-0.5">Date</dt>
-                        <dd className="font-body text-sm font-semibold text-brand-red-dark">{story.date}</dd>
-                      </div>
-                    )}
-                  </dl>
+                  {aboutMeta}
                 </div>
 
                 {/* Support CTA card */}
@@ -190,7 +203,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
                 <span className="font-body text-sm font-semibold uppercase tracking-[0.12em] text-brand-red-dark">Gallery</span>
                 <h2 className="font-display text-3xl font-bold text-brand-navy mt-1">From the field</h2>
               </div>
-              <span className="font-body text-sm text-brand-navy/45">{story.gallery.length} photos</span>
+              <span className="font-body text-sm text-brand-navy/70">{story.gallery.length} photos</span>
             </div>
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-6 sm:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {story.gallery.map((img, i) => (

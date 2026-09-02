@@ -189,14 +189,14 @@ export default function ProgramsPage() {
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                   <Link
                     href="/donate"
-                    className="inline-flex items-center font-body text-sm font-semibold text-brand-red-dark border-b-2 border-brand-gold pb-1 transition-colors duration-200 self-start"
+                    className="inline-flex items-center font-body text-sm font-semibold text-brand-red-dark border-b-2 border-brand-gold pb-1 py-1 transition-colors duration-200 self-start"
                   >
                     Support this program →
                   </Link>
                   {program.story && (
                     <Link
                       href={program.story.href}
-                      className="inline-flex items-center font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-navy/30 pb-1 hover:border-brand-red-dark hover:text-brand-red-dark transition-colors duration-200 self-start"
+                      className="inline-flex items-center font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-navy/30 pb-1 py-1 hover:border-brand-red-dark hover:text-brand-red-dark transition-colors duration-200 self-start"
                     >
                       Read {program.story.label} →
                     </Link>

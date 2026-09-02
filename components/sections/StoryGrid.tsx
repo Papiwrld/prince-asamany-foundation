@@ -46,7 +46,7 @@ export function StoryGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className={`micro-card-lift group flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-4 ${i === 0 ? 'flex' : 'hidden md:flex'}`}
+              className={`micro-card-lift group relative flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4 ${i === 0 ? 'flex' : 'hidden md:flex'}`}
             >
               <div className="relative h-56 overflow-hidden shrink-0">
                 <Image
@@ -79,7 +79,7 @@ export function StoryGrid() {
 
                 <Link
                   href={`/stories/${story.id}`}
-                  className="mt-6 font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200"
+                  className="mt-6 font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
                   aria-label={`Read ${story.name}'s full story`}
                 >
                   Read full story →

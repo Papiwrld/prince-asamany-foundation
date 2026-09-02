@@ -27,7 +27,7 @@ export default function StoriesPage() {
           <h2 id="stories-grid-heading" className="sr-only">Story grid</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stories.map((story) => (
-              <article key={story.id} className="bg-white rounded-card-lg overflow-hidden group">
+              <article key={story.id} className="bg-white rounded-card-lg overflow-hidden group relative focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4">
                 {/* Photo */}
                 <div className="relative h-56 overflow-hidden">
                   <Image
@@ -57,7 +57,7 @@ export default function StoriesPage() {
                   </footer>
                   <Link
                     href={`/stories/${story.id}`}
-                    className="font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 mt-2 inline-block"
+                    className="font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 mt-2 inline-block py-1 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
                     aria-label={`Read ${story.name}'s full story`}
                   >
                     Read full story →

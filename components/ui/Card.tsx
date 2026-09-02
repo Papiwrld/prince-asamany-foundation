@@ -92,7 +92,7 @@ export function CTACard({ title, description, linkLabel, linkHref, className = '
       </div>
       <Link
         href={linkHref}
-        className="mt-6 inline-flex items-center justify-center md:justify-start gap-2 font-body text-brand-red-dark font-semibold text-sm hover:gap-3 transition-all duration-200"
+        className="mt-6 inline-flex items-center justify-center md:justify-start gap-2 font-body text-brand-red-dark font-semibold text-sm hover:gap-3 transition-all duration-200 py-1"
       >
         {linkLabel}
         <span className="text-brand-gold" aria-hidden="true">→</span>

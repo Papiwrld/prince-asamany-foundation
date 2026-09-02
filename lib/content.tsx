@@ -131,7 +131,7 @@ export const stories: Story[] = [
     quote: 'Rather than offering isolated charity, this project is structured as a movement designed to foster social solidarity and provide children with baseline educational tools.',
     body: [
       'The foundation\'s hallmark welfare campaign is the annual "Joy to the Street" program. This strategic initiative focuses heavily on the homeless, low-income families, and vulnerable children across the Ejisu Municipality.',
-      'On Christmas Day, December 26th, 2024, the Prince Asamany Foundation spread holiday cheer to over 800 street children, mentally ill persons, refugees, and other marginalized individuals in Kumasi (Amakom, WAEC Street, Asafo, and Jubilee Park).',
+      'On Boxing Day, December 26th, 2024, the Prince Asamany Foundation spread holiday cheer to over 800 street children, mentally ill persons, refugees, and other marginalized individuals in Kumasi (Amakom, WAEC Street, Asafo, and Jubilee Park).',
       'The campaign directly supplied less-privileged families with food staples, clothing, essential toiletries, and critical support worth millions of cedis.',
       'Rather than offering isolated charity, the project is structured as a "movement" designed to foster social solidarity and provide children with the baseline educational tools needed to stay in school.'
     ],
@@ -164,7 +164,7 @@ export const stories: Story[] = [
     imageAlt: 'A black and white portrait of a child looking into the camera during a community visit',
     quote: 'Sustainable human advancement starts by delivering targeted resources and structural aid to help marginalized individuals secure independent livelihoods.',
     body: [
-      'The foundational philosophy of the organization is heavily tied to its leadership\'s professional experience in strategic development. Founded by Prince Pepe Asamany, the organization\'s self-stated mission is to drive sustainable human advancement.',
+      'The foundational philosophy of the organization is heavily tied to its leadership\'s professional experience in strategic development. Founded by Prince Douglas Asamany, the organization\'s self-stated mission is to drive sustainable human advancement.',
       'Through Economic Literacy and District Upskilling programs, the foundation focuses on delivering training, targeted resources, and structural aid.',
       'This helps marginalized individuals secure independent, sustainable livelihoods rather than relying purely on short-term relief.',
       'By explicitly centering its workflow within the Ejisu Municipal layout, the foundation works directly with local assemblies, chiefs, and existing networks to ensure their volunteer campaigns do not duplicate state efforts but fill critical execution gaps.'

@@ -244,7 +244,7 @@ export function PaystackDonateButton() {
           <div className="bg-white rounded-[1.25rem] w-full max-w-md p-8 shadow-2xl relative">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-brand-cream text-brand-navy hover:bg-brand-gold transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-brand-cream text-brand-navy hover:bg-brand-gold transition-colors"
               aria-label="Close modal"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -263,7 +263,7 @@ export function PaystackDonateButton() {
               <p className="font-body text-sm text-brand-navy/70 mt-2">
                 {paystackConfigured
                   ? 'Enter your details to proceed with Paystack secure payment.'
-                  : 'Online card payment is coming soon. You can give right now via bank transfer or MTN MoMo.'}
+                  : 'Online card payment is almost here — and you can still give right now.'}
               </p>
             </div>
 

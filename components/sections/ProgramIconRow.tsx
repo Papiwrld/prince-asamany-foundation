@@ -30,7 +30,7 @@ export function ProgramIconRow() {
           </div>
           <Link
             href="/programs"
-            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 hover:text-brand-red-dark transition-colors duration-200 self-center whitespace-nowrap"
+            className="font-body text-sm font-semibold text-brand-navy border-b-2 border-brand-gold pb-1 py-1 hover:text-brand-red-dark transition-colors duration-200 self-center whitespace-nowrap"
           >
             All programs →
           </Link>

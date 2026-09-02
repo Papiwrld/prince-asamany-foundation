@@ -205,7 +205,7 @@ export function Navbar() {
             {/* Contact info at bottom */}
             <div className="mt-12 pt-8 border-t border-white/15 text-center px-2 pb-4">
               <p className="font-body text-sm text-white/70">{siteConfig.address.box}, {siteConfig.address.city}, Ashanti</p>
-              <a href={`tel:` + siteConfig.phone.tel} className="mt-3 inline-flex items-center justify-center gap-2 font-body text-lg font-bold text-brand-gold">
+              <a href={`tel:` + siteConfig.phone.tel} className="mt-3 inline-flex items-center justify-center gap-2 font-body text-lg font-bold text-brand-gold py-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" aria-hidden="true" />
                 {siteConfig.phone.display}
               </a>

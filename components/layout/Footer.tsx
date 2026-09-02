@@ -66,7 +66,7 @@ export function Footer() {
                 aria-label={s.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-btn border border-white/20 text-white/60 hover:text-brand-gold hover:border-brand-gold hover:scale-110 transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center rounded-btn border border-white/20 text-white/60 hover:text-brand-gold hover:border-brand-gold hover:scale-110 transition-all duration-200"
               >
                 {s.icon}
               </a>
@@ -79,12 +79,12 @@ export function Footer() {
           <h3 className="font-body text-xs font-bold uppercase tracking-[0.18em] text-brand-gold mb-5">
             Navigation
           </h3>
-          <ul className="flex flex-col gap-3 list-none m-0 p-0 items-center md:items-start" role="list">
+          <ul className="flex flex-col gap-1 list-none m-0 p-0 items-center md:items-start" role="list">
             {footerLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-body text-sm text-white/65 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block"
+                  className="font-body text-sm text-white/65 hover:text-white hover:translate-x-1 transition-all duration-200 inline-block py-1.5"
                 >
                   {link.label}
                 </Link>
@@ -115,7 +115,7 @@ export function Footer() {
               </svg>
               <a
                 href={`tel:${siteConfig.phone.tel}`}
-                className="font-body text-sm text-white/65 hover:text-brand-gold transition-colors duration-200 text-center md:text-left"
+                className="font-body text-sm text-white/65 hover:text-brand-gold transition-colors duration-200 text-center md:text-left inline-block py-1"
               >
                 {siteConfig.phone.display}
               </a>
@@ -126,7 +126,7 @@ export function Footer() {
               </svg>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="font-body text-sm text-white/65 hover:text-brand-gold transition-colors duration-200 text-center md:text-left break-all"
+                className="font-body text-sm text-white/65 hover:text-brand-gold transition-colors duration-200 text-center md:text-left break-all inline-block py-1"
               >
                 {siteConfig.email}
               </a>

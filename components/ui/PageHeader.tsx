@@ -70,7 +70,7 @@ export function PageHeader({ overline, title, description, bgImage, tone = 'navy
 
           <div className="mt-5 h-1 w-12 rounded-full bg-brand-gold opacity-80" aria-hidden="true" />
 
-          <p className="mt-6 font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl text-left lg:text-center">
+          <p className="mt-6 font-body text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl text-center">
             {description}
           </p>
         </div>

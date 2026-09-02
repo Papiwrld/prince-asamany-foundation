@@ -92,7 +92,7 @@ export function FounderHighlight() {
                 </motion.div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" aria-hidden="true" />
 
-                {/* Slide indicators — 32px hit areas around the visual dots */}
+                {/* Slide indicators — 40px hit areas around the visual dots */}
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10">
                   {founderPhotos.map((photo, i) => (
                     <button
@@ -101,7 +101,7 @@ export function FounderHighlight() {
                       onClick={() => setActive(i)}
                       aria-label={`Show photo ${i + 1} of ${founderPhotos.length}`}
                       aria-current={i === active}
-                      className="flex h-8 w-8 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
+                      className="flex h-10 w-10 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
                     >
                       <span
                         className={`h-1.5 rounded-full transition-all duration-300 ${

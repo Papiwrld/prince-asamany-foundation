@@ -22,7 +22,7 @@ export function TrustStrip() {
             </span>
             <span>
               <span className="block font-body text-sm font-bold text-brand-navy">Registered NGO</span>
-              <span className="block font-body text-xs text-brand-navy/65">Ejisu Municipal Assembly, Ghana</span>
+              <span className="block font-body text-xs text-brand-navy/80">Ejisu Municipal Assembly, Ghana</span>
             </span>
           </span>
 
@@ -47,7 +47,7 @@ export function TrustStrip() {
                   <path d="M7 17 17 7" /><path d="M7 7h10v10" />
                 </svg>
               </span>
-              <span className="block font-body text-xs text-brand-navy/65">Local coverage of our programs</span>
+              <span className="block font-body text-xs text-brand-navy/80">Local coverage of our programs</span>
             </span>
           </a>
 
@@ -62,7 +62,7 @@ export function TrustStrip() {
             </span>
             <span>
               <span className="block font-body text-sm font-bold text-brand-navy">2025 Social Change Advocate</span>
-              <span className="block font-body text-xs text-brand-navy/65">AFLAG Philanthropic Awards</span>
+              <span className="block font-body text-xs text-brand-navy/80">AFLAG Philanthropic Awards</span>
             </span>
           </span>
         </div>

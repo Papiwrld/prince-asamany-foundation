@@ -199,7 +199,7 @@ export default function AboutPage() {
           <div className="max-w-2xl mx-auto text-center mb-12">
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Leadership</span>
             <h2 id="founder-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
-              See the Recognition
+              Meet our founder
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -295,7 +295,9 @@ export default function AboutPage() {
               <div className="flex flex-col gap-6">
                 {values.map((v, i) => (
                   <div key={v.title} className="flex gap-5">
-                    <div className="font-display text-4xl font-black text-brand-gold/30 leading-none shrink-0 w-8">
+                    {/* Decorative numeral — hidden from assistive tech; navy/60 is the
+                        faintest shade that still passes WCAG large-text contrast on cream */}
+                    <div className="font-display text-4xl font-black text-brand-navy/60 leading-none shrink-0 w-8" aria-hidden="true">
                       {String(i + 1).padStart(2, '0')}
                     </div>
                     <div>

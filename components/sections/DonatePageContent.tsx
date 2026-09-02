@@ -88,7 +88,7 @@ function DonationCard({
         {logo && <div className="shrink-0">{logo}</div>}
         <div>
           <h3 className="font-display text-xl font-bold text-brand-navy">{title}</h3>
-          <p className="font-body text-sm text-brand-navy/60 mt-0.5">{subtitle}</p>
+          <p className="font-body text-sm text-brand-navy/75 mt-0.5">{subtitle}</p>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ export function DonatePageContent() {
             <h2 id="donate-heading" className="font-display text-3xl md:text-4xl font-bold text-brand-navy leading-tight">
               Choose your donation method
             </h2>
-            <p className="font-body text-base text-brand-navy/65 mt-3 leading-relaxed">
+            <p className="font-body text-base text-brand-navy/80 mt-3 leading-relaxed">
               Give online in minutes, or use the bank and MoMo details below. Every gift funds
               health, education, environment and welfare programs across Ejisu Municipal Assembly.
             </p>
@@ -145,8 +145,8 @@ export function DonatePageContent() {
               title="Guaranty Trust Bank"
               subtitle={siteConfig.donation.bank.branch}
               logo={
-                <div className="w-14 h-14 bg-brand-orange/10 rounded-btn flex items-center justify-center">
-                  <span className="font-body text-xs font-bold text-brand-orange text-center leading-tight">GT<br />Bank</span>
+                <div className="w-14 h-14 bg-brand-orange/10 rounded-btn flex items-center justify-center" aria-hidden="true">
+                  <span className="font-body text-xs font-bold text-brand-navy text-center leading-tight">GT<br />Bank</span>
                 </div>
               }
               rows={[
@@ -160,8 +160,8 @@ export function DonatePageContent() {
               title="MTN MoMo"
               subtitle={siteConfig.donation.momo.subtitle}
               logo={
-                <div className="w-14 h-14 bg-brand-gold/10 rounded-btn flex items-center justify-center">
-                  <span className="font-body text-xs font-bold text-brand-gold text-center leading-tight">MTN<br />MoMo</span>
+                <div className="w-14 h-14 bg-brand-gold/10 rounded-btn flex items-center justify-center" aria-hidden="true">
+                  <span className="font-body text-xs font-bold text-brand-navy text-center leading-tight">MTN<br />MoMo</span>
                 </div>
               }
               rows={[

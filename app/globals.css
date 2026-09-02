@@ -68,7 +68,7 @@ html {
 /* Prevent horizontal scroll from overflowing child elements, especially
    on small viewports where decorative offsets/absolute overlaps can bleed */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 

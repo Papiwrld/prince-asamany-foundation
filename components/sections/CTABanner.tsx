@@ -82,7 +82,7 @@ export function CTABanner() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="font-body text-sm text-white/70"
         >
-          Contact us: <a href={`tel:${siteConfig.phone.tel}`} className="text-brand-gold hover:text-brand-gold-light transition-colors duration-200">{siteConfig.phone.display}</a>
+          Contact us: <a href={`tel:${siteConfig.phone.tel}`} className="text-brand-gold hover:text-brand-gold-light transition-colors duration-200 inline-block py-1.5">{siteConfig.phone.display}</a>
         </motion.div>
       </div>
     </section>

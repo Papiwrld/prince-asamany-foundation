@@ -146,8 +146,10 @@ export function LeadershipRecognition() {
                     className="w-full aspect-video object-cover relative z-10"
                     aria-label="Award night highlights video: Prince Douglas Asamany receiving the 2025 Social Change Advocate Award"
                   >
-                    <source src="/media/award-night-highlights.webm" type="video/webm" />
+                    {/* mp4 first: the current webm encode is ~2x larger, so serve the
+                        smaller file to every browser that supports it */}
                     <source src="/media/award-night-highlights.mp4" type="video/mp4" />
+                    <source src="/media/award-night-highlights.webm" type="video/webm" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
