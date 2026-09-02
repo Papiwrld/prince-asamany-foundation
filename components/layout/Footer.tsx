@@ -82,17 +82,18 @@ export function Footer() {
           <h3 className="font-body text-xs font-bold uppercase tracking-[0.18em] text-brand-gold mb-5">
             Navigation
           </h3>
+          {/* 2-column centered grid on mobile, vertical list on desktop */}
           <ul
-            className="flex flex-col items-center md:items-start gap-1 list-none m-0 p-0 text-center md:text-left"
+            className="grid grid-cols-2 gap-x-6 gap-y-2 max-w-xs mx-auto md:max-w-none md:flex md:flex-col md:gap-1 list-none m-0 p-0 text-center md:text-left"
             role="list"
           >
             {footerLinks.map((link) => {
               const isDonate = link.href === '/donate';
               return (
-                <li key={link.href}>
+                <li key={link.href} className="flex justify-center md:justify-start">
                   <Link
                     href={link.href}
-                    className={`font-body text-sm hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-1.5 py-1.5 ${
+                    className={`font-body text-sm hover:translate-x-1 transition-all duration-200 inline-flex items-center justify-center md:justify-start gap-1.5 py-1.5 text-center md:text-left ${
                       isDonate
                         ? 'font-bold text-brand-gold hover:text-white'
                         : 'text-white/80 hover:text-white'
