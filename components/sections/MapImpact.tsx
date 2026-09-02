@@ -117,8 +117,11 @@ export function MapImpact() {
                     {activeHotspot.tag}
                   </span>
                 </div>
-                <p className="font-body text-xs text-brand-navy/70 font-medium mb-1">
-                  📍 {activeHotspot.area}
+                <p className="font-body text-xs text-brand-navy/70 font-medium mb-1 flex items-center gap-1.5">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-brand-red-dark shrink-0">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>{activeHotspot.area}</span>
                 </p>
                 <p className="font-body text-sm text-brand-navy/80 leading-relaxed">
                   {activeHotspot.impact}

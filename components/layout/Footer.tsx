@@ -82,9 +82,8 @@ export function Footer() {
           <h3 className="font-body text-xs font-bold uppercase tracking-[0.18em] text-brand-gold mb-5">
             Navigation
           </h3>
-          {/* 2-column compact grid on mobile to cut scroll budget, flex column on desktop */}
           <ul
-            className="grid grid-cols-2 gap-x-6 gap-y-2 max-w-xs mx-auto md:max-w-none md:flex md:flex-col md:gap-1 list-none m-0 p-0 text-left"
+            className="flex flex-col items-center md:items-start gap-1 list-none m-0 p-0 text-center md:text-left"
             role="list"
           >
             {footerLinks.map((link) => {
@@ -113,15 +112,15 @@ export function Footer() {
           <h3 className="font-body text-xs font-bold uppercase tracking-[0.18em] text-brand-gold mb-5">
             Contact Us
           </h3>
-          <address className="not-italic flex flex-col gap-4 max-w-xs mx-auto md:max-w-none text-left">
+          <address className="not-italic flex flex-col items-center md:items-start gap-5 text-center md:text-left">
             {/* Postal Address */}
-            <div className="flex items-start gap-3.5">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-2.5 md:gap-3.5 text-center md:text-left">
               <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                 </svg>
               </span>
-              <span className="font-body text-sm text-white/80 leading-relaxed">
+              <span className="font-body text-sm text-white/80 leading-relaxed text-center md:text-left">
                 {siteConfig.address.box}<br />
                 {siteConfig.address.line1}<br />
                 {siteConfig.address.line2}
@@ -129,7 +128,7 @@ export function Footer() {
             </div>
 
             {/* Telephone */}
-            <div className="flex items-center gap-3.5">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3.5 text-center md:text-left">
               <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.49 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.1 6.1l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -137,14 +136,14 @@ export function Footer() {
               </span>
               <a
                 href={`tel:${siteConfig.phone.tel}`}
-                className="font-body text-sm text-white/80 hover:text-brand-gold transition-colors duration-200 inline-block py-1"
+                className="font-body text-sm text-white/80 hover:text-brand-gold transition-colors duration-200 inline-block py-1 text-center md:text-left"
               >
                 {siteConfig.phone.display}
               </a>
             </div>
 
             {/* Email */}
-            <div className="flex items-center gap-3.5">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3.5 text-center md:text-left">
               <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold">
                   <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
@@ -152,7 +151,7 @@ export function Footer() {
               </span>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="font-body text-sm text-white/80 hover:text-brand-gold transition-colors duration-200 break-all inline-block py-1"
+                className="font-body text-sm text-white/80 hover:text-brand-gold transition-colors duration-200 break-all inline-block py-1 text-center md:text-left"
               >
                 {siteConfig.email}
               </a>
