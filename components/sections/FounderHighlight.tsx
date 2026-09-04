@@ -65,6 +65,13 @@ export function FounderHighlight() {
             className="flex flex-col gap-4 lg:col-span-7"
           >
             {/* Single auto-rotating frame — portrait ratio suits the source photos. Video lives on the About page. */}
+            <div className="relative">
+              {/* Gold warmth halo behind the portrait */}
+              <div
+                className="absolute -inset-4 rounded-full blur-3xl pointer-events-none"
+                style={{ background: "radial-gradient(ellipse at 60% 60%, rgba(248,166,20,0.18) 0%, transparent 70%)" }}
+                aria-hidden="true"
+              />
             <div className="relative rounded-card-lg overflow-hidden shadow-2xl">
               <div
                 className="relative aspect-[4/5] group"
@@ -113,6 +120,7 @@ export function FounderHighlight() {
                 </div>
               </div>
             </div>
+            </div>
           </motion.div>
 
           {/* Right Column: Text Content — stretched to share one height with the imagery */}
@@ -142,7 +150,7 @@ export function FounderHighlight() {
               Awarded the 2025 Social Change Advocate Award, Prince Asamany has dedicated his life to uplifting communities across the Ashanti Region through initiatives like &ldquo;Joy to the Street&rdquo; and preventive healthcare programs.
             </p>
 
-            <div className="border-t border-white/15 pt-6 pb-2 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5 w-full">
+            <div className="border-t border-white/15 pt-6 pb-2 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5 w-full" role="list">
               <div className="sm:text-left">
                 <p className="font-display text-xl font-bold text-brand-gold">2025</p>
                 <p className="font-body text-xs uppercase tracking-wider text-white/60 mt-1">Social Change Advocate honoree</p>
@@ -174,3 +182,4 @@ export function FounderHighlight() {
     </section>
   );
 }
+

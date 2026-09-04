@@ -11,8 +11,8 @@ import { blurProps } from '@/lib/media';
 export function StoryGrid() {
   return (
     <section className="relative overflow-hidden bg-brand-navy section-padding" aria-labelledby="stories-heading">
-      {/* Subtle dot texture */}
-      <div className="absolute inset-0 opacity-10" aria-hidden="true">
+      {/* Subtle dot texture with Aceternity radial falloff mask */}
+      <div className="absolute inset-0 opacity-15 radial-mask-falloff pointer-events-none" aria-hidden="true">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="storyDotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -38,7 +38,7 @@ export function StoryGrid() {
         </div>
 
         {/* Three-card grid on desktop, single featured card on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {stories.slice(0, 3).map((story, i) => (
             <motion.article
               key={story.id}
@@ -46,8 +46,10 @@ export function StoryGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className={`micro-card-lift group relative flex-col overflow-hidden rounded-card-lg bg-white shadow-xl focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4 ${i === 0 ? 'flex' : 'hidden md:flex'}`}
+              className="spotlight-card group relative flex flex-col overflow-hidden rounded-card-lg bg-white border border-brand-navy/5 hover:border-brand-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4"
             >
+              {/* Top specular highlight */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20" aria-hidden="true" />
               <div className="relative h-56 overflow-hidden shrink-0">
                 <Image
                   src={story.image}
@@ -57,7 +59,7 @@ export function StoryGrid() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   {...blurProps(story.image)}
                 />
-                <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
+                <div className={`absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-body font-semibold backdrop-blur-sm shadow-sm ${story.tagColor}`}>
                   {story.tag}
                 </div>
               </div>
@@ -73,16 +75,23 @@ export function StoryGrid() {
                   <div className="font-body text-xs font-semibold text-brand-red-dark mt-1">{story.date}</div>
                 )}
 
+                {story.location && (
+                  <div className="font-body text-xs text-brand-navy/50 mt-1 flex items-center justify-center gap-1">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {story.location}
+                  </div>
+                )}
                 <blockquote className="font-display italic text-base text-brand-navy/80 leading-relaxed mt-4">
                   &ldquo;{story.quote}&rdquo;
                 </blockquote>
 
                 <Link
                   href={`/stories/${story.id}`}
-                  className="mt-6 font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
+                  className="mt-6 font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none inline-flex items-center justify-center gap-1.5"
                   aria-label={`Read ${story.name}'s full story`}
                 >
-                  Read full story →
+                  <span>Read full story</span>
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
                 </Link>
               </div>
             </motion.article>
@@ -102,3 +111,6 @@ export function StoryGrid() {
     </section>
   );
 }
+
+
+

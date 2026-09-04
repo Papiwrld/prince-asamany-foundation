@@ -71,11 +71,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={cn(playfair.variable, plusJakarta.variable, "font-sans", geist.variable)}>
-      <head>
-        <link rel="icon" href="/logo.jpeg" type="image/jpeg" />
-      </head>
-      <body>
+    <html lang="en" className={cn(playfair.variable, plusJakarta.variable, "font-sans", geist.variable)}>
+<body>
         <MotionConfig reducedMotion="user">
           <a href="#main-content" className="skip-link">Skip to content</a>
           <Navbar />
@@ -89,3 +86,4 @@ export default function RootLayout({
     </html>
   );
 }
+

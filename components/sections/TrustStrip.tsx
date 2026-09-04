@@ -11,9 +11,9 @@ export function TrustStrip() {
   return (
     <section aria-label="Recognition and trust" className="bg-white border-y border-brand-navy/10 py-10 md:py-12">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-x-10 gap-y-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-x-0 gap-y-6 divide-y lg:divide-y-0 lg:divide-x divide-brand-navy/10">
           {/* Registered NGO */}
-          <span className="inline-flex items-center gap-3">
+          <span className="inline-flex items-center gap-3 px-8 first:pl-0 last:pr-0">
             <span className="w-10 h-10 rounded-btn bg-brand-navy text-white flex items-center justify-center shrink-0" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
@@ -31,7 +31,7 @@ export function TrustStrip() {
             href={latestPress?.href ?? 'https://www.choicenewsonline.com'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 group rounded-btn focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2"
+            className="inline-flex items-center gap-3 px-8 group rounded-btn focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2"
             aria-label={`Our work has been featured by ${latestPress?.outlet ?? 'Choice News Online'}. Read the latest article (opens in a new tab)`}
           >
             <span className="w-10 h-10 rounded-btn bg-brand-red text-white flex items-center justify-center shrink-0" aria-hidden="true">
@@ -52,7 +52,7 @@ export function TrustStrip() {
           </a>
 
           {/* Award */}
-          <span className="inline-flex items-center gap-3">
+          <span className="inline-flex items-center gap-3 px-8 first:pl-0 last:pr-0">
             <span className="w-10 h-10 rounded-btn bg-brand-gold text-brand-navy flex items-center justify-center shrink-0" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
@@ -70,3 +70,4 @@ export function TrustStrip() {
     </section>
   );
 }
+

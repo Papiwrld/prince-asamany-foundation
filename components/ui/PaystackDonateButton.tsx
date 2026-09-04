@@ -60,6 +60,8 @@ function loadPaystackScript(): Promise<void> {
       // Script tag is already in DOM but may still be loading
       existing.addEventListener('load', () => resolve());
       existing.addEventListener('error', () => reject(new Error('Paystack script failed to load')));
+      // Script may have already loaded between the check above and this listener:
+      if (window.PaystackPop) resolve();
       return;
     }
     const script = document.createElement('script');
@@ -84,7 +86,8 @@ export function PaystackDonateButton() {
   const dialogRef = useRef<HTMLDivElement>(null);
   const referenceRef = useRef<string>(generateReference());
 
-  const paystackConfigured = PAYSTACK_PUBLIC_KEY.length > 0;
+  const paystackConfigured =
+  PAYSTACK_PUBLIC_KEY.startsWith('pk_test_') || PAYSTACK_PUBLIC_KEY.startsWith('pk_live_');
 
   const openModal = () => {
     referenceRef.current = generateReference();

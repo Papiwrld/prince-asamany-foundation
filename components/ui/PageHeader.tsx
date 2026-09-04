@@ -43,7 +43,7 @@ export function PageHeader({ overline, title, description, bgImage, tone = 'navy
         </div>
       ) : (
         /* Abstract pattern if no image */
-        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+        <div className="absolute inset-0 opacity-[0.06] radial-mask-falloff pointer-events-none" aria-hidden="true">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -78,3 +78,4 @@ export function PageHeader({ overline, title, description, bgImage, tone = 'navy
     </section>
   );
 }
+

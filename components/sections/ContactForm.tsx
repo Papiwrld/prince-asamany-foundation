@@ -201,8 +201,7 @@ export function ContactForm() {
                 <input
                   type="text"
                   name="website"
-                  value=""
-                  readOnly
+                  defaultValue=""
                   aria-hidden="true"
                   tabIndex={-1}
                   autoComplete="off"
@@ -224,3 +223,4 @@ export function ContactForm() {
     </section>
   );
 }
+

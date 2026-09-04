@@ -93,7 +93,7 @@ export default function AboutPage() {
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">About Us</span>
+            <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Our Story</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-brand-navy mt-2 leading-tight">
               Who we are
             </h2>
@@ -365,3 +365,4 @@ export default function AboutPage() {
     </>
   );
 }
+

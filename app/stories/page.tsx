@@ -25,11 +25,13 @@ export default function StoriesPage() {
       <section className="bg-brand-cream section-padding" aria-labelledby="stories-grid-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <h2 id="stories-grid-heading" className="sr-only">Story grid</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {stories.map((story) => (
-              <article key={story.id} className="bg-white rounded-card-lg overflow-hidden group relative focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4">
+              <article key={story.id} className="spotlight-card group relative flex flex-col overflow-hidden rounded-card-lg bg-white border border-brand-navy/5 hover:border-brand-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4">
+                {/* Top specular highlight */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20" aria-hidden="true" />
                 {/* Photo */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden shrink-0">
                   <Image
                     src={story.image}
                     alt={story.imageAlt}
@@ -38,14 +40,14 @@ export default function StoriesPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     {...blurProps(story.image)}
                   />
-                  <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-body font-semibold ${story.tagColor}`}>
+                  <span className={`absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-body font-semibold backdrop-blur-sm shadow-sm ${story.tagColor}`}>
                     {story.tag}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col gap-3">
-                  <blockquote className="font-display italic text-base text-brand-navy leading-relaxed">
+                <div className="p-6 flex flex-col flex-grow gap-3 text-center">
+                  <blockquote className="font-display italic text-base text-brand-navy/80 leading-relaxed">
                     &ldquo;{story.quote}&rdquo;
                   </blockquote>
                   <footer className="mt-2">
@@ -60,7 +62,8 @@ export default function StoriesPage() {
                     className="font-body text-sm font-semibold text-brand-red-dark transition-colors duration-200 mt-2 inline-block py-1 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
                     aria-label={`Read ${story.name}'s full story`}
                   >
-                    Read full story →
+                    <span>Read full story</span>
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
                   </Link>
                 </div>
               </article>
@@ -91,3 +94,4 @@ export default function StoriesPage() {
     </>
   );
 }
+

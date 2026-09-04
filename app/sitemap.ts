@@ -15,15 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/donate', priority: 0.8 },
   ].map(({ path, priority }) => ({
     url: `${base}${path}`,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority,
   }));
 
   const storyPages: MetadataRoute.Sitemap = stories.map((story) => ({
     url: `${base}/stories/${story.id}`,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
   return [...staticPages, ...storyPages];
 }
+
