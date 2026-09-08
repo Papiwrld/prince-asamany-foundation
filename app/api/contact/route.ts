@@ -45,21 +45,21 @@ async function deliverMessage(payload: {
     payload.message,
   ].join('\n');
 
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    signal: AbortSignal.timeout(10000),
-    body: JSON.stringify({
-      from,
-      to: [EMAIL],
-      replyTo: payload.email,
-      subject: payload.subject,
-      text,
-    }),
-  });
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      signal: AbortSignal.timeout(10000),
+      body: JSON.stringify({
+        from,
+        to: ['paf.ghana.dev@gmail.com'], // Must match Resend account owner in test mode
+        replyTo: payload.email,
+        subject: payload.subject,
+        text,
+      }),
+    });
 
   if (!res.ok) {
     const bodyText = await res.text().catch(() => '');
