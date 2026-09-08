@@ -121,7 +121,7 @@ export function Navbar() {
             <Link
               href="/donate"
               id="nav-donate-cta"
-              className="micro-press shimmer-sheen font-body text-sm font-semibold bg-brand-red text-white px-5 py-2.5 rounded-btn hover:bg-brand-red-dark border-2 border-brand-red hover:border-brand-red-dark shadow-sm"
+              className="inline-block micro-press shimmer-sheen font-body text-sm font-semibold bg-brand-red text-white px-5 py-2.5 rounded-btn hover:bg-brand-red-dark border-2 border-brand-red hover:border-brand-red-dark shadow-sm"
             >
               Donate
             </Link>

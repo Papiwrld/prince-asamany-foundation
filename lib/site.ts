@@ -90,6 +90,7 @@ export const navLinks: { label: string; href: string }[] = [
     { label: 'About Us', href: '/about' },
     { label: 'Programs', href: '/programs' },
     { label: 'Stories', href: '/stories' },
+    { label: 'Events', href: '/events' },
     { label: 'Get Involved', href: '/get-involved' },
     { label: 'Contact', href: '/contact' },
 ];
