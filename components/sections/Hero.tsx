@@ -104,7 +104,7 @@ export function HeroSection() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full pt-24 pb-24 md:pt-28 md:pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 w-full pt-24 pb-16 md:pt-28 md:pb-20">
         <div className="flex flex-col items-center text-center gap-6 lg:gap-8 max-w-3xl mx-auto">
           {/* Overline */}
           <motion.div
@@ -183,29 +183,6 @@ export function HeroSection() {
           <GhanaMapSilhouette />
         </div>
       </motion.div>
-
-      {/* Carousel Indicator Navigation & Image Caption */}
-      <div className="absolute bottom-6 sm:bottom-8 inset-x-0 z-20 flex flex-col items-center gap-2 pointer-events-auto">
-        <div className="flex items-center gap-1.5 sm:gap-2 bg-brand-navy/60 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-white/15 shadow-xl">
-          {HERO_SLIDES.map((slide, idx) => (
-            <button
-              key={slide.src}
-              type="button"
-              onClick={() => setCurrentIndex(idx)}
-              aria-label={`View slide ${idx + 1}: ${slide.caption}`}
-              className={`transition-all duration-300 rounded-full h-1.5 sm:h-2 ${
-                idx === currentIndex
-                  ? 'w-6 sm:w-8 bg-brand-gold shadow-sm'
-                  : 'w-1.5 sm:w-2 bg-white/40 hover:bg-white/70'
-              }`}
-            />
-          ))}
-        </div>
-        <div className="flex items-center gap-1.5 text-xs text-white/80 font-body tracking-wider uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
-          <span>{HERO_SLIDES[currentIndex].caption}</span>
-        </div>
-      </div>
     </section>
   );
 }
