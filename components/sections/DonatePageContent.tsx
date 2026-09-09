@@ -5,7 +5,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { siteConfig } from '@/lib/site';
 import { pressItems } from '@/lib/content';
-import { GIVE_TIERS } from '@/components/ui/PaystackDonateButton';
+import { GIVE_TIERS, PaystackDonateButtonHandle } from '@/components/ui/PaystackDonateButton';
 
 const PaystackDonateButton = dynamic(
   () => import('@/components/ui/PaystackDonateButton').then((mod) => mod.PaystackDonateButton),
@@ -103,6 +103,12 @@ function DonationCard({
 }
 
 export function DonatePageContent() {
+  const paystackRef = useRef<PaystackDonateButtonHandle>(null);
+
+  const handleTierClick = (amount: string) => {
+    paystackRef.current?.openWithAmount(amount);
+  };
+
   return (
     <>
       {/* Donation cards */}
@@ -118,8 +124,9 @@ export function DonatePageContent() {
             </p>
           </div>
 
-          <div className="flex justify-center mb-10">
-            <PaystackDonateButton />
+          <div className="flex flex-col items-center gap-3 mb-10">
+            <PaystackDonateButton ref={paystackRef} />
+            <p className="font-body text-sm text-brand-navy/60">or tap a giving tier below to pre-fill the amount</p>
           </div>
 
           {/* Impact-anchored giving tiers */}
@@ -127,11 +134,18 @@ export function DonatePageContent() {
             {GIVE_TIERS.map((tier) => (
               <li
                 key={tier.amount}
-                className="rounded-card-lg bg-white border border-brand-navy/5 shadow-sm px-5 py-6 text-center transition-all duration-200 hover:shadow-md"
+                className="list-none"
               >
-                <span className="block font-display text-xl font-bold text-brand-navy">{tier.label}</span>
-                <span className="block w-8 h-0.5 bg-brand-gold mx-auto my-2.5" aria-hidden="true" />
-                <span className="block font-body text-sm text-brand-navy/75 leading-relaxed">{tier.impact}</span>
+                <button
+                  type="button"
+                  onClick={() => handleTierClick(tier.amount)}
+                  className="group w-full rounded-card-lg bg-white border border-brand-navy/5 shadow-sm px-5 py-6 text-center transition-all duration-200 hover:shadow-md hover:border-brand-gold/60 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span className="block font-display text-xl font-bold text-brand-navy group-hover:text-brand-red-dark transition-colors">{tier.label}</span>
+                  <span className="block w-8 h-0.5 bg-brand-gold mx-auto my-2.5" aria-hidden="true" />
+                  <span className="block font-body text-sm text-brand-navy/75 leading-relaxed">{tier.impact}</span>
+                  <span className="block mt-3 font-body text-xs font-semibold text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">Tap to donate this amount</span>
+                </button>
               </li>
             ))}
           </ul>

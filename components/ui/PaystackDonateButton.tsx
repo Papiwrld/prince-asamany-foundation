@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 // Set NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY in .env.local with your real Paystack key.
 const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '';
@@ -73,7 +73,15 @@ function loadPaystackScript(): Promise<void> {
   });
 }
 
-export function PaystackDonateButton() {
+export interface PaystackDonateButtonHandle {
+  openWithAmount: (amount: string) => void;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+interface PaystackDonateButtonProps {}
+
+export const PaystackDonateButton = React.forwardRef<PaystackDonateButtonHandle, PaystackDonateButtonProps>(
+  function PaystackDonateButton(_props, ref) {
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -223,6 +231,17 @@ export function PaystackDonateButton() {
       setFormError('Unable to start the payment window. Please try again.');
     }
   };
+
+  const openWithAmount = useCallback((presetAmount: string) => {
+    referenceRef.current = generateReference();
+    setFieldErrors({});
+    setFormError('');
+    setStatusMsg('');
+    setAmount(presetAmount);
+    setIsOpen(true);
+  }, []);
+
+  useImperativeHandle(ref, () => ({ openWithAmount }), [openWithAmount]);
 
   return (
     <>
@@ -398,4 +417,5 @@ export function PaystackDonateButton() {
       )}
     </>
   );
-}
+  }
+);

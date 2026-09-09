@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 
 import { stories } from '@/lib/content';
 import { blurProps } from '@/lib/media';
+import { StoryGallery } from '@/components/ui/StoryGallery';
 
 type StoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -209,31 +210,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
               </div>
               <span className="font-body text-sm text-brand-navy/70">{story.gallery.length} photos</span>
             </div>
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-6 sm:grid sm:grid-cols-3 md:grid-cols-4 md:gap-4 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              {story.gallery.map((img, i) => (
-                <div
-                  key={img.src}
-                  className={`relative rounded-card-lg overflow-hidden group shrink-0 snap-center w-[85vw] sm:w-auto ${
-                    // Make first image span 2 columns for a featured feel on desktop
-                    i === 0 ? 'sm:col-span-2 sm:row-span-2 aspect-[4/3] sm:aspect-auto' : 'aspect-[4/3]'
-                  }`}
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    sizes={i === 0
-                      ? '(max-width: 640px) 100vw, (max-width: 768px) 66vw, 50vw'
-                      : '(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw'
-                    }
-                    {...blurProps(img.src)}
-                  />
-                  {/* Subtle hover overlay */}
-                  <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/20 transition-colors duration-300" />
-                </div>
-              ))}
-            </div>
+            <StoryGallery photos={story.gallery} storyName={story.name} />
           </section>
         )}
 
