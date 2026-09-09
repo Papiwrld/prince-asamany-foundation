@@ -38,7 +38,7 @@ export function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
-  // Focus trap for mobile menu — includes the header hamburger so keyboard
+  // Focus trap for mobile menu - includes the header hamburger so keyboard
   // users can always Tab back to the close control
   useEffect(() => {
     if (!menuOpen) return;

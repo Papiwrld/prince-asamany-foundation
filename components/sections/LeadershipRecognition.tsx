@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { AwardGallery } from '@/components/sections/AwardGallery';
 import { blurProps } from '@/lib/media';
 
-/* Premium ease — smooth deceleration, no bounce */
+/* Premium ease - smooth deceleration, no bounce */
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const PlayChipIcon = () => (
@@ -17,13 +17,13 @@ const PlayChipIcon = () => (
 );
 
 const VIDEO_POSTER = '/media/opt/award-night-poster.webp';
-/* AFLAG honoree card frame extracted at 0:95 — strong representative poster, not frame 0 */
+/* AFLAG honoree card frame extracted at 0:95 - strong representative poster, not frame 0 */
 
 export function LeadershipRecognition() {
   const [playing, setPlaying] = useState(false);
 
   const startVideo = () => {
-    /* User gesture — autoplay with sound is permitted here */
+    /* User gesture - autoplay with sound is permitted here */
     setPlaying(true);
   };
 
@@ -156,7 +156,7 @@ export function LeadershipRecognition() {
               </div>
             )}
 
-            {/* Supporting copy — balances column height with the text side */}
+            {/* Supporting copy - balances column height with the text side */}
             <div className="mt-6 lg:mt-8 flex flex-col gap-5">
               <p className="font-body text-base md:text-lg text-white/70 leading-relaxed">
                 Beyond direct humanitarian outreach, AFLAG also emphasized his rising influence as a promoter of{' '}

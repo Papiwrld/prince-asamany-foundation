@@ -24,7 +24,7 @@ export function StoryGrid() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
-        {/* Heading — centered "moment" statement */}
+        {/* Heading - centered "moment" statement */}
         <div className="max-w-2xl mx-auto mb-12 md:mb-16 text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-gold">
             Impact Stories

@@ -14,7 +14,7 @@ export function AsymmetricCards() {
       aria-labelledby="impact-cards-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Section heading — centered "moment" statement */}
+        {/* Section heading - centered "moment" statement */}
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">
             Our Impact
@@ -69,11 +69,11 @@ export function AsymmetricCards() {
               sizes="(max-width: 768px) 100vw, 33vw"
               {...blurProps('/media/opt/IMG_6848.webp')}
             />
-            {/* Gradient scrim — stronger toward the bottom-left where text sits,
+            {/* Gradient scrim - stronger toward the bottom-left where text sits,
                  fading to clean toward the top-right, for an Apple-like focal balance. */}
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy via-brand-navy/55 to-transparent" aria-hidden="true" />
             
-            {/* Overlay content — horizontally centered, anchored to the bottom */}
+            {/* Overlay content - horizontally centered, anchored to the bottom */}
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-end px-8 pb-10 pt-20 text-center md:px-12 md:pb-12">
               <div className="flex flex-col items-center max-w-md">
                 <span className="w-10 h-0.5 bg-brand-gold rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>

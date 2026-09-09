@@ -37,7 +37,7 @@ export function PhotoCollage() {
                 />
               </div>
 
-              {/* Secondary photo — stacked below on mobile/tablet, overlapped bottom-right at lg+ */}
+              {/* Secondary photo - stacked below on mobile/tablet, overlapped bottom-right at lg+ */}
               <div
                 className="relative mt-6 lg:mt-0 lg:absolute lg:-bottom-10 lg:-right-8 lg:w-56 lg:h-44 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-20"
               >
@@ -53,7 +53,7 @@ export function PhotoCollage() {
                 </div>
               </div>
 
-              {/* Third photo — overlapped top-left at lg+ */}
+              {/* Third photo - overlapped top-left at lg+ */}
               <div
                 className="hidden lg:block lg:absolute lg:-top-10 lg:-left-8 lg:w-48 lg:h-48 rounded-card-lg overflow-hidden border-4 border-white shadow-lg z-20"
               >

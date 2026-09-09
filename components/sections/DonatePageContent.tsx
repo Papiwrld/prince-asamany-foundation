@@ -280,7 +280,7 @@ export function DonatePageContent() {
         </div>
       </section>
 
-      {/* Donation FAQs — objection handling near the ask */}
+      {/* Donation FAQs - objection handling near the ask */}
       <section className="bg-brand-cream section-padding" aria-labelledby="donate-faq-heading">
         <div className="max-w-3xl mx-auto px-5 md:px-8">
           <div className="text-center mb-10">

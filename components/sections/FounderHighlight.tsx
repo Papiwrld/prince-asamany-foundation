@@ -64,7 +64,7 @@ export function FounderHighlight() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="flex flex-col gap-4 lg:col-span-7"
           >
-            {/* Single auto-rotating frame — portrait ratio suits the source photos. Video lives on the About page. */}
+            {/* Single auto-rotating frame - portrait ratio suits the source photos. Video lives on the About page. */}
             <div className="relative">
               {/* Gold warmth halo behind the portrait */}
               <div
@@ -99,7 +99,7 @@ export function FounderHighlight() {
                 </motion.div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" aria-hidden="true" />
 
-                {/* Slide indicators — 40px hit areas around the visual dots */}
+                {/* Slide indicators - 40px hit areas around the visual dots */}
                 <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10">
                   {founderPhotos.map((photo, i) => (
                     <button
@@ -123,7 +123,7 @@ export function FounderHighlight() {
             </div>
           </motion.div>
 
-          {/* Right Column: Text Content — stretched to share one height with the imagery */}
+          {/* Right Column: Text Content - stretched to share one height with the imagery */}
           <motion.div 
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -313,7 +313,7 @@ export async function getEvents(): Promise<EventsResponse> {
       };
     }
 
-    // Parse header to map columns dynamically — works with both manual sheets and Google Forms
+    // Parse header to map columns dynamically - works with both manual sheets and Google Forms
     const header = rows[0].map((h) => h.toLowerCase().replace(/[^a-z0-9]/g, ''));
     const colIndex = {
       title: header.findIndex((h) => !h.includes('timestamp') && (h.includes('title') || h.includes('name') || h.includes('event'))),

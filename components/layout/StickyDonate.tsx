@@ -8,7 +8,7 @@ export function StickyDonate() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
-  // Pages with a Donate Now button near the footer — sticky button is redundant there
+  // Pages with a Donate Now button near the footer - sticky button is redundant there
   const redundantPaths = ['/', '/about', '/programs', '/get-involved', '/stories'];
   const isRedundant =
     pathname === '/donate' || redundantPaths.some((p) => p === '/' ? pathname === '/' : pathname.startsWith(p));

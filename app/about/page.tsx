@@ -193,7 +193,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Meet the Founder — editorial profile */}
+      {/* Meet the Founder - editorial profile */}
       <section className="bg-brand-cream section-padding overflow-hidden" aria-labelledby="founder-heading">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
@@ -295,7 +295,7 @@ export default function AboutPage() {
               <div className="flex flex-col gap-6">
                 {values.map((v, i) => (
                   <div key={v.title} className="flex gap-5">
-                    {/* Decorative numeral — hidden from assistive tech; navy/60 is the
+                    {/* Decorative numeral - hidden from assistive tech; navy/60 is the
                         faintest shade that still passes WCAG large-text contrast on cream */}
                     <div className="font-display text-4xl font-black text-brand-navy/60 leading-none shrink-0 w-8" aria-hidden="true">
                       {String(i + 1).padStart(2, '0')}

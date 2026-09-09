@@ -14,7 +14,7 @@ interface GalleryImage {
 }
 
 /* Intrinsic dimensions of each source photo so the masonry keeps natural
-   aspect ratios — no cropping. */
+   aspect ratios - no cropping. */
 const IMAGES: GalleryImage[] = [
   { src: '/media/opt/IMG-20251118-WA0038.webp', alt: 'Prince Douglas Asamany on the red carpet holding the 2025 Social Change Advocate Award trophy and citation', caption: 'On the red carpet with the trophy and citation', width: 854, height: 1280 },
   { src: '/media/opt/IMG_6934.webp', alt: 'Foundation volunteers in Prince Asamany Foundation shirts celebrating with raised arms outside the Santasi event centre in Kumasi', caption: 'Team celebration after a street outreach in Santasi', width: 1384, height: 1038 },
@@ -132,7 +132,7 @@ const [active, setActive] = useState<number | null>(null);
             aria-label={`View photo: ${img.caption}`}
             className="group relative shrink-0 snap-center w-[85vw] sm:w-full mb-0 sm:mb-4 md:mb-6 break-inside-avoid block overflow-hidden rounded-card-lg border border-white/15 shadow-2xl bg-brand-navy focus-visible:outline-2 focus-visible:outline-brand-gold focus-visible:outline-offset-2"
           >
-            {/* Main Image — natural aspect ratio, never cropped */}
+            {/* Main Image - natural aspect ratio, never cropped */}
             <Image
               src={img.src}
               alt={img.alt}

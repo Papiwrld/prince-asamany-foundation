@@ -9,7 +9,7 @@ const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
- * Paystack inline popup type — matches the global `PaystackPop` object
+ * Paystack inline popup type - matches the global `PaystackPop` object
  * injected by https://js.paystack.co/v1/inline.js
  */
 declare global {
@@ -33,7 +33,7 @@ const generateReference = () =>
 
 /**
  * Impact-anchored giving tiers (landing-page best practice: concrete specificity
- * beats open amounts). Wording is deliberately conservative — "helps provide" —
+ * beats open amounts). Wording is deliberately conservative - "helps provide" -
  * so it stays accurate even as program costs change.
  */
 export interface GiveTier {
@@ -180,7 +180,7 @@ export function PaystackDonateButton() {
     e.preventDefault();
     if (processing) return;
 
-    // Per-field validation — errors are announced and tied to their input
+    // Per-field validation - errors are announced and tied to their input
     // via aria-describedby, directly beneath the field.
     const errors: { email?: string; amount?: string } = {};
     if (!amount || parseFloat(amount) <= 0) {
@@ -272,7 +272,7 @@ export function PaystackDonateButton() {
               <p className="font-body text-sm text-brand-navy/70 mt-2">
                 {paystackConfigured
                   ? 'Enter your details to proceed with Paystack secure payment.'
-                  : 'Online card payment is almost here — and you can still give right now.'}
+                  : 'Online card payment is almost here - and you can still give right now.'}
               </p>
             </div>
 

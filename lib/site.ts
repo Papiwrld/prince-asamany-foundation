@@ -43,7 +43,7 @@ export const siteConfig: SiteConfig = {
         tel: '+233553045832',
     },
 
-    // NOTE: verify this address is correct — it is used for the contact form /
+    // NOTE: verify this address is correct - it is used for the contact form /
     // footer email. If you use a different inbox, update it here.
     email: 'pasamanyfoundation@gmail.com',
 

@@ -111,7 +111,7 @@ export default function ProgramsPage() {
           <div className="max-w-7xl mx-auto px-5 md:px-8">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
 
-              {/* Image — editorial stack when a secondary photo exists */}
+              {/* Image - editorial stack when a secondary photo exists */}
               <div className="relative">
                 <div className="relative rounded-card-lg overflow-hidden aspect-[4/3] group">
                   <Image

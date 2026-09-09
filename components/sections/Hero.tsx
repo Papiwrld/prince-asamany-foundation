@@ -46,7 +46,7 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Headline — centered on mobile, balanced measure */}
+            {/* Headline - centered on mobile, balanced measure */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export function HeroSection() {
               Municipal Assembly.
             </motion.p>
 
-            {/* CTAs — centered on mobile, side-by-side on larger screens */}
+            {/* CTAs - centered on mobile, side-by-side on larger screens */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export function HeroSection() {
 
       </div>
 
-      {/* Ghana map accent — subtle backdrop on desktop, kept out of the centered flow */}
+      {/* Ghana map accent - subtle backdrop on desktop, kept out of the centered flow */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}

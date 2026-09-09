@@ -15,7 +15,7 @@ export function ProgramIconRow() {
       aria-labelledby="programs-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* Heading row — centered "moment" statement */}
+        {/* Heading row - centered "moment" statement */}
         <div className="flex flex-col items-center text-center gap-6 mb-14">
           <div>
             <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">

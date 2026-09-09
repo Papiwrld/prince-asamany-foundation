@@ -39,7 +39,7 @@ export function EventsSection({ events }: EventsSectionProps) {
               Join us on the ground
             </h2>
             <p className="mt-4 font-body text-lg text-slate-600 leading-relaxed max-w-xl">
-              From free community health screenings and deworming initiatives to rural farmer workshops — explore our upcoming schedules.
+              From free community health screenings and deworming initiatives to rural farmer workshops - explore our upcoming schedules.
             </p>
           </div>
 

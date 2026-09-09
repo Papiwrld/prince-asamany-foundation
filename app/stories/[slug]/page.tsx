@@ -44,7 +44,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
   const prevStory = stories[(currentIndex - 1 + stories.length) % stories.length];
   const nextStory = stories[(currentIndex + 1) % stories.length];
 
-  /* "About this story" metadata — rendered in the sticky sidebar on desktop
+  /* "About this story" metadata - rendered in the sticky sidebar on desktop
      and as a card above the article on mobile. */
   const aboutMeta = (
     <>
@@ -92,7 +92,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-brand-navy/10" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-brand-gold" aria-hidden="true" />
 
-        {/* Hero text — anchored to bottom */}
+        {/* Hero text - anchored to bottom */}
         <div className="absolute inset-x-0 bottom-0 max-w-7xl mx-auto px-5 md:px-8 pb-12 md:pb-16">
           <nav aria-label="Breadcrumb" className="mb-5">
             <Link
@@ -127,7 +127,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
 
             {/* ── Left: Article prose ── */}
             <div className="min-w-0">
-              {/* About this story — mobile only (desktop uses the sticky sidebar) */}
+              {/* About this story - mobile only (desktop uses the sticky sidebar) */}
               <div className="lg:hidden bg-white rounded-card-lg border border-brand-navy/10 p-6 mb-10">
                 {aboutMeta}
               </div>
@@ -199,7 +199,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
           </div>
         </div>
 
-        {/* ── Photo gallery — full width ── */}
+        {/* ── Photo gallery - full width ── */}
         {story.gallery && story.gallery.length > 0 && (
           <section className="pb-20 max-w-7xl mx-auto px-5 md:px-8" aria-label={`Photo gallery from ${story.name}`}>
             <div className="border-t border-brand-navy/10 pt-14 mb-10 flex items-center justify-between">
