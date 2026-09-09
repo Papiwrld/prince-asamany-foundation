@@ -74,7 +74,7 @@ export function FounderHighlight() {
               />
             <div className="relative rounded-card-lg overflow-hidden shadow-2xl">
               <div
-                className="relative aspect-[4/5] group"
+                className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/5] group"
                 onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)}
                 onFocusCapture={() => setPaused(true)}

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { GhanaMapSilhouette } from '@/components/ui/illustrations';
 import { blurProps } from '@/lib/media';
 
-const HERO_IMAGE = '/media/opt/IMG_4403_2.webp';
+const HERO_IMAGE = '/media/opt/IMG_6871.webp';
 
 export function HeroSection() {
   return (
@@ -15,21 +15,21 @@ export function HeroSection() {
       className="relative min-h-screen bg-brand-navy overflow-hidden flex items-center"
       aria-label="Hero, Prince Asamany Foundation"
     >
-      {/* Background photo, full bleed, dark overlay */}
+      {/* Background photo, full bleed, editorial gradient overlay */}
       <div className="absolute inset-0">
         <Image
           src={HERO_IMAGE}
-          alt="Foundation volunteer in a Santa hat handing a holiday gift to a child over a car boot during the Joy to the Street outreach in Kumasi"
+          alt="Prince Douglas Asamany and foundation volunteers in official shirts with community members and children in Ashanti Region, Ghana"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[center_28%] md:object-[center_24%]"
           priority
-          quality={82}
+          quality={88}
           sizes="100vw"
           {...blurProps(HERO_IMAGE)}
         />
-        {/* Lightened overlay so image color shows through */}
-        <div className="absolute inset-0 bg-brand-navy/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-brand-navy/20 to-transparent" />
+        {/* Subtle dual gradient: protects text legibility at top while keeping the smiling community bright, vibrant, and natural */}
+        <div className="absolute inset-0 bg-brand-navy/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/65 via-brand-navy/20 to-brand-navy/70" />
       </div>
 
       {/* Main content */}

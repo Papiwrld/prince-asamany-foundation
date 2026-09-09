@@ -54,7 +54,7 @@ export function LeadershipRecognition() {
 
             <blockquote className="border-l-4 border-brand-gold pl-6 mt-2">
               <p className="font-display text-xl md:text-2xl italic leading-snug text-white">
-                &ldquo;A humble, strategic, and impact-driven leader whose work stands as a model for service-oriented citizenship.&rdquo;
+                &ldquo;A humble, visionary, and compassionate community leader whose work stands as a model for service-oriented citizenship.&rdquo;
               </p>
               <footer className="mt-2 text-sm text-brand-gold font-semibold uppercase tracking-wider">Rita Ama Nupe Demuyakor, AFLAG Founder</footer>
             </blockquote>

@@ -6,7 +6,15 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/lib/site';
 
-export function CTABanner() {
+interface CTABannerProps {
+  primaryAction?: { href: string; label: string };
+  secondaryAction?: { href: string; label: string };
+}
+
+export function CTABanner({
+  primaryAction = { href: '/donate', label: 'Donate Now' },
+  secondaryAction = { href: '/get-involved', label: 'Become a Volunteer' },
+}: CTABannerProps = {}) {
   return (
     <section
       className="relative bg-brand-navy overflow-hidden py-20 md:py-28"
@@ -60,18 +68,18 @@ export function CTABanner() {
           className="flex flex-col sm:flex-row gap-4 w-full justify-center"
         >
           <Link
-            href="/donate"
+            href={primaryAction.href}
             id="cta-donate-btn"
             className="inline-flex items-center justify-center font-body font-semibold text-base bg-brand-red text-white px-8 py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark transition-all duration-200 active:scale-[0.98] w-full sm:w-auto"
           >
-            Donate Now
+            {primaryAction.label}
           </Link>
           <Link
-            href="/get-involved"
+            href={secondaryAction.href}
             id="cta-volunteer-btn"
             className="inline-flex items-center justify-center font-body font-semibold text-base bg-transparent text-white px-8 py-4 rounded-btn border-2 border-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-all duration-200 w-full sm:w-auto"
           >
-            Become a Volunteer
+            {secondaryAction.label}
           </Link>
         </motion.div>
 

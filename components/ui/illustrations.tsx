@@ -1,32 +1,49 @@
 import React from 'react';
+import {
+  GHANA_OUTLINE_PATH,
+  LAKE_VOLTA_PATH,
+  ASHANTI_REGION_PATH,
+} from './ghanaMapData';
 
-// Ghana/Ashanti map silhouette as inline SVG
+// Authentic Ghana national silhouette with Lake Volta and Ashanti Region
 export function GhanaMapSilhouette() {
   return (
     <svg
-      viewBox="0 0 300 380"
+      viewBox="0 0 964 1304"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="w-full h-full"
+      className="w-full h-full select-none"
     >
+      {/* Ghana National Silhouette */}
       <path
-        d="M150 20 L230 45 L270 90 L275 150 L260 200 L250 240 L230 270 L200 300 L170 330 L150 355 L130 330 L100 300 L70 270 L50 240 L40 200 L25 150 L30 90 L70 45 Z"
+        d={GHANA_OUTLINE_PATH}
         className="fill-brand-gold stroke-brand-gold"
         fillOpacity="0.15"
+        strokeWidth="4"
+        strokeOpacity="0.45"
+      />
+      {/* Lake Volta */}
+      <path
+        d={LAKE_VOLTA_PATH}
+        className="fill-brand-gold stroke-brand-gold"
+        fillOpacity="0.3"
         strokeWidth="2"
         strokeOpacity="0.4"
       />
+      {/* Ashanti Region */}
       <path
-        d="M120 180 L180 175 L195 200 L185 230 L160 245 L135 240 L115 220 Z"
+        d={ASHANTI_REGION_PATH}
         className="fill-brand-gold stroke-brand-gold"
-        fillOpacity="0.45"
-        strokeWidth="1.5"
+        fillOpacity="0.5"
+        strokeWidth="5"
+        strokeOpacity="0.9"
       />
-      <circle cx="155" cy="208" r="8" className="fill-brand-red" />
-      <circle cx="155" cy="208" r="4" className="fill-white" />
-      <circle className="pulse-ring stroke-brand-red" cx="155" cy="208" r="14" strokeWidth="1.5" strokeOpacity="0.5" fill="none" />
-      <text x="168" y="212" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="11" className="fill-brand-gold" fontWeight="600">
+      {/* Ejisu Focal Pin */}
+      <circle cx="395" cy="870" r="16" className="fill-brand-red" />
+      <circle cx="395" cy="870" r="8" className="fill-white" />
+      <circle className="pulse-ring stroke-brand-red" cx="395" cy="870" r="28" strokeWidth="3" strokeOpacity="0.6" fill="none" />
+      <text x="425" y="878" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="28" className="fill-brand-gold" fontWeight="700">
         Ejisu
       </text>
     </svg>
@@ -51,8 +68,8 @@ export const MAP_HOTSPOTS: MapHotspot[] = [
     area: 'Ejisu Municipal Assembly',
     tag: 'Foundation HQ & Agriculture',
     tagColor: 'bg-brand-green text-white',
-    x: 218,
-    y: 216,
+    x: 425,
+    y: 905,
     impact: 'Foundation headquarters, farmers’ cooperative empowerment, and youth workshops.',
   },
   {
@@ -61,8 +78,8 @@ export const MAP_HOTSPOTS: MapHotspot[] = [
     area: 'Mansa Memorial Hospital',
     tag: 'Preventive Healthcare',
     tagColor: 'bg-brand-red text-white',
-    x: 202,
-    y: 195,
+    x: 395,
+    y: 870,
     impact: 'Annual free cervical cancer screenings and preventive health education.',
   },
   {
@@ -71,8 +88,8 @@ export const MAP_HOTSPOTS: MapHotspot[] = [
     area: 'Amakom, Asafo & WAEC',
     tag: 'Social Welfare',
     tagColor: 'bg-brand-navy text-white',
-    x: 172,
-    y: 208,
+    x: 345,
+    y: 890,
     impact: 'Annual "Joy to the Street" relief campaign reaching 800+ street children and vulnerable families.',
   },
   {
@@ -81,13 +98,13 @@ export const MAP_HOTSPOTS: MapHotspot[] = [
     area: 'Akyawkrom Corridor',
     tag: 'Student Wellness',
     tagColor: 'bg-brand-gold text-brand-navy',
-    x: 232,
-    y: 178,
+    x: 445,
+    y: 845,
     impact: 'Free deworming medication and hygiene training for 84 Natural Resources students.',
   },
 ];
 
-// Ashanti region interactive SVG map
+// Authentic Ghana National Map with Ashanti Region & Lake Volta
 export function AshantiMap({
   activeId = 'akyawkrom',
   onSelect,
@@ -97,62 +114,93 @@ export function AshantiMap({
 }) {
   return (
     <svg
-      viewBox="0 0 400 320"
+      viewBox="0 0 964 1304"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full max-w-md mx-auto select-none"
-      aria-label="Interactive map highlighting Prince Asamany Foundation hotspots in the Ashanti Region"
+      className="w-full max-w-sm sm:max-w-md mx-auto select-none"
+      aria-label="Interactive map of Ghana highlighting Prince Asamany Foundation community programs in the Ashanti Region"
       role="img"
     >
+      {/* Full Ghana Landmass */}
       <path
-        d="M200 15 L295 38 L350 85 L358 148 L342 200 L320 245 L295 278 L255 305 L200 318 L145 305 L105 278 L80 245 L58 200 L42 148 L50 85 L105 38 Z"
-        className="fill-brand-green stroke-brand-green"
-        fillOpacity="0.10"
-        strokeWidth="1.5"
-        strokeOpacity="0.3"
+        d={GHANA_OUTLINE_PATH}
+        className="fill-brand-gold/10 stroke-brand-navy/35"
+        strokeWidth="3.5"
       />
+
+      {/* Lake Volta */}
       <path
-        d="M155 170 L195 162 L238 168 L258 190 L252 218 L228 235 L198 242 L168 238 L148 220 L145 198 Z"
-        className="fill-brand-gold stroke-brand-gold"
-        fillOpacity="0.3"
+        d={LAKE_VOLTA_PATH}
+        className="fill-sky-100 stroke-sky-400/50"
         strokeWidth="2"
-        strokeOpacity="0.65"
       />
+
+      {/* Lake Volta Label */}
       <text
-        x="166"
-        y="178"
-        fontFamily="Plus Jakarta Sans, sans-serif"
-        fontSize="10"
-        className="fill-brand-gold"
-        fontWeight="600"
-        opacity="0.9"
+        x="660"
+        y="780"
+        className="fill-sky-600/70 text-[26px] font-body font-semibold italic pointer-events-none select-none"
+      >
+        Lake Volta
+      </text>
+
+      {/* Gulf of Guinea label along South coast */}
+      <text
+        x="450"
+        y="1260"
+        textAnchor="middle"
+        className="fill-brand-navy/35 text-[26px] font-body tracking-[0.2em] uppercase font-bold pointer-events-none select-none"
+      >
+        Gulf of Guinea
+      </text>
+
+      {/* Ashanti Region Highlight (Warm gold tinted beacon) */}
+      <path
+        d={ASHANTI_REGION_PATH}
+        className="fill-brand-gold/30 stroke-brand-navy/40"
+        strokeWidth="3"
+      />
+
+      {/* Ashanti Region subtle label */}
+      <text
+        x="370"
+        y="760"
+        className="fill-brand-navy/55 text-[24px] font-display font-bold italic pointer-events-none select-none"
       >
         Ashanti Region
       </text>
 
-      {/* Interactive Hotspots */}
+      {/* Regional Connection Lines (Ejisu Corridor) */}
+      <path
+        d="M 345 890 L 395 870 L 425 905 L 445 845"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeDasharray="6 6"
+        className="text-brand-gold/60"
+      />
+
+      {/* Interactive Community Pins */}
       {MAP_HOTSPOTS.map((spot) => {
         const isActive = activeId === spot.id;
         return (
           <g
             key={spot.id}
             onClick={() => onSelect?.(spot.id)}
+            className="cursor-pointer group"
+            role="button"
+            tabIndex={0}
+            aria-label={`${spot.name}: ${spot.tag}`}
+            aria-pressed={isActive}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 onSelect?.(spot.id);
               }
             }}
-            tabIndex={0}
-            role="button"
-            aria-label={`${spot.name}: ${spot.tag}`}
-            aria-pressed={isActive}
-            className="cursor-pointer focus:outline-none group"
           >
-            {/* Expanded touch area */}
-            <circle cx={spot.x} cy={spot.y} r="18" fill="transparent" />
+            <circle cx={spot.x} cy={spot.y} r="32" fill="transparent" />
 
-            {/* Pulsing ring for active or hovered node */}
+            {/* Pulsing ring for active or hovered community pin */}
             <circle
               className={
                 isActive
@@ -161,8 +209,8 @@ export function AshantiMap({
               }
               cx={spot.x}
               cy={spot.y}
-              r={isActive ? '14' : '12'}
-              strokeWidth="1.5"
+              r={isActive ? '26' : '20'}
+              strokeWidth="3"
               fill="none"
             />
 
@@ -170,7 +218,7 @@ export function AshantiMap({
             <circle
               cx={spot.x}
               cy={spot.y}
-              r={isActive ? '8.5' : '6.5'}
+              r={isActive ? '15' : '11'}
               className={`transition-all duration-200 ${
                 isActive ? 'fill-brand-red' : 'fill-brand-navy group-hover:fill-brand-red'
               }`}
@@ -178,22 +226,22 @@ export function AshantiMap({
             <circle
               cx={spot.x}
               cy={spot.y}
-              r={isActive ? '4' : '3'}
+              r={isActive ? '7' : '5'}
               className="fill-white transition-all duration-200"
             />
 
-            {/* Node label */}
+            {/* Community pin label */}
             <text
               x={spot.x}
-              y={spot.y + (spot.y > 210 ? 18 : -12)}
+              y={spot.y + (spot.y > 880 ? 34 : -22)}
               textAnchor="middle"
               fontFamily="Plus Jakarta Sans, sans-serif"
-              fontSize={isActive ? '11' : '10'}
-              fontWeight={isActive ? '700' : '600'}
-              className={`transition-colors duration-200 pointer-events-none ${
+              fontSize={isActive ? '20' : '18'}
+              fontWeight={isActive ? '800' : '700'}
+              className={`transition-colors duration-200 pointer-events-none select-none drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] ${
                 isActive
                   ? 'fill-brand-red font-bold'
-                  : 'fill-brand-navy/80 group-hover:fill-brand-navy'
+                  : 'fill-brand-navy group-hover:fill-brand-red'
               }`}
             >
               {spot.name}

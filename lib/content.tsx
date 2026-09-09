@@ -33,7 +33,7 @@ export const programs: Program[] = [
   {
     title: 'Economic Empowerment',
     description:
-      'Running skills training and district upskilling efforts that equip community members with tools for economic independence.',
+      'Running vocational skills training and workshops that equip community members with tools for economic independence.',
     href: '/programs#economic-empowerment',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -74,18 +74,18 @@ export const stories: Story[] = [
     date: 'July 2026',
     body: [
       'In July, the Prince Asamany Foundation organized a free deworming exercise for 84 students offering the Certificate in Natural Resources Management course at the Forestry Commission Training Centre and in the Ejisu Akyawkrom community.',
-      'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students. Beneficiaries received free deworming medication and were educated on the importance of personal hygiene, proper sanitation, and healthy living practices.',
-      'The exercise was important because good health enables students to concentrate on their studies, participate actively in practical training, and complete their programme successfully. It also reduced the financial burden on the beneficiaries while promoting awareness of preventive healthcare.',
-      'Overall, the exercise was a valuable health intervention that contributed to the well-being of the 84 students and demonstrated the Prince Asamany Foundation\u2019s commitment to supporting students and promoting healthy communities.',
+      'The exercise was aimed at promoting good health and preventing intestinal worm infections among the students. Students received free deworming medication and were educated on the importance of personal hygiene, proper sanitation, and healthy living practices.',
+      'The exercise was important because good health enables students to concentrate on their studies, participate actively in practical training, and complete their programme successfully. It also reduced the financial burden on the students while promoting awareness of preventive healthcare.',
+      'Overall, the exercise was a valuable community health outreach that contributed to the well-being of the 84 students and demonstrated the Prince Asamany Foundation\u2019s commitment to supporting students and promoting healthy communities.',
     ],
     gallery: [
       { src: '/media/opt/WhatsApp Image 2026-08-26 at 00.41.26.webp', alt: 'Flyer for the Free Deworming Exercise organized by the Prince Asamany Foundation' },
       { src: '/media/opt/IMG-20260727-WA0011.webp', alt: 'A wider group photo of students on the training-centre steps, several holding up deworming tablets' },
       { src: '/media/opt/IMG-20260727-WA0017.webp', alt: 'Students in Forestry Commission shirts gather inside the training centre during the deworming exercise' },
       { src: '/media/opt/IMG-20260727-WA0014.webp', alt: 'A screened health station set up for the deworming exercise' },
-      { src: '/media/opt/IMG-20260727-WA0018.webp', alt: 'A beneficiary holds her deworming medication as a staff member looks on' },
+      { src: '/media/opt/IMG-20260727-WA0018.webp', alt: 'A student holds her deworming medication as a staff member looks on' },
       { src: '/media/opt/IMG-20260727-WA0010.webp', alt: 'Students and foundation representatives walking together outdoors' },
-      { src: '/media/opt/IMG-20260727-WA0012.webp', alt: 'Foundation representatives and beneficiaries walking' },
+      { src: '/media/opt/IMG-20260727-WA0012.webp', alt: 'Foundation representatives and students walking together' },
       { src: '/media/opt/IMG-20260727-WA0016.webp', alt: 'Foundation representative addressing students indoors' },
     ],
   },
@@ -128,12 +128,12 @@ export const stories: Story[] = [
     tagColor: 'bg-brand-navy text-white',
     image: '/media/opt/IMG_6871.webp',
     imageAlt: 'Prince Asamany sharing a moment with a community member during the Joy to the Street campaign',
-    quote: 'Rather than offering isolated charity, this project is structured as a movement designed to foster social solidarity and provide children with baseline educational tools.',
+    quote: 'Rather than offering isolated charity, this project is structured as a movement designed to foster community solidarity and provide children with essential educational tools.',
     body: [
-      'The foundation\'s hallmark welfare campaign is the annual "Joy to the Street" program. This strategic initiative focuses heavily on the homeless, low-income families, and vulnerable children across the Ejisu Municipality.',
+      'The foundation\'s hallmark welfare campaign is the annual "Joy to the Street" program. This flagship community outreach focuses warmly on the homeless, low-income families, and vulnerable children across the Ejisu Municipality.',
       'On Boxing Day, December 26th, 2024, the Prince Asamany Foundation spread holiday cheer to over 800 street children, mentally ill persons, refugees, and other marginalized individuals in Kumasi (Amakom, WAEC Street, Asafo, and Jubilee Park).',
       'The campaign directly supplied less-privileged families with food staples, clothing, essential toiletries, and critical support worth millions of cedis.',
-      'Rather than offering isolated charity, the project is structured as a "movement" designed to foster social solidarity and provide children with the baseline educational tools needed to stay in school.'
+      'Rather than offering isolated charity, the project is structured as a movement designed to foster social solidarity and provide children with the basic educational tools needed to stay in school.'
     ],
   },
   {
@@ -147,7 +147,7 @@ export const stories: Story[] = [
     imageAlt: 'Foundation team and health workers posing with a banner at a free cervical cancer screening event',
     quote: 'Through community engagement and health education, the initiative empowered women with life-saving knowledge and promoted preventive healthcare.',
     body: [
-      'The Prince Asamany Foundation is committed to improving the health and well-being of underserved communities through impactful outreach and strategic partnerships.',
+      'The Prince Asamany Foundation is committed to improving the health and well-being of underserved communities through impactful outreach and trusted partnerships.',
       'One of its notable initiatives focused on cervical cancer awareness and prevention, where the Foundation collaborated with Mansa Memorial Hospital and the Ejisu Municipal Health Directorate of the Ghana Health Service to educate women on the importance of early detection and regular screening.',
       'Through community engagement and health education, the initiative empowered women with life-saving knowledge, promoted preventive healthcare, and strengthened access to essential screening services.',
       'The Foundation continues to support efforts that create healthier, more informed, and resilient communities through collaboration and compassionate service.'
@@ -155,19 +155,19 @@ export const stories: Story[] = [
   },
   {
     id: 'district-upskilling',
-    name: 'District Upskilling',
+    name: 'Community Skills & Mentorship',
     location: 'Ashanti Region',
     role: 'Economic Empowerment',
-    tag: 'Economic Literacy',
+    tag: 'Economic Empowerment',
     tagColor: 'bg-brand-gold text-brand-navy',
     image: '/media/opt/IMG_4488.webp',
     imageAlt: 'A black and white portrait of a child looking into the camera during a community visit',
-    quote: 'Sustainable human advancement starts by delivering targeted resources and structural aid to help marginalized individuals secure independent livelihoods.',
+    quote: 'Lasting community progress starts with practical support and useful skills that help families secure independent livelihoods.',
     body: [
-      'The foundational philosophy of the organization is heavily tied to its leadership\'s professional experience in strategic development. Founded by Prince Douglas Asamany, the organization\'s self-stated mission is to drive sustainable human advancement.',
-      'Through Economic Literacy and District Upskilling programs, the foundation focuses on delivering training, targeted resources, and structural aid.',
-      'This helps marginalized individuals secure independent, sustainable livelihoods rather than relying purely on short-term relief.',
-      'By explicitly centering its workflow within the Ejisu Municipal layout, the foundation works directly with local assemblies, chiefs, and existing networks to ensure their volunteer campaigns do not duplicate state efforts but fill critical execution gaps.'
+      'The work of the organization is guided by a heartfelt commitment to community development and youth mentorship. Founded by Prince Douglas Asamany, the organization\'s mission is to uplift every life with dignity and care.',
+      'Through practical skills training and community workshops, the foundation focuses on delivering useful tools, education, and sustainable aid.',
+      'This helps vulnerable families secure independent livelihoods rather than relying solely on short-term charity.',
+      'By working directly with local chiefs, elders, and community groups across Ejisu, the foundation ensures every outreach brings genuine, long-term help directly to where it is needed most.'
     ],
   },
 ];

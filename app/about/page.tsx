@@ -10,26 +10,26 @@ import { blurProps } from '@/lib/media';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Prince Asamany Foundation is a non-governmental organization located at Akyawkrom in Ejisu Municipal Assembly. Learn about our mission, vision, values, and strategic objectives.',
+    'Prince Asamany Foundation is a non-governmental organization located at Akyawkrom in Ejisu Municipal Assembly. Learn about our mission, vision, values, and community goals.',
 };
 
 const values = [
   { title: 'Service beyond self.', desc: 'We put the needs of our communities before our own comfort, acting always in the interest of the people we serve.' },
   { title: 'Integrity.', desc: 'We are transparent, honest, and accountable in every action and decision we make.' },
-  { title: 'Responsibility.', desc: 'We take ownership of our commitments to communities, partners, and beneficiaries.' },
+  { title: 'Responsibility.', desc: 'We take ownership of our commitments to the communities, families, and partners we serve.' },
 ];
 
 const objectives = [
-  'Capacity building.',
-  'Training for community empowerment.',
-  'Fundraising and resource mobilization for sustainability.',
-  'Collaboration with stakeholders for collective impact.',
+  'Skills training and practical workshops for young people.',
+  'Hands-on vocational tools and community mentorship.',
+  'Local and international partnerships for sustainable community support.',
+  'Close collaboration with local chiefs, healthcare workers, and families.',
 ];
 
 const programs = [
   { title: 'Preventive Healthcare.', image: '/media/opt/IMG_8259.webp', alt: 'Health workers and foundation team posing by a free cervical cancer screening banner', href: '/programs#health-screenings' },
   { title: 'Social Welfare & Relief.', image: '/media/opt/IMG_6851.webp', alt: 'Foundation volunteers handing relief items to mothers and children during a Joy to the Street outreach in Kumasi', href: '/programs#social-welfare' },
-  { title: 'Economic Empowerment.', image: '/media/opt/IMG_8208.webp', alt: 'Foundation volunteers standing beside the foundation mission and vision banner during a community capacity-building event', href: '/programs#economic-empowerment' },
+  { title: 'Economic Empowerment.', image: '/media/opt/IMG_8208.webp', alt: 'Foundation volunteers standing beside the foundation mission and vision banner during a community skills training event', href: '/programs#economic-empowerment' },
 ];
 
 const achievements = [
@@ -43,7 +43,7 @@ const achievements = [
   },
   {
     title: 'Youth Empowerment',
-    text: "Invested in capacity-building programs that equip young people with skills and opportunities to thrive in today's world.",
+    text: "Invested in youth skills training and educational workshops that equip young people with tools and opportunities to build thriving livelihoods.",
   },
   {
     title: 'Women\u2019s Economic Empowerment',
@@ -105,19 +105,19 @@ export default function AboutPage() {
                 with his daughter, Prince Douglas Asamany encountered a beggar asking for food. His
                 daughter&rsquo;s innocent plea, &ldquo;Daddy, why are they begging for food?
                 Let&rsquo;s take them home and give them something to eat,&rdquo; sparked the vision
-                to create a platform where kindness meets action.
+                to create a foundation where kindness meets action.
               </p>
               <blockquote className="border-l-4 border-brand-gold pl-6 mb-5">
                 <p className="font-display text-xl text-brand-navy italic leading-snug">
-                  We stand for hope, Development and opportunity for all.
+                  We stand for hope, development and opportunity for all.
                 </p>
               </blockquote>
               <p className="font-body text-lg text-brand-navy/75 leading-relaxed mb-5">
-                Our objective is to assist in the process of social integration and personal
-                realization of the underprivileged.
+                Our purpose is to walk beside underprivileged individuals and families, restoring
+                dignity, hope, and real opportunity.
               </p>
               <p className="font-body text-lg text-brand-navy/75 leading-relaxed">
-                Registered as an LBG (Limited by Guarantee) with the Government of Ghana, the
+                Registered as an official non-profit organization with the Government of Ghana, the
                 Foundation operates with transparency, accountability, and a deep commitment to the
                 dignity of every person we serve.
               </p>
@@ -128,8 +128,8 @@ export default function AboutPage() {
               <div className="border-l-4 border-brand-gold pl-6">
                 <h3 className="font-display text-xl font-bold text-brand-red-dark mb-2">Vision</h3>
                 <p className="font-body text-lg text-brand-navy/75 leading-relaxed italic">
-                  Our Work aims to break the vicious cycle of poverty &amp; social isolation and to
-                  restore hope for a better future.
+                  Our work aims to break the cycle of poverty and isolation, restoring hope and
+                  opportunity for a brighter future.
                 </p>
               </div>
 
@@ -137,8 +137,8 @@ export default function AboutPage() {
               <div className="border-l-4 border-brand-navy pl-6">
                 <h3 className="font-display text-xl font-bold text-brand-red-dark mb-2">Mission</h3>
                 <p className="font-body text-lg text-brand-navy/75 leading-relaxed italic">
-                  Work for social development and integration of the underprivileged individuals,
-                  groups and communities.
+                  Promote community well-being, uplift underprivileged families, and build lasting
+                  opportunities for every child and mother across Ghana.
                 </p>
               </div>
             </div>
@@ -262,12 +262,12 @@ export default function AboutPage() {
       <section className="bg-brand-cream section-padding">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-            {/* Strategic Objectives */}
+            {/* Key Goals for Our Communities */}
             <div>
               <div className="text-left mb-8">
-                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Strategy</span>
+                <span className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-brand-red-dark">Our Purpose</span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-navy mt-2 leading-tight">
-                  Strategic Objectives
+                  Key Goals for Our Communities
                 </h2>
               </div>
               <ul className="flex flex-col gap-4 list-none m-0 p-0" role="list">
@@ -348,10 +348,10 @@ export default function AboutPage() {
           {/* Key Program Areas list */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
             {[
-              'Analysis and assessment of needs.',
-              'Developing programmes and strategies for development.',
-              'Empowering and developing local communities.',
-              'Interaction with stakeholders.',
+              'Listening closely to the direct needs of local families.',
+              'Designing practical, long-term health and education programs.',
+              'Providing tools and training that empower local communities.',
+              'Walking together with chiefs, elders, and community members.',
             ].map((item) => (
               <div key={item} className="bg-white/5 border border-white/10 rounded-card p-4">
                 <p className="font-body text-sm text-white/75 leading-relaxed">{item}</p>

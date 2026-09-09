@@ -161,53 +161,69 @@ export function Navbar() {
         {/* Gold accent bar at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-brand-gold" />
 
-        <nav className="flex-1 flex flex-col px-8 pt-28 pb-10" aria-label="Mobile navigation">
-          <ul className="flex flex-col list-none m-0 p-0">
+        <nav className="flex-1 flex flex-col px-6 pt-24 pb-8" aria-label="Mobile navigation">
+          <ul className="flex flex-col list-none m-0 p-0 gap-1 my-auto">
             {navLinks.map((link, i) => {
               const active = isActive(link.href);
               return (
-                <li key={link.href} className="relative">
+                <li key={link.href} className="flex flex-col items-center justify-center">
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
                     aria-current={active ? 'page' : undefined}
-                    className={`micro-press relative block text-center font-display text-4xl font-bold py-4 transition-colors duration-200 ` + (active ? 'text-brand-gold' : 'text-white/85 hover:text-brand-gold')}
+                    className={`micro-press relative inline-flex flex-col items-center justify-center font-display text-2xl sm:text-3xl font-bold py-2 sm:py-2.5 transition-colors duration-200 ${
+                      active ? 'text-brand-gold' : 'text-white/80 hover:text-white'
+                    }`}
                     style={{
-                      transitionDelay: menuOpen ? `${i * 60}ms` : '0ms',
-                      transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
+                      transitionDelay: menuOpen ? `${i * 45}ms` : '0ms',
+                      transform: menuOpen ? 'translateY(0)' : 'translateY(14px)',
                       opacity: menuOpen ? 1 : 0,
                     }}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    {/* Centered active underline indicator */}
+                    {active && (
+                      <span
+                        className="w-6 h-0.5 rounded-full bg-brand-gold mt-1"
+                        aria-hidden="true"
+                      />
+                    )}
                   </Link>
-                  {/* Active indicator dot */}
-                  {active && (
-                    <span
-                      className="absolute left-0 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-brand-gold"
-                      aria-hidden="true"
-                    />
-                  )}
                 </li>
               );
             })}
           </ul>
 
-          {/* Donate + contact */}
-          <div className="mt-auto" style={{ transitionDelay: menuOpen ? `${navLinks.length * 60}ms` : '0ms', opacity: menuOpen ? 1 : 0, transform: menuOpen ? 'translateY(0)' : 'translateY(20px)' }}>
+          {/* Donate CTA + Contact Info */}
+          <div
+            className="mt-6 flex flex-col items-center text-center gap-3.5"
+            style={{
+              transitionDelay: menuOpen ? `${navLinks.length * 45}ms` : '0ms',
+              opacity: menuOpen ? 1 : 0,
+              transform: menuOpen ? 'translateY(0)' : 'translateY(14px)',
+            }}
+          >
             <Link
               href="/donate"
               onClick={() => setMenuOpen(false)}
-              className="micro-press block w-full text-center font-body font-semibold text-lg bg-brand-red text-white py-4 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark"
+              className="micro-press inline-flex items-center justify-center w-full max-w-xs font-body font-semibold text-base bg-brand-red text-white py-3.5 px-6 rounded-btn border-2 border-brand-red hover:bg-brand-red-dark shadow-md active:scale-[0.98] transition-all"
             >
               Donate Now
             </Link>
 
-            {/* Contact info at bottom */}
-            <div className="mt-12 pt-8 border-t border-white/15 text-center px-2 pb-4">
-              <p className="font-body text-sm text-white/70">{siteConfig.address.box}, {siteConfig.address.city}, Ashanti</p>
-              <a href={`tel:` + siteConfig.phone.tel} className="mt-3 inline-flex items-center justify-center gap-2 font-body text-lg font-bold text-brand-gold py-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" aria-hidden="true" />
-                {siteConfig.phone.display}
+            {/* Compact contact info */}
+            <div className="pt-3 border-t border-white/10 flex flex-col items-center gap-1 w-full max-w-xs text-center">
+              <span className="font-body text-[11px] text-white/60">
+                {siteConfig.address.box}, {siteConfig.address.city}, Ashanti Region
+              </span>
+              <a
+                href={`tel:${siteConfig.phone.tel}`}
+                className="inline-flex items-center gap-1.5 font-body text-xs font-bold text-brand-gold hover:text-white transition-colors py-0.5"
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.49 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.1 6.1l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>{siteConfig.phone.display}</span>
               </a>
             </div>
           </div>

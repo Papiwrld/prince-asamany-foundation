@@ -7,21 +7,21 @@ const opportunities = [
   {
     title: 'Community Outreach Volunteer',
     description:
-      'Work directly with our team in Ejisu communities, conducting needs assessments, supporting water projects, and engaging with beneficiaries.',
+      'Work directly with our team in Ejisu communities, listening to community needs, supporting clean water outreach, and spending time with families.',
     commitment: 'Flexible, weekends or weekdays',
     location: 'Ejisu Municipality',
   },
   {
     title: 'Skills Trainer / Facilitator',
     description:
-      'Share your professional expertise by facilitating workshops in areas such as business skills, health education, financial literacy, or vocational training.',
-    commitment: '1–2 sessions per month',
+      'Share your practical skills and know-how by leading workshops in areas such as business skills, health education, financial literacy, or vocational trades.',
+    commitment: '1 - 2 sessions per month',
     location: 'On-site in Ejisu / Hybrid',
   },
   {
     title: 'Environmental Program Volunteer',
     description:
-      'Join our tree-planting and environmental awareness campaigns in the Ashanti Region. No prior experience required, just enthusiasm for the work.',
+      'Join our tree-planting and environmental care campaigns in the Ashanti Region. No prior experience required, just a heart for the community.',
     commitment: 'Seasonal campaigns',
     location: 'Ashanti Region field sites',
   },
@@ -259,7 +259,9 @@ export function GetInvolvedContent() {
         </div>
       </section>
 
-      <CTABanner />
+      <CTABanner
+        secondaryAction={{ href: '/contact', label: 'Speak With Our Team' }}
+      />
     </>
   );
 }

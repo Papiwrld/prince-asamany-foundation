@@ -47,7 +47,7 @@ export function AsymmetricCards() {
             <StatCard
               stat="3"
               label="Core Programs Running"
-              sublabel="Economic empowerment, healthcare interventions, and social welfare across Ejisu Municipal Assembly"
+              sublabel="Economic empowerment, healthcare programs, and social welfare across Ejisu Municipal Assembly"
               variant="navy"
               className="h-full min-h-64 md:min-h-0"
             />
@@ -59,7 +59,7 @@ export function AsymmetricCards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-            className="group md:row-span-2 relative overflow-hidden rounded-[2rem] w-full h-[24rem] sm:h-[28rem] md:h-auto md:min-h-[30rem] flex flex-col items-center justify-center"
+            className="group md:row-span-2 relative overflow-hidden rounded-[2rem] w-full h-[18rem] sm:h-[28rem] md:h-auto md:min-h-[30rem] flex flex-col items-center justify-center"
           >
             <Image
               src="/media/opt/IMG_6848.webp"
@@ -74,23 +74,23 @@ export function AsymmetricCards() {
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-navy via-brand-navy/55 to-transparent" aria-hidden="true" />
             
             {/* Overlay content - horizontally centered, anchored to the bottom */}
-            <div className="relative z-10 w-full h-full flex flex-col items-center justify-end px-8 pb-10 pt-20 text-center md:px-12 md:pb-12">
+            <div className="relative z-10 w-full h-full flex flex-col items-center justify-end px-6 pb-8 pt-12 text-center md:px-12 md:pb-12">
               <div className="flex flex-col items-center max-w-md">
                 <span className="w-10 h-0.5 bg-brand-gold rounded-full opacity-90 shadow-sm" aria-hidden="true"></span>
-                <p className="mt-6 font-display text-white text-2xl leading-[1.3] md:text-3xl lg:text-4xl lg:leading-[1.22] font-medium italic drop-shadow-xl">
-                  Driving sustainable human advancement.
+                <p className="mt-4 md:mt-6 font-display text-white text-xl sm:text-2xl leading-[1.3] md:text-3xl lg:text-4xl lg:leading-[1.22] font-medium italic drop-shadow-xl">
+                  Uplifting lives, strengthening our communities.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Col 3 top: Photo card linking to programs (avoids competing numeric stats) */}
+          {/* Col 3 top: Photo card linking to programs (hidden on mobile to avoid duplicating the Programs section above) */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-            className="group relative overflow-hidden rounded-card-lg min-h-44 shadow-lg"
+            className="hidden md:block group relative overflow-hidden rounded-card-lg min-h-44 shadow-lg"
           >
             <Link href="/programs" aria-label="Explore our work: see our programs" className="absolute inset-0 z-10">
               <span className="sr-only">Explore our work: see our programs</span>

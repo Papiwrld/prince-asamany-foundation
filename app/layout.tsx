@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: '%s | Prince Asamany Foundation',
   },
   description:
-    'Prince Asamany Foundation is a registered NGO located in Akyawkrom, Ejisu Municipal Assembly, Ashanti Region, Ghana. We work for social development, clean water access, environmental projects, and capacity building.',
+    'Prince Asamany Foundation is a registered NGO located in Akyawkrom, Ejisu Municipal Assembly, Ashanti Region, Ghana. We work for social development, clean water access, environmental care, and skills training for youth and families.',
   keywords: [
     'Prince Asamany Foundation',
     'NGO Ghana',
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     title: 'Prince Asamany Foundation, Hope, Development & Opportunity for All',
     description:
       'A registered NGO working for social development and integration of underprivileged communities in Ejisu, Ashanti Region, Ghana.',
-    images: [{ url: '/media/opt/IMG_4403_2.webp', width: 1200, height: 630, alt: 'Prince Asamany Foundation volunteer handing a holiday gift to a child during the Joy to the Street outreach in Kumasi' }],
+    images: [{ url: '/media/opt/IMG_6871.webp', width: 1200, height: 630, alt: 'Prince Douglas Asamany and foundation volunteers standing together with community members and children in Ghana' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Prince Asamany Foundation',
     description: 'Hope, Development & Opportunity for All, Ejisu, Ashanti, Ghana',
-    images: ['/media/opt/IMG_4403_2.webp'],
+    images: ['/media/opt/IMG_6871.webp'],
   },
 };
 

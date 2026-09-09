@@ -1,14 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 import { stories } from '@/lib/content';
 import { blurProps } from '@/lib/media';
 
 export function StoryGrid() {
+  const [showAllMobile, setShowAllMobile] = useState(false);
   return (
     <section className="relative overflow-hidden bg-brand-navy section-padding" aria-labelledby="stories-heading">
       {/* Subtle dot texture with Aceternity radial falloff mask */}
@@ -37,7 +39,7 @@ export function StoryGrid() {
           </h2>
         </div>
 
-        {/* Three-card grid on desktop, single featured card on mobile */}
+        {/* Three-card grid on desktop, progressive disclosure on mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {stories.slice(0, 3).map((story, i) => (
             <motion.article
@@ -46,7 +48,9 @@ export function StoryGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="spotlight-card group relative flex flex-col overflow-hidden rounded-card-lg bg-white border border-brand-navy/5 hover:border-brand-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4"
+              className={`spotlight-card group relative flex flex-col overflow-hidden rounded-card-lg bg-white border border-brand-navy/5 hover:border-brand-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 focus-within:outline-2 focus-within:outline-brand-navy focus-within:outline-offset-4 ${
+                i > 0 ? (showAllMobile ? 'flex' : 'hidden sm:flex') : 'flex'
+              }`}
             >
               {/* Top specular highlight */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20" aria-hidden="true" />
@@ -98,14 +102,37 @@ export function StoryGrid() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/stories"
-            className="micro-press inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn"
-          >
-            View all stories
-          </Link>
+        {/* Actions / CTA: Exactly one button on mobile */}
+        <div className="mt-6 sm:mt-12 flex justify-center">
+          {!showAllMobile ? (
+            <>
+              {/* Mobile-only single button when collapsed */}
+              <button
+                type="button"
+                onClick={() => setShowAllMobile(true)}
+                className="sm:hidden w-full max-w-xs inline-flex items-center justify-center gap-2 py-3 px-6 rounded-btn bg-white/10 hover:bg-white/15 border border-white/20 text-white font-body text-sm font-semibold transition-colors duration-200"
+              >
+                <span>View more stories</span>
+                <ChevronDown className="w-4 h-4 text-brand-gold" />
+              </button>
+
+              {/* Desktop button */}
+              <Link
+                href="/stories"
+                className="hidden sm:inline-flex micro-press items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn"
+              >
+                View all stories
+              </Link>
+            </>
+          ) : (
+            /* Follow-up button shown after expanding on mobile (and on desktop) */
+            <Link
+              href="/stories"
+              className="micro-press inline-flex items-center justify-center font-body text-sm font-semibold text-white border-2 border-white/40 hover:bg-white hover:text-brand-navy px-6 py-3 rounded-btn w-full max-w-xs sm:w-auto"
+            >
+              View all stories
+            </Link>
+          )}
         </div>
       </div>
     </section>

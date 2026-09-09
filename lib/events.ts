@@ -108,7 +108,7 @@ export const fallbackEvents: EventItem[] = [
     id: 'cervical-cancer-screening-2026',
     title: 'Free Community Health Screening & Deworming Outreach',
     date: '2026-10-24',
-    time: '8:30 AM – 3:30 PM GMT',
+    time: '8:30 AM - 3:30 PM GMT',
     location: 'Ejisu Community Health Centre, Ashanti Region',
     category: 'Healthcare',
     description:
@@ -123,7 +123,7 @@ export const fallbackEvents: EventItem[] = [
     id: 'joy-to-the-street-dec-2026',
     title: 'Joy to the Street: Annual Festive Relief Drive',
     date: '2026-12-19',
-    time: '10:00 AM – 4:00 PM GMT',
+    time: '10:00 AM - 4:00 PM GMT',
     location: 'Akyawkrom & Ejisu Municipal District',
     category: 'Social Welfare',
     description:
@@ -136,13 +136,13 @@ export const fallbackEvents: EventItem[] = [
   },
   {
     id: 'farmers-empowerment-workshop-nov-2026',
-    title: 'Smallholder Farmers Capacity Building & Equipment Drive',
+    title: 'Smallholder Farmers Skills Workshop & Tools Distribution',
     date: '2026-11-14',
-    time: '9:00 AM – 1:00 PM GMT',
+    time: '9:00 AM - 1:00 PM GMT',
     location: 'Akyawkrom Farmers Cooperative Hall',
     category: 'Economic Empowerment',
     description:
-      'Hands-on training in sustainable agricultural practices, post-harvest loss reduction, and distribution of essential farming gear for local cooperative members.',
+      'Hands-on training in sustainable agricultural methods, preserving harvested crops, and distribution of essential farming gear for local cooperative members.',
     imageUrl: '/media/opt/IMG-20260713-WA0030.webp',
     registrationUrl: '/contact',
     featured: false,
@@ -153,7 +153,7 @@ export const fallbackEvents: EventItem[] = [
     id: 'forestry-deworming-past',
     title: 'Forestry Commission Student Health Initiative',
     date: '2026-07-27',
-    time: '9:00 AM – 2:00 PM GMT',
+    time: '9:00 AM - 2:00 PM GMT',
     location: 'Forestry Commission Training Centre, Ejisu',
     category: 'Healthcare',
     description:

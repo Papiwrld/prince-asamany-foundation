@@ -274,10 +274,10 @@ export function DonatePageContent() {
               </blockquote>
               <ul className="flex flex-col gap-3 list-none m-0 p-0" role="list">
                 {[
-                  'Directly funds clean water infrastructure in Ejisu communities',
-                  'Supports environmental restoration and reforestation',
-                  'Enables capacity-building workshops for women and youth',
-                  "Sustains the Foundation's operations and community outreach",
+                  'Directly provides clean water and community wells in Ejisu',
+                  'Supports environmental care and tree planting in local schools',
+                  'Enables practical skills training and tools for women and youth',
+                  'Keeps volunteer medical teams and relief outreaches running on the ground',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="w-5 h-5 rounded-full bg-brand-gold shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">

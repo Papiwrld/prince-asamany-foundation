@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Sparkles, HeartHandshake } from 'lucide-react';
+import { Calendar, ArrowRight, Users, HeartHandshake, Stethoscope, Wheat, Backpack } from 'lucide-react';
 import { EventItem } from '@/lib/events';
 import { EventCard } from '@/components/ui/EventCard';
 
@@ -26,7 +26,7 @@ export function EventsSection({ events }: EventsSectionProps) {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-gold/15 text-brand-navy border border-brand-gold/30 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-brand-red" />
+            <Users className="w-3.5 h-3.5 text-brand-red" />
             <span className="font-body text-xs font-semibold uppercase tracking-[0.15em]">
               Upcoming Gatherings & Outreaches
             </span>
@@ -105,14 +105,14 @@ export function EventsSection({ events }: EventsSectionProps) {
               New Outreaches Currently in Planning
             </h3>
             <p className="font-body text-slate-600 mb-8 max-w-lg mx-auto text-base md:text-lg leading-relaxed">
-              Our medical teams and welfare coordinators are actively organizing our next round of healthcare screenings and rural assistance operations in the Ejisu Municipality.
+              Our medical teams and welfare coordinators are actively organizing our next round of healthcare screenings and rural community assistance in the Ejisu Municipality.
             </p>
 
             {/* Active focus chips */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 max-w-xl mx-auto text-left">
               <div className="p-3.5 rounded-xl bg-surface-alt/70 border border-brand-navy/5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-red font-bold text-base shadow-sm shrink-0">
-                  🩺
+                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-sm shrink-0">
+                  <Stethoscope className="w-4 h-4 text-brand-red" />
                 </div>
                 <div>
                   <p className="font-display text-xs font-bold text-brand-navy">Health Screenings</p>
@@ -120,8 +120,8 @@ export function EventsSection({ events }: EventsSectionProps) {
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-surface-alt/70 border border-brand-navy/5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-gold-dark font-bold text-base shadow-sm shrink-0">
-                  🌾
+                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-sm shrink-0">
+                  <Wheat className="w-4 h-4 text-amber-600" />
                 </div>
                 <div>
                   <p className="font-display text-xs font-bold text-brand-navy">Farmer Support</p>
@@ -129,8 +129,8 @@ export function EventsSection({ events }: EventsSectionProps) {
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-surface-alt/70 border border-brand-navy/5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand-navy font-bold text-base shadow-sm shrink-0">
-                  🎒
+                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-sm shrink-0">
+                  <Backpack className="w-4 h-4 text-brand-navy" />
                 </div>
                 <div>
                   <p className="font-display text-xs font-bold text-brand-navy">Youth Welfare</p>

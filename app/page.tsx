@@ -10,10 +10,12 @@ import { TrustStrip } from '@/components/sections/TrustStrip';
 import { CTABanner } from '@/components/sections/CTABanner';
 import { getEvents } from '@/lib/events';
 
+export const revalidate = 60; // Auto-sync with Google Sheets every 60 seconds
+
 export const metadata: Metadata = {
   title: 'Home',
   description:
-    'A registered NGO based in Akyawkrom, Ejisu Municipal Assembly, Ashanti Region, Ghana. We work for social development, clean water access, environmental projects, and capacity building for underprivileged communities.',
+    'A registered NGO based in Akyawkrom, Ejisu Municipal Assembly, Ashanti Region, Ghana. We work for social development, clean water access, environmental projects, and skills training for underprivileged communities.',
 };
 
 export default async function HomePage() {

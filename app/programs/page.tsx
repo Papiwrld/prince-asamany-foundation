@@ -8,7 +8,7 @@ import { blurProps } from '@/lib/media';
 export const metadata: Metadata = {
   title: 'Programs',
   description:
-    'Explore Prince Asamany Foundation\'s key programs: clean water access, environmental projects, and capacity building for communities in Ejisu, Ashanti Region, Ghana.',
+    'Explore Prince Asamany Foundation\'s key programs: clean water access, environmental care, and skills training for communities in Ejisu, Ashanti Region, Ghana.',
 };
 
 interface ProgramBlock {
@@ -42,7 +42,7 @@ const programs: ProgramBlock[] = [
     image: '/media/opt/IMG_8098.webp',
     imageAlt: 'Women seated under a canopy awaiting free health screenings beside a Prince Asamany Foundation banner in Ejisu',
     image2: '/media/opt/IMG_8116.webp',
-    image2Alt: 'Health educator presenting a cervical cancer awareness atlas to seated women at a community screening outreach',
+    image2Alt: 'Health educator presenting a cervical cancer health guide to seated women at a community screening outreach',
     color: 'brand-red',
     story: { href: '/stories/free-deworming-exercise', label: 'the deworming exercise' },
   },
@@ -68,12 +68,12 @@ const programs: ProgramBlock[] = [
     tag: 'Empowerment',
     title: 'Economic Empowerment',
     description:
-      'Sustainable human advancement starts by delivering targeted resources and structural aid. Our district upskilling efforts focus on equipping individuals with the tools and training they need to secure independent livelihoods and break the cycle of poverty.',
+      'Lasting community progress starts with practical support and useful skills. Our community training programs focus on equipping farmers, traders, and youth with the tools they need to earn an honest living and build a better future.',
     approach: [
-      'Targeted resource distribution for local businesses',
-      'Structural aid and capacity building',
-      'Promoting economic literacy',
-      'Collaboration with local assemblies and chiefs',
+      'Practical tools and starter support for small businesses',
+      'Hands-on vocational training and youth workshops',
+      'Financial guidance for market women and farmers',
+      'Close partnership with local chiefs and community leaders',
     ],
     image: '/media/opt/IMG_8277.webp',
     imageAlt: 'Community member participating in an economic empowerment session',
@@ -94,7 +94,7 @@ export default function ProgramsPage() {
       <PageHeader
         overline="What We Do"
         title="Core Programs"
-        description="The Prince Asamany Foundation stands as a bridge between need and compassion. Our interventions are focused on these three core pillars."
+        description="The Prince Asamany Foundation stands as a bridge between need and compassion. Our community work is focused on these three core pillars."
       />
 
       {/* Program details */}

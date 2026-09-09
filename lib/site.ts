@@ -57,6 +57,7 @@ export const siteConfig: SiteConfig = {
     // Leave blank (empty string) to hide a social link. Add real URLs when known.
     social: {
         facebook: 'https://www.facebook.com/share/1DLhECoCuQ/?mibextid=wwXIfr',
+        whatsapp: 'https://wa.me/233553045832',
         twitter: '',
         instagram: '',
     },

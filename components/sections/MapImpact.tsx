@@ -62,7 +62,7 @@ export function MapImpact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Interactive Map & Hotspot Inspector */}
+          {/* Interactive Map & Community Impact Locations */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -73,10 +73,10 @@ export function MapImpact() {
             <div className="bg-white/80 backdrop-blur-sm rounded-card-lg border border-brand-navy/10 p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-body text-xs font-bold uppercase tracking-wider text-brand-red-dark">
-                  Operational Hotspots
+                  Community Focus Areas
                 </span>
                 <span className="font-body text-xs text-brand-navy/65">
-                  Select a node to inspect
+                  Choose a community to view impact
                 </span>
               </div>
 
@@ -106,7 +106,7 @@ export function MapImpact() {
                 ))}
               </div>
 
-              {/* Active Hotspot Information Callout */}
+              {/* Active Location Information Callout */}
               <div className="mt-4 p-4 rounded-card bg-brand-cream/80 border border-brand-navy/10 transition-all duration-300">
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
                   <span className="font-display text-base font-bold text-brand-navy flex items-center gap-1.5">
@@ -130,8 +130,8 @@ export function MapImpact() {
             </div>
           </motion.div>
 
-          {/* Stats, stack on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Stats: 2x2 on mobile, 2 cols on tablet/desktop */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
             {stats.map((stat, i) => {
               const themeClasses = {
                 red: 'bg-brand-red text-white border-brand-red',
@@ -147,19 +147,19 @@ export function MapImpact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-                  className={`flex flex-col items-center text-center md:items-start md:text-left p-6 min-h-[10rem] rounded-card-lg border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2 ${themeClasses}`}
+                  className={`flex flex-col items-center text-center md:items-start md:text-left p-4 sm:p-6 min-h-[9rem] sm:min-h-[10rem] rounded-card sm:rounded-card-lg border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group focus-visible:outline-2 focus-visible:outline-brand-navy focus-visible:outline-offset-2 ${themeClasses}`}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 mb-4 backdrop-blur-sm">
+                  <div className="flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-white/20 mb-2 sm:mb-4 backdrop-blur-sm [&>svg]:w-4.5 [&>svg]:h-4.5 sm:[&>svg]:w-6 sm:[&>svg]:h-6">
                     {stat.icon}
                   </div>
-                  <div className="font-display text-3xl md:text-4xl font-black leading-none mb-2">
+                  <div className="font-display text-2xl sm:text-3xl md:text-4xl font-black leading-none mb-1.5 sm:mb-2">
                     <CountUp value={stat.value} />
                   </div>
                   
-                  <div className="w-10 h-1 rounded-full my-3 bg-white/30" aria-hidden="true" />
+                  <div className="w-8 sm:w-10 h-0.5 sm:h-1 rounded-full my-2 sm:my-3 bg-white/30" aria-hidden="true" />
                   
-                  <div className="font-body text-lg font-semibold mb-1.5">{stat.label}</div>
-                  <div className={`font-body text-sm leading-relaxed ${stat.theme === 'gold' ? 'text-brand-navy' : 'text-white'}`}>
+                  <div className="font-body text-xs sm:text-lg font-bold sm:font-semibold mb-1 leading-tight">{stat.label}</div>
+                  <div className={`font-body text-[11px] sm:text-sm leading-snug sm:leading-relaxed line-clamp-3 sm:line-clamp-none ${stat.theme === 'gold' ? 'text-brand-navy/90' : 'text-white/90'}`}>
                     {stat.description}
                   </div>
                 </motion.div>
