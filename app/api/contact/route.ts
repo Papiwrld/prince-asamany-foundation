@@ -54,7 +54,7 @@ async function deliverMessage(payload: {
       signal: AbortSignal.timeout(10000),
       body: JSON.stringify({
         from,
-        to: ['paf.ghana.dev@gmail.com'], // Must match Resend account owner in test mode
+        to: [EMAIL],
         replyTo: payload.email,
         subject: payload.subject,
         text,
