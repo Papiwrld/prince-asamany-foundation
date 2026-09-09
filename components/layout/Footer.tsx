@@ -57,7 +57,6 @@ export function Footer() {
               height={427}
               sizes="160px"
               className="h-10 w-auto"
-              priority
             />
           </Link>
 
@@ -159,7 +158,6 @@ export function Footer() {
               height={427}
               sizes="160px"
               className="h-14 w-auto"
-              priority
             />
           </Link>
           <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white/10 text-white/80 font-body text-xs font-medium">
