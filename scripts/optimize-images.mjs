@@ -22,9 +22,12 @@ const FILES = fs.readdirSync(MEDIA).filter(f => {
 const WIDTHS = {
   'IMG_4403_2.jpg': 2400,        // volunteer gift outreach
   'IMG_6871.jpg': 2400,          // hero bg full-bleed community & founder
+  'IMG_6846.jpg': 2400,          // hero rotation: founder & community
+  'IMG_6876.jpg': 2400,          // hero rotation: youth outreach
+  'IMG_6885.jpg': 2400,          // hero rotation / about hero bg
+  'IMG-20260727-WA0008.jpg.jpeg': 2400, // hero rotation: health initiative
   'IMG_6965.jpg': 1800,          // about founder portrait (large feature)
   'IMG_8098.jpg.jpeg': 2000,     // programs health feature (50vw)
-  'IMG_6885.jpg': 2000,          // about hero bg
   'IMG_6863.jpg': 2000,          // donate bg / og
   'IMG_6890.jpg': 2000,          // cta bg
 };
