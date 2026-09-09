@@ -145,9 +145,7 @@ export function HeroSection() {
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
               className="font-body text-sm sm:text-base lg:text-lg leading-relaxed text-white/90 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]"
             >
-              Prince Asamany Foundation turns compassion into opportunity: from deworming
-              84 schoolchildren this July to welfare outreach for families across Ejisu
-              Municipal Assembly.
+              Uplifting underprivileged children, families, and communities across Ghana through vital healthcare, education, and life-changing opportunity.
             </motion.p>
 
             {/* CTAs */}
