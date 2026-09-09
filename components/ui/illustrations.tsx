@@ -144,15 +144,6 @@ export function AshantiMap({
         Lake Volta
       </text>
 
-      {/* Gulf of Guinea label along South coast */}
-      <text
-        x="450"
-        y="1260"
-        textAnchor="middle"
-        className="fill-brand-navy/35 text-[26px] font-body tracking-[0.2em] uppercase font-bold pointer-events-none select-none"
-      >
-        Gulf of Guinea
-      </text>
 
       {/* Ashanti Region Highlight (Warm gold tinted beacon) */}
       <path
